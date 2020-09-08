@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const ProductDB = require('../services/indexService');
+const ProductDB = require('../bll/mockBLL');
 
 const productDB = new ProductDB();
 
