@@ -22,13 +22,12 @@ export class MockService {
      return this.httpClient.get(`${this.url}/${id}`);
    }
 
-   /*
-   createNew(product: Product): Observable<any> {
-     return this.httpClient.put(`${this.url}`, product);
+   createNew(mock: Mock): Observable<any> {
+     return this.httpClient.put(`${this.url}`, mock);
    }
 
-   update(product: Product): Observable<any> {
-     return this.httpClient.post(`${this.url}/${product.id}`, product);
+   update(mock: Mock): Observable<any> {
+     return this.httpClient.post(`${this.url}/${mock.id}`, mock);
    }
-   */
+
 }

@@ -10,11 +10,6 @@ const pool = mariadb.createPool({
       pool.getConnection().then(conn => this.conn = conn);
     }
   
-    /**
-     * Read method for database (all records or one record)
-     * @param {string} table The name of the table where you would like to get the records/record
-     * @param {number} id OPTIONAL ID of the record what you would like to get as an object
-     */
     async read(table, id) {
       if (id) {
         const query = `
@@ -33,11 +28,6 @@ const pool = mariadb.createPool({
       return result;
     }
   
-    /**
-     * Create method for database
-     * @param {string} table The name of the table where you would like to add new records
-     * @param {object} record Object with the same keys as the table columns
-     */
     async create(table, record) {
       const query = `
       INSERT INTO ${table} (${Object.keys(record).join(', ')})
@@ -47,11 +37,6 @@ const pool = mariadb.createPool({
       return result;
     }
   
-    /**
-     * Update method for database (one record)
-     * @param {string} table The name of the table where you would like to update a record
-     * @param {object} record Object with the same keys as the table columns
-     */
     async update(table, record) {
       const query = `
       UPDATE ${table}
@@ -62,11 +47,6 @@ const pool = mariadb.createPool({
       return result;
     }
   
-    /**
-     * Delete method for database (one record)
-     * @param {string} table The name of the table where you would like to delete a record
-     * @param {number} id ID of the record what you would like to remove
-     */
     async delete(table, id) {
       const query = `
       DELETE FROM ${table}
