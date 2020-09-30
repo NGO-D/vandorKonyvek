@@ -16,7 +16,7 @@ export class MockComponent implements OnInit {
 
   ngOnInit() {
     console.log('mock megy :D');
-    this.mockService.getAll().subscribe(mocks => {
+    this.mockService.get().subscribe(mocks => {
       this.mocks = mocks;
     });
   }

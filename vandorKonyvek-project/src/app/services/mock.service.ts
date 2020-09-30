@@ -14,12 +14,8 @@ export class MockService {
    // list: BehaviorSubject<any> = new BehaviorSubject([]);
    url: string = 'http://localhost:3000/api/mock';
 
-   getAll(): Observable<any> {
+   get(): Observable<any> {
      return this.httpClient.get(this.url);
-   }
-
-   getOne(id: number): Observable<any> {
-     return this.httpClient.get(`${this.url}/${id}`);
    }
 
    createNew(mock: Mock): Observable<any> {
@@ -30,4 +26,9 @@ export class MockService {
      return this.httpClient.post(`${this.url}/${mock.id}`, mock);
    }
 
+   //delete nem biztos, hogy működik
+   delete(id: number): Observable<Mock> {
+    return this.httpClient.delete<Mock>(`${this.url}/${id}`);
+  }
 }
+
