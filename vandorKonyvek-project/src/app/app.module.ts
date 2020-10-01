@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MockComponent } from './mock/mock.component';
 import { MockService } from './services/mock.service';
+import { AdminListsComponent } from './components/admin-component/admin-lists/admin-lists.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MockComponent
+    MockComponent,
+    AdminListsComponent
   ],
   imports: [
     BrowserModule,
