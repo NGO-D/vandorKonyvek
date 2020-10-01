@@ -9,8 +9,8 @@ import { Mock } from '../models/mock.model';
 })
 
 export class MockComponent implements OnInit {
-  mocks: Mock[];
-  mock: Mock;
+  public mocks: Mock[];
+  //mock: Mock;
 
   constructor(private mockService: MockService) { }
 
