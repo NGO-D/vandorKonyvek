@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { MockComponent } from './mock/mock.component';
 import { LoginComponent } from './components/admin-component/auth/login/login.component';
 import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
