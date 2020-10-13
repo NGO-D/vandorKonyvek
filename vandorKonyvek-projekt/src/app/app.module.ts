@@ -13,6 +13,9 @@ import { LoginComponent } from './components/admin-component/auth/login/login.co
 import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminNavigationComponent } from './components/admin-component/admin-landing/admin-navigation/admin-navigation.component';
+import { BookListComponent } from './components/admin-component/book-list/book-list.component';
+import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
+import { BookDetailsComponent } from './components/admin-component/books/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AdminNavigationComponent } from './components/admin-component/admin-lan
     SignUpComponent,
     LoginComponent,
     AdminLandingComponent,
-    AdminNavigationComponent
+    AdminNavigationComponent,
+    BookListComponent,
+    BookEditComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
