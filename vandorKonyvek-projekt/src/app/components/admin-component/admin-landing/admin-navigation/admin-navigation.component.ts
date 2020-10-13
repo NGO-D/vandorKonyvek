@@ -10,7 +10,7 @@ export class AdminNavigationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
