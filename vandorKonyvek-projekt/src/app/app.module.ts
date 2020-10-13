@@ -12,6 +12,7 @@ import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-
 import { LoginComponent } from './components/admin-component/auth/login/login.component';
 import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminNavigationComponent } from './components/admin-component/admin-landing/admin-navigation/admin-navigation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AdminEditComponent,
     SignUpComponent,
     LoginComponent,
-    AdminLandingComponent
+    AdminLandingComponent,
+    AdminNavigationComponent
   ],
   imports: [
     BrowserModule,

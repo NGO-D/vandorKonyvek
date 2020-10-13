@@ -9,8 +9,8 @@ import { AdminLandingComponent} from './components/admin-component/admin-landing
 const routes: Routes = [
  { path: 'mock', component: MockComponent },
  { path: 'admin/login', component: LoginComponent},
- { path: 'admin/signup', component: SignUpComponent},
- { path: 'admin/home', component: AdminLandingComponent}
+ { path: 'admin/home', component: AdminLandingComponent},
+ { path: '', component: SignUpComponent}
 ];
 
 @NgModule({
