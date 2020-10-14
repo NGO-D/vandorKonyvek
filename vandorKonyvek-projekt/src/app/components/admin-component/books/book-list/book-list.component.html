@@ -1,3 +1,64 @@
 <app-admin-header></app-admin-header>
 <app-admin-navigation></app-admin-navigation>
-<p>book-list works!</p>
+<h1 class="text-center">Könyvlista</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+ 
+            
+<!-- 
+<br>
+<div class="container">
+  <div id="searchActive">
+    <div class="row">
+      <div class="col-4">
+        <input class="form-control"
+               type="text"
+               placeholder="Search.."
+            
+      </div>
+      <div class="col-2">
+        <button class="btn btn-primary"
+                routerLink="/new-product">New product</button>
+      </div>
+      <div class="col-6 text-white"
+           id="checkBox">
+        <input type="checkbox"
+               name="active"
+               id="active"
+            
+      </div>
+    </div>
+  </div>
+</div> -->
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Borító</th>
+      <th>ID</th>
+      <th>Szerző</th>
+      <th>Cím</th>
+      <th>Elérhető</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+        <td>{{book.bo_image}}</td>
+        <td>{{book.bo_id}}</td>
+        <td>{{book.bo_author}}</td>
+        <td>{{book.bo_title}}</td>
+        <td>{{book.bo_available}}</td>
+        <td><button class="btn btn-light">
+<i class="fa fa-eye"></i>
+        </button></td>
+        <td><button class="btn btn-danger" (click)="onDeleteOneBook(book)">
+            <i class="fa fa-skull"></i>
+        </button></td>
+    </tr>
+  </tbody>
+</table>
+   
+</div>
+</div>
+</div>
