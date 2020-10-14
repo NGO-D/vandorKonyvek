@@ -16,6 +16,7 @@ import { AdminNavigationComponent } from './components/admin-component/admin-lan
 import { BookListComponent } from './components/admin-component/books/book-list/book-list.component';
 import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
 import { BookDetailsComponent } from './components/admin-component/books/book-details/book-details.component';
+import { BookNewComponent } from './components/admin-component/books/book-new/book-new.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BookDetailsComponent } from './components/admin-component/books/book-de
     AdminNavigationComponent,
     BookListComponent,
     BookEditComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BookNewComponent
   ],
   imports: [
     BrowserModule,

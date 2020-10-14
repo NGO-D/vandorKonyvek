@@ -15,6 +15,7 @@ export class BooksService {
    url: string = 'http://localhost:3000/api/books';
 
    get(): Observable<any> {
+    console.log(this.url)
      return this.httpClient.get(this.url);
    }
 
@@ -28,6 +29,7 @@ export class BooksService {
 
    //delete nem biztos, hogy működik
    delete(id: number): Observable<Books> {
+    console.log("ájdi: " + id);
     return this.httpClient.delete<Books>(`${this.url}/${id}`);
   }
 }

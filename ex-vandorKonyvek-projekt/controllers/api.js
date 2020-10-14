@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const AdminsBll = require('../bll/adminsBLL');
 const BasketsBll = require('../bll/basketsBLL');
 const BooksBll = require('../bll/booksBLL');
@@ -93,9 +94,21 @@ router.put('/books', async (req, res, next) => {
 });
 
 // Delete book
+// router.delete('/books/:id', async (req, res, next) => {
+//   console.log("legalább mondj valamit");
+//   let book = await booksBLL.getBooks(req.params.id);
+//   let result = await booksBLL.deleteBooks(book);
+//   console.log('utállak api' + result);
+//   res.json(result);
+
+  
+
 router.delete('/books/:id', async (req, res, next) => {
-  let result = await booksBLL.deleteBooks(req.params.id);
-  res.json(result);
+console.log('utállak api');
+console.log(req.params);
+let result = await booksBLL.deleteBooks(req.params.id);
+  
+res.json(result);
 });
 
 
