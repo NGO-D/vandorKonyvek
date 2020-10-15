@@ -45,11 +45,11 @@
   <tbody>
     <tr *ngFor="let book of books">
         <td>{{book.bo_image}}</td>
-        <td>{{book.bo_id}}</td>
+        <td>{{book.id}}</td>
         <td>{{book.bo_author}}</td>
         <td>{{book.bo_title}}</td>
         <td>{{book.bo_available}}</td>
-        <td><button class="btn btn-light">
+        <td><button class="btn btn-light" [routerLink]="[book.id]">
 <i class="fa fa-eye"></i>
         </button></td>
         <td><button class="btn btn-danger" (click)="onDelete(book)">

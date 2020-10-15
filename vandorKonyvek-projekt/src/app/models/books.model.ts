@@ -1,5 +1,5 @@
 export class Books {
-  bo_id: number;
+  id: number;
   bo_author: string;
   bo_title: string;
   bo_image: string;

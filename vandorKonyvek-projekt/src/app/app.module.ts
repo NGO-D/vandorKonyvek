@@ -1,22 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MockComponent } from './mock/mock.component';
-import { MockService } from './services/mock.service';
-import { AdminHeaderComponent } from './components/admin-component/admin-header/admin-header.component';
-import { AdminEditComponent } from './components/admin-component/users/admin-edit/admin-edit.component';
-import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
-import { LoginComponent } from './components/admin-component/auth/login/login.component';
-import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
+
+import { AdminEditComponent } from './components/admin-component/users/admin-edit/admin-edit.component';
+import { AdminHeaderComponent } from './components/admin-component/admin-header/admin-header.component';
+import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
 import { AdminNavigationComponent } from './components/admin-component/admin-landing/admin-navigation/admin-navigation.component';
-import { BookListComponent } from './components/admin-component/books/book-list/book-list.component';
-import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
+import { AppComponent } from './app.component';
 import { BookDetailsComponent } from './components/admin-component/books/book-details/book-details.component';
+import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
+import { BookListComponent } from './components/admin-component/books/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/books/book-new/book-new.component';
+import { LoginComponent } from './components/admin-component/auth/login/login.component';
+import { MockComponent } from './mock/mock.component';
+import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
+
+import { BooksService } from './services/books.service';
+import { MockService } from './services/mock.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { BookNewComponent } from './components/admin-component/books/book-new/bo
     HttpClientModule,
     NgbModule
     ],
-  providers: [MockService],
+  providers: [MockService,
+              BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

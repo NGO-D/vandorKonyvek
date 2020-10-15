@@ -1,5 +1,5 @@
 export class Admins {
-  ad_id: number;
+  id: number;
   ad_first_name: string;
   ad_last_name: string;
   ad_email: string;

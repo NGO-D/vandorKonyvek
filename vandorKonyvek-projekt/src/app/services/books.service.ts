@@ -24,20 +24,15 @@ export class BooksService {
    }
 
    update(books: Books): Observable<any> {
-     return this.httpClient.post(`${this.url}/${books.bo_id}`, books);
+     return this.httpClient.post(`${this.url}/${books.id}`, books);
    }
 
-   //delete nem biztos, hogy működik
-//    delete(id: number): Observable<Books> {
-//      console.log('service');
-//  console.log(`${this.url}/${id}`);
-//   console.log(id);
-//     return this.httpClient.delete<Books>(`${this.url}/${id}`);
-//   }
+  
 
-delete(id: any): Observable<Books> {
-  console.log(id);
-    return this.httpClient.delete<Books>(`${this.url}/${id.bo_id}`);
+delete(book: any): Observable<Books> {
+  console.log(book);
+  console.log('evvót a book');
+    return this.httpClient.delete<Books>(`${this.url}/${book.id}`);
   }
 }
 

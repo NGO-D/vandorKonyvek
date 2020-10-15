@@ -39,42 +39,19 @@ export class BookListComponent implements OnInit {
     this.booksSubscription.unsubscribe();
   } 
 
-
-onDeleteOneBook(book: any): void {
-  console.log(book);
-  console.log('felső a book');
-  let index = book.bo_id;
-  console.log(index);
-  let a = this.books.splice(index, 1);
-  console.log("boid");
-  //this.books = book;
-   console.log(this.books[index].bo_id);
-  // console.log('felső az új');
-this.booksService.delete(this.books[index].bo_id);
-}
-
-onDelete(id: number): void {
-    this.booksService.delete(id).forEach(data => {
-      let index = this.books.findIndex(book => book.bo_id == id);
+onDelete(obj: any): void {
+  console.log(obj.id);
+    this.booksService.delete(obj).forEach(data => {
+      let index = this.books.findIndex(book => book.id == obj.id);
+      console.log(index);
       this.books.splice(index, 1);
-      this.changeCounter++;
+      console.log(this.books)
     });
   }
-
-  // // onDeleteOneBook(id: number): void {
-  // //   console.log(id);
-  // //   console.log("ts");
-  // //   this.booksService.delete(id).forEach(data => {
-  // //     let index = this.books.findIndex(book => book.bo_id == id);
-  // //     this.books.splice(index, 1);
-  // //     this.changeCounter++;
-  // //   });
-  // // }
-
-//   nemműködik, az egyéni oldal után jó lesz
-// onDeleteOneBook(books) {
-//     console.log(books.bo_id);
-//   this.booksService.delete(books.bo_id);
-//  }
-
+/* működik, csak mást használok
+  onToBookDetails(book: any) {
+    this.router.navigate([book.id], {relativeTo: this.activatedRoute});
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  }
+*/
 }
