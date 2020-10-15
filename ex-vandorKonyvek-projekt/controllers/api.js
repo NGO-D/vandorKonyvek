@@ -105,8 +105,8 @@ router.put('/books', async (req, res, next) => {
 
 router.delete('/books/:id', async (req, res, next) => {
 console.log('utállak api');
-console.log(req.params);
-let result = await booksBLL.deleteBooks(req.params.id);
+console.log(req.params.id);
+const result = await booksBLL.deleteBooks(req.params.id);
   
 res.json(result);
 });

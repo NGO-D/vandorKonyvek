@@ -28,9 +28,16 @@ export class BooksService {
    }
 
    //delete nem biztos, hogy működik
-   delete(id: number): Observable<Books> {
-    console.log("ájdi: " + id);
-    return this.httpClient.delete<Books>(`${this.url}/${id}`);
+//    delete(id: number): Observable<Books> {
+//      console.log('service');
+//  console.log(`${this.url}/${id}`);
+//   console.log(id);
+//     return this.httpClient.delete<Books>(`${this.url}/${id}`);
+//   }
+
+delete(id: any): Observable<Books> {
+  console.log(id);
+    return this.httpClient.delete<Books>(`${this.url}/${id.bo_id}`);
   }
 }
 

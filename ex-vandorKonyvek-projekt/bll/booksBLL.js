@@ -18,8 +18,11 @@ async updateBooks() {
     return result;
 };
 
-async deleteBooks() {
+async deleteBooks(id) {
+    console.log('bazmegBLL');
+    console.log(id);
     const result = await dal.delete('books', id);
+    console.log(result);
     return result;
 };
 }

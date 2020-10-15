@@ -48,9 +48,10 @@ const pool = mariadb.createPool({
     }
   
     async delete(table, id) {
+      console.log('bekaphatodDAL');
       const query = `
       DELETE FROM ${table}
-      WHERE id=${id};
+      WHERE bo_id=${id};
       `;
       const result = await this.conn.query(query);
       return result;

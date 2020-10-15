@@ -12,7 +12,10 @@ import { Books } from '../../../../models/books.model';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books: Books[];
+   
+  books: Array<Books>;
+ 
+
   booksSubscription: Subscription;
   changeCounter: number = 0;
 
@@ -34,17 +37,40 @@ export class BookListComponent implements OnInit {
 
   ngOnDestroy() {
     this.booksSubscription.unsubscribe();
-  }
+  } 
 
 
-  onDeleteOneBook(id: number): void {
+onDeleteOneBook(book: any): void {
+  console.log(book);
+  console.log('felső a book');
+  let index = book.bo_id;
+  console.log(index);
+  let a = this.books.splice(index, 1);
+  console.log("boid");
+  //this.books = book;
+   console.log(this.books[index].bo_id);
+  // console.log('felső az új');
+this.booksService.delete(this.books[index].bo_id);
+}
+
+onDelete(id: number): void {
     this.booksService.delete(id).forEach(data => {
       let index = this.books.findIndex(book => book.bo_id == id);
       this.books.splice(index, 1);
       this.changeCounter++;
     });
-
   }
+
+  // // onDeleteOneBook(id: number): void {
+  // //   console.log(id);
+  // //   console.log("ts");
+  // //   this.booksService.delete(id).forEach(data => {
+  // //     let index = this.books.findIndex(book => book.bo_id == id);
+  // //     this.books.splice(index, 1);
+  // //     this.changeCounter++;
+  // //   });
+  // // }
+
 //   nemműködik, az egyéni oldal után jó lesz
 // onDeleteOneBook(books) {
 //     console.log(books.bo_id);
