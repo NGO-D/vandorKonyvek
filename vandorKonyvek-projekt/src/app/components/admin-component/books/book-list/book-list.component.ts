@@ -9,7 +9,8 @@ import { Books } from '../../../../models/books.model';
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  styleUrls: ['./book-list.component.css'],
+  providers: [BooksService]
 })
 export class BookListComponent implements OnInit {
    
@@ -17,7 +18,7 @@ export class BookListComponent implements OnInit {
  
 
   booksSubscription: Subscription;
-  changeCounter: number = 0;
+  changeCounter: number = 0; //ez minek, kell egyáltalán ide?
 
 
   constructor(private booksService: BooksService,

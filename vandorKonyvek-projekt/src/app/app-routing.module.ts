@@ -11,16 +11,21 @@ import { BookDetailsComponent } from './components/admin-component/books/book-de
 import { BookNewComponent } from './components/admin-component/books/book-new/book-new.component';
 
 const routes: Routes = [
- { path: '', redirectTo: 'admin/home', pathMatch: 'full'}, // only redirect is the full path is empty
- { path: 'admin/login', component: LoginComponent},
- { path: 'admin/home', component: AdminLandingComponent},
- { path: 'admin/books', component: BookListComponent, children: [
-   { path: ':id', component: BookDetailsComponent},
-   { path: ':id/edit', component: BookEditComponent},
-   { path: 'new', component: BookNewComponent}
- ]},
- //{ path: '', component: SignUpComponent}
-];
+  { path: 'mock', redirectTo: 'admin', pathMatch: 'full'},// only redirect is the full path is empty
+  { path: 'admin/books', component: BookListComponent},
+  { path: 'admin', component: AdminLandingComponent},
+  { path: 'admin/login', component: LoginComponent},   //nem lesz jó, hogy az adminon van
+  { path: 'books/:id', component: BookDetailsComponent},
+  { path: '', component: SignUpComponent}, 
+]; 
+   
+ //, children: [
+  //  { path: '', component: BookListComponent},
+  //  { path: ':id', component: BookDetailsComponent},
+  //  { path: ':id/edit', component: BookEditComponent},
+  //  { path: 'new', component: BookNewComponent}
+ // ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
