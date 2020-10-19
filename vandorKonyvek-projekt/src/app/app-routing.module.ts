@@ -13,9 +13,12 @@ import { BookNewComponent } from './components/admin-component/books/book-new/bo
 const routes: Routes = [
   { path: 'mock', redirectTo: 'admin', pathMatch: 'full'},// only redirect is the full path is empty
   { path: 'admin/books', component: BookListComponent},
-  { path: 'admin', component: AdminLandingComponent},
+  { path: 'admin', component: AdminLandingComponent, children: [
+    { path: '', component: BookNewComponent},
+    { path: 'books/:id', component: BookDetailsComponent}
+  ]},
   { path: 'admin/login', component: LoginComponent},   //nem lesz jó, hogy az adminon van
-  { path: 'books/:id', component: BookDetailsComponent},
+ 
   { path: '', component: SignUpComponent}, 
 ]; 
    

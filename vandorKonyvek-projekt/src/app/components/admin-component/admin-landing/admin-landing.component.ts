@@ -10,6 +10,7 @@ export class AdminLandingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  console.log('i am admin landing')
   }
 
 }
