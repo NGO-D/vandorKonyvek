@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'mock', redirectTo: 'admin', pathMatch: 'full'},// only redirect is the full path is empty
   { path: 'admin/books', component: BookListComponent},
   { path: 'admin', component: AdminLandingComponent, children: [
-    { path: '', component: BookNewComponent},
+    { path: 'books/new', component: BookNewComponent},
     { path: 'books/:id', component: BookDetailsComponent}
   ]},
   { path: 'admin/login', component: LoginComponent},   //nem lesz jó, hogy az adminon van

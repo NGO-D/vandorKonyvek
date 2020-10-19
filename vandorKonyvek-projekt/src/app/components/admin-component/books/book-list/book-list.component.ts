@@ -36,11 +36,7 @@ export class BookListComponent implements OnInit {
     );
   }
 
-  ngOnDestroy() {
-    this.booksSubscription.unsubscribe();
-  } 
-
-onDelete(obj: any): void {
+  onDelete(obj: any): void {
   console.log(obj.id);
     this.booksService.delete(obj).forEach(data => {
       let index = this.books.findIndex(book => book.id == obj.id);
@@ -49,6 +45,13 @@ onDelete(obj: any): void {
       console.log(this.books)
     });
   }
+
+
+  ngOnDestroy() {
+    this.booksSubscription.unsubscribe();
+  } 
+
+
 /* működik, csak mást használok
   onToBookDetails(book: any) {
     this.router.navigate([book.id], {relativeTo: this.activatedRoute});

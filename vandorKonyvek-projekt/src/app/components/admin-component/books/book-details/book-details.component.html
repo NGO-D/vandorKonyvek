@@ -1,1 +1,69 @@
-<p>book-details works!</p>
+<div class="container">
+    <h1 class="text-center">Book Details</h1>
+    <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <div class="card-body">
+            <img src="../../../../../assets/hard-cover-book.png" class="card-img mx-auto" alt="...">
+          </div>
+        </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Card title</h5> -->
+              <!-- <p class="card-text"> -->
+                <ul>
+                  <li class="list-group-item">
+                    <p>
+                      <i class="fa fa-book-open fa-fw" aria-hidden="true"></i>&nbsp;
+                      ID
+                    <span class="float-right"><button class="btn btn-outline-dark">
+                      <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </button></span>
+                    </p>
+                      {{ oneBook.id }}</li>
+                
+                  <li class="list-group-item"> 
+                      <p>
+                        <i class="fa fa-book-open fa-fw" aria-hidden="true"></i>&nbsp;
+                        Könyvcím
+                        <span class="float-right"><button class="btn btn-danger">
+                          <i class="fa fa-skull" aria-hidden="true"></i>
+                        </button></span>
+                      </p>
+                        {{ oneBook.bo_title }}</li>
+                  <li class="list-group-item">
+                     <div> <p>
+                       <i class="fa fa-book-open fa-fw" aria-hidden="true"></i>&nbsp;
+                         Szerző(k)
+                         <span class="float-right"><button class="btn btn-danger">
+                          <i class="fa fa-skull" aria-hidden="true"></i>
+                        </button></span>
+                       </p></div>
+                         {{ oneBook.bo_author }}</li>
+                  <li class="list-group-item">
+                      <p>
+                        <i class="fa fa-book-open fa-fw" aria-hidden="true"></i>&nbsp;
+                         Borító
+                         <span class="float-right"><button class="btn btn-danger">
+                          <i class="fa fa-skull" aria-hidden="true"></i>
+                        </button></span>
+                        </p>
+                         {{ oneBook.bo_image }}</li>
+                  <li class="list-group-item">
+                       <p>
+                         <i class="fa fa-book-open fa-fw" aria-hidden="true"></i>&nbsp;
+                         Elérhetőség
+                         <span class="float-right"><button class="btn btn-danger">
+                          <i class="fa fa-skull" aria-hidden="true"></i>
+                        </button></span>
+                        </p>
+                         {{ oneBook.bo_available }}</li>
+                </ul>
+                
+              <!-- </p> -->
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div> 
+      </div>
+</div>
