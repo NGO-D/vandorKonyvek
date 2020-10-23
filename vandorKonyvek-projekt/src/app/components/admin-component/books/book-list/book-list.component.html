@@ -1,6 +1,10 @@
 <app-admin-header></app-admin-header>
 <app-admin-navigation></app-admin-navigation>
-<h1 class="text-center">Könyvlista</h1>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+      <h2 class="heading">Könyvlista</h2>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-11">&nbsp;</div>
@@ -61,7 +65,7 @@
         <td>{{book.bo_author}}</td>
         <td>{{book.bo_title}}</td>
         <td>{{book.bo_available}}</td>
-        <td><button class="btn btn-light" [routerLink]="[book.id]">
+        <td><button class="btn btn-light" type="button" [routerLink]="[book.id]">
 <i class="fa fa-eye"></i>
         </button></td>
         <td><button class="btn btn-danger" (click)="onDelete(book)">

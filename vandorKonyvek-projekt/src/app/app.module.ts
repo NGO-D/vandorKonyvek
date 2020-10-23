@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminEditComponent } from './components/admin-component/users/admin-edit/admin-edit.component';
 import { AdminHeaderComponent } from './components/admin-component/admin-header/admin-header.component';
@@ -39,7 +40,8 @@ import { MockService } from './services/mock.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
     ],
   providers: [MockService,
               BooksService],
