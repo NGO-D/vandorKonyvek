@@ -13,9 +13,10 @@ import { BooksService } from '../../../../services/books.service';
 })  
 export class BookNewComponent implements OnInit {
   books: Array<Books>;
+ // maxBookID: Any;
   booksSubscription: Subscription;
   bookNewSignupForm: FormGroup;
-  ajdi: Number = 5;
+  maxID: Number;
 
   constructor(private booksService: BooksService) {}
 
@@ -23,23 +24,30 @@ export class BookNewComponent implements OnInit {
     this.booksSubscription = this.booksService.get().subscribe(
         books => {
         this.books = books;
-        console.log(this.books);
       },
       err => console.log(err)
     );
-      
-
+    
     this.bookNewSignupForm = new FormGroup( {
       'bo_author': new FormControl(null),
       'bo_title': new FormControl(null),
       'bo_image': new FormControl(null),
       'bo_available': new FormControl(null),
-      'id': new FormControl(this.ajdi)
+      'id': new FormControl(this.maxID)
     } )
   }
 
 onSubmit() {
+  this.maxIDFinder();
+  console.log(this.maxID);
   console.log(this.bookNewSignupForm);
+  return this.maxID;
+}
+
+maxIDFinder() {
+  this.maxID = this.books.reduce((max, element) => (element.id > max ? element.id : max),
+  this.books[0].id
+  );
 }
 
 ngOnDestroy() {

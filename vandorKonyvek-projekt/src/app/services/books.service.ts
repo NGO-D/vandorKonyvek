@@ -8,6 +8,8 @@ import { Books } from '../models/books.model';
   providedIn: 'root'
 })
 export class BooksService {
+ // books: Array<Books>;
+ // maxBookID: Number;
 
   constructor(private httpClient: HttpClient) { }
 
