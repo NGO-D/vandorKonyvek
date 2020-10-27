@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 
 import { Books } from '../../../../models/books.model';
@@ -16,7 +16,7 @@ export class BookNewComponent implements OnInit {
  // maxBookID: Any;
   booksSubscription: Subscription;
   bookNewSignupForm: FormGroup;
-  maxID: Number;
+  maxID: Number = -555;
 
   constructor(private booksService: BooksService) {}
 
@@ -24,35 +24,36 @@ export class BookNewComponent implements OnInit {
     this.booksSubscription = this.booksService.get().subscribe(
         books => {
         this.books = books;
-      },
-      err => console.log(err)
-    );
-    
+        },
+        err => console.log(err)
+        );
+
     this.bookNewSignupForm = new FormGroup( {
       'bo_author': new FormControl(null),
       'bo_title': new FormControl(null),
       'bo_image': new FormControl(null),
       'bo_available': new FormControl(null),
-      'id': new FormControl(this.maxID)
+      'id': new FormControl(null)
     } )
   }
 
-onSubmit() {
+ onSubmit() {
   this.maxIDFinder();
-  console.log(this.maxID);
-  console.log(this.bookNewSignupForm);
-  return this.maxID;
-}
+  console.log(this.bookNewSignupForm.value);
+this.bookNewSignupForm.value.id = this.maxID;
+console.log(this.bookNewSignupForm.value);
+ }
 
-maxIDFinder() {
+ maxIDFinder() {
   this.maxID = this.books.reduce((max, element) => (element.id > max ? element.id : max),
-  this.books[0].id
-  );
+        this.books[0].id) + 1;
+  console.log(this.maxID);
+ }
+
+ ngOnDestroy() {
+ this.booksSubscription.unsubscribe();
+ }
+
+
 }
 
-ngOnDestroy() {
-this.booksSubscription.unsubscribe();
-}
-
-
-}
