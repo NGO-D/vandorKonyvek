@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 
@@ -11,16 +11,19 @@ import { BooksService } from '../../../../services/books.service';
   styleUrls: ['./book-new.component.css'],
   providers: [BooksService]
 })  
-export class BookNewComponent implements OnInit {
+
+export class BookNewComponent implements OnInit, OnDestroy{
   books: Array<Books>;
  // maxBookID: Any;
   booksSubscription: Subscription;
+  bookFormSubscription: Subscription;
   bookNewSignupForm: FormGroup;
-  maxID: Number = -555;
+ 
+  ID: Number = -555;
 
   constructor(private booksService: BooksService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.booksSubscription = this.booksService.get().subscribe(
         books => {
         this.books = books;
@@ -28,32 +31,45 @@ export class BookNewComponent implements OnInit {
         err => console.log(err)
         );
 
-    this.bookNewSignupForm = new FormGroup( {
-      'bo_author': new FormControl(null),
-      'bo_title': new FormControl(null),
-      'bo_image': new FormControl(null),
-      'bo_available': new FormControl(null),
-      'id': new FormControl(null)
-    } )
+    this.bookNewSignupForm = this.booksService
+    .createBookNewSignupForm();
+    console.log(this.bookNewSignupForm);
+
   }
+  /*
+  onSubmit(ev: Event): void {
+    ev.preventDefault();
+    delete this.newProduct.id;
+    this.productService.createNew(this.newProduct).subscribe(
+      response => {
+        console.log('sikeres');
+        this.router.navigateByUrl('/products');
+      },
+      err => {
+        console.error(err);
+      }
+    );
+  }
+  */
 
- onSubmit() {
-  this.maxIDFinder();
-  console.log(this.bookNewSignupForm.value);
-this.bookNewSignupForm.value.id = this.maxID;
-console.log(this.bookNewSignupForm.value);
- }
+  onSubmit(): void {
+    this.booksService.createNew(this.bookNewSignupForm.value).subscribe(
+      response => {
+        console.log('megvót! :)');
+      },
+      err => console.log(err)
+    );
+  //this.maxIDFinder();
+    console.log(this.bookNewSignupForm.value);
+//this.bookNewSignupForm.value.id = this.maxID;
+    console.log(this.bookNewSignupForm.value);
+  }
+/*
+ 
+ */
 
- maxIDFinder() {
-  this.maxID = this.books.reduce((max, element) => (element.id > max ? element.id : max),
-        this.books[0].id) + 1;
-  console.log(this.maxID);
- }
-
- ngOnDestroy() {
+ ngOnDestroy(): void {
  this.booksSubscription.unsubscribe();
  }
-
-
 }
 

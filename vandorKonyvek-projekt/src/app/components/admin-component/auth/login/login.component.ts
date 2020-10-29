@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.signupForm = new FormGroup( {
       'userData': new FormGroup( {
         'username': new FormControl(null, Validators.required), 
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         // second arg is validation, there is no () after required and it never be called
         // the key-value pairs are the controls. FormGroups consist of FormControls
 
-        onSubmit() {
+        onSubmit(): void {
           console.log(this.signupForm);
         }
               

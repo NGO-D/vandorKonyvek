@@ -12,7 +12,7 @@ import { Books } from '../../../../models/books.model';
   styleUrls: ['./book-list.component.css'],
   providers: [BooksService]
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
    
   books: Array<Books>;
  
@@ -26,7 +26,7 @@ export class BookListComponent implements OnInit {
               private activatedRoute: ActivatedRoute) 
               { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log("Books megy :D");
     this.booksSubscription = this.booksService.get().subscribe(
       books => {
@@ -47,7 +47,7 @@ export class BookListComponent implements OnInit {
   }
 
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.booksSubscription.unsubscribe();
   } 
 
