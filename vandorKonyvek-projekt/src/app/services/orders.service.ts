@@ -19,16 +19,16 @@ export class OrdersService {
    }
 
    createNew(orders: Orders): Observable<any> {
-     return this.httpClient.put(`${this.url}`, orders);
+     return this.httpClient.put(`${this.url}/${'new'}`, orders);
    }
 
    update(orders: Orders): Observable<any> {
-     return this.httpClient.post(`${this.url}/${orders.or_id}`, orders);
+     return this.httpClient.post(`${this.url}/${orders.id}`, orders);
    }
 
    //delete nem biztos, hogy működik
-   delete(id: number): Observable<Orders> {
-    return this.httpClient.delete<Orders>(`${this.url}/${id}`);
+   delete(order: any): Observable<Orders> {
+    return this.httpClient.delete<Orders>(`${this.url}/${order.id}`);
   }
 }
 

@@ -4,26 +4,22 @@ const dal = new DAL();
 
 module.exports = class MockBLL {
 async getMock() {
-    const result = await dal.read('mock_data'/* ,id */);
-    //console.log('getMock: ' + result);
+    const result = await dal.read('mock_data');
     return result;
 };
 
-async createMock() {
+async createMock(object) {
     const result = await dal.create('mock_data', object);
-    console.log('createMock: ' + result);
     return result;
 };
 
-async updateMock() {
+async updateMock(object) {
     const result = await dal.update('mock_data', object);
-    console.log('updateMock: ' + result);
     return result;
 };
 
-async deleteMock() {
+async deleteMock(id) {
     const result = await dal.delete('mock_data', id);
-    console.log('deleteMock: ' + result);
     return result;
 };
 }

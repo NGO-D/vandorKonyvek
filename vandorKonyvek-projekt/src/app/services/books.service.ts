@@ -40,25 +40,22 @@ export class BooksService {
    url: string = 'http://localhost:3000/api/books';
 
    get(): Observable<any> {
-    console.log(this.url)
      return this.httpClient.get(this.url);
    }
 
+   //POST
    createNew(books: Books): Observable<any> {
-     console.log('service put');
      return this.httpClient.post(`${this.url}/${'new'}`, books);
    }
 
+   //PUT
    update(books: Books): Observable<any> {
      return this.httpClient.put(`${this.url}/${books.id}`, books);
    }
 
-  
-
-delete(book: any): Observable<Books> {
-  console.log(book);
-  console.log('evvót a book');
-    return this.httpClient.delete<Books>(`${this.url}/${book.id}`);
+   delete(book: any): Observable<Books> {
+      return this.httpClient.delete<Books>(`${this.url}/${book.id}`);
   }
+
 }
 

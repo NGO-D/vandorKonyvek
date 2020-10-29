@@ -19,16 +19,15 @@ export class AdminsService {
    }
 
    createNew(admins: Admins): Observable<any> {
-     return this.httpClient.put(`${this.url}`, admins);
+     return this.httpClient.put(`${this.url}/${'new'}`, admins);
    }
 
    update(admins: Admins): Observable<any> {
-     return this.httpClient.post(`${this.url}/${admins.ad_id}`, admins);
+     return this.httpClient.post(`${this.url}/${admins.id}`, admins);
    }
 
-   //delete nem biztos, hogy működik
-   delete(id: number): Observable<Admins> {
-    return this.httpClient.delete<Admins>(`${this.url}/${id}`);
+   delete(admin: any): Observable<Admins> {
+    return this.httpClient.delete<Admins>(`${this.url}/${admin.id}`);
   }
 }
 

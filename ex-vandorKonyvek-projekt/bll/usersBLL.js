@@ -8,17 +8,17 @@ async getUsers() {
     return result;
 };
 
-async createUsers() {
+async createUsers(object) {
     const result = await dal.create('users', object);
     return result;
 };
 
-async updateUsers() {
+async updateUsers(object) {
     const result = await dal.update('users', object);
     return result;
 };
 
-async deleteUsers() {
+async deleteUsers(id) {
     const result = await dal.delete('users', id);
     return result;
 };

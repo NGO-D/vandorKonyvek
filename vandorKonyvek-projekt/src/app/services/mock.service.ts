@@ -19,16 +19,15 @@ export class MockService {
    }
 
    createNew(mock: Mock): Observable<any> {
-     return this.httpClient.put(`${this.url}`, mock);
+     return this.httpClient.put(`${this.url}/${'new'}`, mock);
    }
 
    update(mock: Mock): Observable<any> {
      return this.httpClient.post(`${this.url}/${mock.id}`, mock);
    }
 
-   //delete nem biztos, hogy működik
-   delete(id: number): Observable<Mock> {
-    return this.httpClient.delete<Mock>(`${this.url}/${id}`);
+   delete(mock: any): Observable<Mock> {
+    return this.httpClient.delete<Mock>(`${this.url}/${mock.id}`);
   }
 }
 

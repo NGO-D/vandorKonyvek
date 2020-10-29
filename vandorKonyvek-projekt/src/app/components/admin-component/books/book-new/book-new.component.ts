@@ -36,21 +36,6 @@ export class BookNewComponent implements OnInit, OnDestroy{
     console.log(this.bookNewSignupForm);
 
   }
-  /*
-  onSubmit(ev: Event): void {
-    ev.preventDefault();
-    delete this.newProduct.id;
-    this.productService.createNew(this.newProduct).subscribe(
-      response => {
-        console.log('sikeres');
-        this.router.navigateByUrl('/products');
-      },
-      err => {
-        console.error(err);
-      }
-    );
-  }
-  */
 
   onSubmit(): void {
     this.booksService.createNew(this.bookNewSignupForm.value).subscribe(

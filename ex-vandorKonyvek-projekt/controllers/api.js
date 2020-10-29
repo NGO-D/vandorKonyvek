@@ -29,13 +29,13 @@ router.get('/admin', async (req, res, next) => {
   res.json(result);
 });
 
-// Update admin
-router.post('/admin/:id', async (req, res, next) => {
+// Create new admin
+router.post('/admin/new', async (req, res, next) => {
   let result = await adminsBLL.createAdmins(req.body);
   res.json(result);
 });
 
-// Create new admin
+// Update admin - kérdéses
 router.put('/admin', async (req, res, next) => {
   let result = await adminsBLL.updateAdmins(req.body);
   res.json(result);
@@ -55,13 +55,13 @@ router.get('/basket', async (req, res, next) => {
   res.json(result);
 });
 
-// Update basket
-router.post('/basket/:id', async (req, res, next) => {
+// Create new basket
+router.post('/basket/new', async (req, res, next) => {
   let result = await basketsBLL.createBaskets(req.body);
   res.json(result);
 });
 
-// Create new basket
+// Update basket - kérdéses
 router.put('/basket', async (req, res, next) => {
   let result = await basketsBLL.updateBaskets(req.body);
   res.json(result);
@@ -81,36 +81,22 @@ router.get('/books', async (req, res, next) => {
   res.json(result);
 });
 
-// Update book
-router.post('/books/:id', async (req, res, next) => {
+// Create new book
+router.post('/books/new', async (req, res, next) => {
   let result = await booksBLL.createBooks(req.body);
   res.json(result);
 });
 
-// Create new book
-router.put('/books', async (req, res, next) => {
-  console.log('api books vagyok');
-  console.log(req.body);
+// Update book - kérdéses
+router.put('/books/:id', async (req, res, next) => {
   let result = await booksBLL.updateBooks(req.body);
   res.json(result);
 });
 
 // Delete book
-// router.delete('/books/:id', async (req, res, next) => {
-//   console.log("legalább mondj valamit");
-//   let book = await booksBLL.getBooks(req.params.id);
-//   let result = await booksBLL.deleteBooks(book);
-//   console.log('utállak api' + result);
-//   res.json(result);
-
-  
-
 router.delete('/books/:id', async (req, res, next) => {
-console.log('utállak api');
-console.log(req.params.id);
-const result = await booksBLL.deleteBooks(req.params.id);
-  
-res.json(result);
+  const result = await booksBLL.deleteBooks(req.params.id);
+  res.json(result);
 });
 
 
@@ -121,13 +107,13 @@ router.get('/mock', async (req, res, next) => {
   res.json(result);
 });
 
-// Update mock
-router.post('/mock/:id', async (req, res, next) => {
+// Create new mock
+router.post('/mock/new', async (req, res, next) => {
   let result = await mockBLL.createMock(req.body);
   res.json(result);
 });
 
-// Create new mock
+// Update mock - kérdéses
 router.put('/mock', async (req, res, next) => {
   let result = await mockBLL.updateMock(req.body);
   res.json(result);
@@ -147,13 +133,13 @@ router.get('/orders', async (req, res, next) => {
   res.json(result);
 });
 
-// Update order
-router.post('/orders/:id', async (req, res, next) => {
+// Create new order
+router.post('/orders/new', async (req, res, next) => {
   let result = await ordersBLL.createOrders(req.body);
   res.json(result);
 });
 
-// Create new order
+// Update order - kérdéses
 router.put('/orders', async (req, res, next) => {
   let result = await ordersBLL.updateOrders(req.body);
   res.json(result);
@@ -173,13 +159,13 @@ router.get('/users', async (req, res, next) => {
   res.json(result);
 });
 
-// Update user
-router.post('/users/:id', async (req, res, next) => {
+// Create new user
+router.post('/users/new', async (req, res, next) => {
   let result = await usersBLL.createUsers(req.body);
   res.json(result);
 });
 
-// Create new user
+// Update user - kérdéses
 router.put('/users', async (req, res, next) => {
   let result = await usersBLL.updateUsers(req.body);
   res.json(result);

@@ -8,17 +8,17 @@ async getBaskets() {
     return result;
 };
 
-async createBaskets() {
+async createBaskets(object) {
     const result = await dal.create('baskets', object);
     return result;
 };
 
-async updateBaskets() {
+async updateBaskets(object) {
     const result = await dal.update('baskets', object);
     return result;
 };
 
-async deleteBaskets() {
+async deleteBaskets(id) {
     const result = await dal.delete('baskets', id);
     return result;
 };

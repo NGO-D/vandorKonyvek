@@ -8,17 +8,17 @@ async getOrders() {
     return result;
 };
 
-async createOrders() {
+async createOrders(object) {
     const result = await dal.create('orders', object);
     return result;
 };
 
-async updateOrders() {
+async updateOrders(object) {
     const result = await dal.update('orders', object);
     return result;
 };
 
-async deleteOrders() {
+async deleteOrders(id) {
     const result = await dal.delete('orders', id);
     return result;
 };

@@ -19,16 +19,16 @@ export class BasketsService {
    }
 
    createNew(baskets: Baskets): Observable<any> {
-     return this.httpClient.put(`${this.url}`, baskets);
+     return this.httpClient.put(`${this.url}/${'new'}`, baskets);
    }
 
    update(baskets: Baskets): Observable<any> {
-     return this.httpClient.post(`${this.url}/${baskets.ba_id}`, baskets);
+     return this.httpClient.post(`${this.url}/${baskets.id}`, baskets);
    }
 
    //delete nem biztos, hogy működik
-   delete(id: number): Observable<Baskets> {
-    return this.httpClient.delete<Baskets>(`${this.url}/${id}`);
+   delete(basket: any): Observable<Baskets> {
+    return this.httpClient.delete<Baskets>(`${this.url}/${basket.id}`);
   }
 }
 

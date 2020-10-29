@@ -15,15 +15,11 @@ async createBooks(object) {
 
 async updateBooks(object) {
     const result = await dal.update('books', object);
-    console.log('booksbll');
     return result;
 };
 
 async deleteBooks(id) {
-    console.log('bazmegBLL');
-    console.log(id);
     const result = await dal.delete('books', id);
-    console.log(result);
     return result;
 };
 }
