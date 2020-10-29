@@ -90,6 +90,7 @@ router.post('/books/:id', async (req, res, next) => {
 // Create new book
 router.put('/books', async (req, res, next) => {
   console.log('api books vagyok');
+  console.log(req.body);
   let result = await booksBLL.updateBooks(req.body);
   res.json(result);
 });

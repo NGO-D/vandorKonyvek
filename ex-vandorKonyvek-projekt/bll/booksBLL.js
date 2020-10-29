@@ -8,13 +8,14 @@ async getBooks() {
     return result;
 };
 
-async createBooks() {
+async createBooks(object) {
     const result = await dal.create('books', object);
     return result;
 };
 
-async updateBooks() {
+async updateBooks(object) {
     const result = await dal.update('books', object);
+    console.log('booksbll');
     return result;
 };
 

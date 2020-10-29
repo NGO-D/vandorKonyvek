@@ -29,6 +29,7 @@ const pool = mariadb.createPool({
     }
   
     async create(table, record) {
+      console.log('már a dalnál vagyok...');
       const query = `
       INSERT INTO ${table} (${Object.keys(record).join(', ')})
       VALUES (${Object.values(record).map(value => (typeof value === 'number' ? `${value}` : `'${value}'`)).join(', ')})

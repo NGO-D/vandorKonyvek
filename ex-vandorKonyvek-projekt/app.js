@@ -9,7 +9,7 @@ const apiRouter = require('./controllers/api');
 
 const app = express();
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Header",
@@ -17,8 +17,15 @@ app.use((req, res, next) => {
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, DELETE, OPTIONS, PUT"
+    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
   );
+  next();
+}); */
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
   next();
 });
 

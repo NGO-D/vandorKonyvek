@@ -46,11 +46,11 @@ export class BooksService {
 
    createNew(books: Books): Observable<any> {
      console.log('service put');
-     return this.httpClient.put(`${this.url}`, books);
+     return this.httpClient.post(`${this.url}/${'new'}`, books);
    }
 
    update(books: Books): Observable<any> {
-     return this.httpClient.post(`${this.url}/${books.id}`, books);
+     return this.httpClient.put(`${this.url}/${books.id}`, books);
    }
 
   
