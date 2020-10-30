@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subscription } from 'rxjs';
-import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule,
+         FormBuilder } from '@angular/forms';
 
 import { Books } from '../models/books.model';
 
@@ -9,30 +10,28 @@ import { Books } from '../models/books.model';
   providedIn: 'root'
 })
 export class BooksService {
- // books: Array<Books>;
- // maxBookID: Number;
-
-  constructor(private httpClient: HttpClient) { }
-  books: Array<Books>;
+  //books: Array<Books>;
   bookSignupForm: FormGroup;
-  maxID: Number;
+  //maxID: Number;
+
+  constructor(private httpClient: HttpClient,
+              private formBuilder: FormBuilder) { }
+
 
   createBookNewSignupForm() {
-    return this.bookSignupForm = new FormGroup( {
-      'bo_author': new FormControl(null),
-      'bo_title': new FormControl(null),
-      'bo_image': new FormControl(null),
-      'bo_available': new FormControl(null),
-      'id': new FormControl(null)
+    return this.bookSignupForm = this.formBuilder.group( {
+      'bo_author': '',
+      'bo_title': '',
+      'bo_image': '',
+      'bo_available': '',
+      'id': ''
     } )
   } 
 
-  maxIDFinder() {
-    console.log(this.books);
-    this.maxID = this.books.reduce((max, element) => (element.id > max ? element.id : max),
-          this.books[0].id) + 1;
-    console.log(this.maxID);
-    return this.maxID;
+  maxIDFinder(books) {
+    let maxID = books.reduce((max, element) => (element.id > max ? element.id : max),
+          books[0].id) + 1;
+    return maxID;
     }
   
 
