@@ -20,7 +20,7 @@ export class BooksService {
 
   createBookNewSignupForm() {
     return this.bookSignupForm = this.formBuilder.group( {
-      'bo_author': ['', Validators.required, Validators.pattern('[a-z0-9]*')],
+      'bo_author': ['', Validators.required, Validators.pattern('[a-z]*')],
       'bo_title': ['', Validators.required, Validators.pattern('[a-z0-9]*')],
       'bo_image': ['', Validators.required, Validators.pattern('[a-z0-9]*')],
       'bo_available': ['', Validators.required, Validators.pattern('[a-z0-9]*')],

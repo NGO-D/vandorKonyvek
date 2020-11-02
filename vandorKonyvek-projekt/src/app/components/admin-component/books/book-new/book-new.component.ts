@@ -16,7 +16,7 @@ export class BookNewComponent implements OnInit, OnDestroy{
   books: Array<Books>;
   booksSubscription: Subscription;
   bookFormSubscription: Subscription;
-  bookNewSignupForm: FormGroup;
+  bookNewSignupForm: FormGroup; 
   newID: Number;
 
   constructor(private booksService: BooksService) {}
@@ -27,6 +27,7 @@ export class BookNewComponent implements OnInit, OnDestroy{
         this.books = books;
         this.newID = this.booksService.maxIDFinder(this.books);
         this.bookNewSignupForm = this.booksService.createBookNewSignupForm();
+        console.log(this.bookNewSignupForm.value);
         this.bookNewSignupForm.patchValue({id: this.newID});
         },
         error => console.log(error)
