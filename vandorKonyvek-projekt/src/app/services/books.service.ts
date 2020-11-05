@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule,
          FormBuilder } from '@angular/forms';
+import { of } from 'rxjs';
+import { map, max } from 'rxjs/operators';
 
 import { Books } from '../models/books.model';
 
@@ -10,24 +12,22 @@ import { Books } from '../models/books.model';
   providedIn: 'root'
 })
 export class BooksService {
-  //books: Array<Books>;
- 
-  //maxID: Number;
+  books: Array<Books>;
 
   constructor(private httpClient: HttpClient,
               private formBuilder: FormBuilder) { }
 
 
-
-  maxIDFinder(books) {
-    let maxID = books.reduce((max, element) => (element.id > max ? element.id : max),
-          books[0].id) + 1;
-    return maxID;
-    }
-  
-
    // list: BehaviorSubject<any> = new BehaviorSubject([]);
    url: string = 'http://localhost:3000/api/books';
+
+  findMax(list: Books[]): number | undefined {
+    return (list.reduce((max, book) => (book.id > max ? book.id : max ), list[0].id)) + 1;
+}
+
+  getMaxID(): Observable<any> {
+  return this.httpClient.get(this.url).pipe(map(this.findMax));
+  }
 
    get(): Observable<any> {
      return this.httpClient.get(this.url);

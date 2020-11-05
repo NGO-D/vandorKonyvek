@@ -15,9 +15,8 @@ import { BooksService } from '../../../../services/books.service';
 export class BookNewComponent implements OnInit, OnDestroy{
   books: Array<Books>;
   booksSubscription: Subscription;
- // bookFormSubscription: Subscription;
   bookNewSignupForm: FormGroup; 
-  newID: Number;
+  newID: any;
 
   constructor(private booksService: BooksService,
               private formBuilder: FormBuilder) {}
@@ -31,46 +30,24 @@ export class BookNewComponent implements OnInit, OnDestroy{
       'id': [null]
     } )
   
-
-   this.booksSubscription = this.booksService.get().subscribe(
-        books => {
-        this.books = books;
-        this.newID = this.booksService.maxIDFinder(this.books);
+    this.newID = this.booksService.getMaxID().subscribe(
+      id => {
+        this.bookNewSignupForm.patchValue({id: id});
         console.log(this.bookNewSignupForm.value);
-        this.bookNewSignupForm.patchValue({id: this.newID});
-        this.bookNewSignupForm.statusChanges.subscribe(
-          (status) => {
-            console.log(this.bookNewSignupForm);
-            this.booksService.createNew(this.bookNewSignupForm.value).subscribe(
-              (respose) => {
-                console.log('new book added to database');
-              }
-            )
-        },
-        error => console.log(error)
-        );
       }
-      )
-
+    )
   }
 
-  onChanges() {
-    console.log();
-    console.log(this.bookNewSignupForm.value);
-  }
-    /*
   onChanges(): void {
+    console.log(this.bookNewSignupForm.value);
     this.booksService.createNew(this.bookNewSignupForm.value).subscribe(
-      response => {
-        console.log('megvót! :)');
-      },
-      err => console.log(err)
-    );
+      response => console.log('new book added to database')
+    )
   }
-*/
+  
 
- ngOnDestroy(): void {
-   this.booksSubscription.unsubscribe();
- }
+  ngOnDestroy(): void {
+    this.booksSubscription.unsubscribe();
+  }
 }
 
