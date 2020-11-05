@@ -1,6 +1,5 @@
-import { compileDirectiveFromMetadata } from '@angular/compiler';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 
 import { Books } from '../../../../models/books.model';
@@ -16,18 +15,27 @@ import { BooksService } from '../../../../services/books.service';
 export class BookNewComponent implements OnInit, OnDestroy{
   books: Array<Books>;
   booksSubscription: Subscription;
-  bookFormSubscription: Subscription;
+ // bookFormSubscription: Subscription;
   bookNewSignupForm: FormGroup; 
   newID: Number;
 
-  constructor(private booksService: BooksService) {}
+  constructor(private booksService: BooksService,
+              private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.bookNewSignupForm = this.formBuilder.group( {
+      'bo_author': [null],
+      'bo_title': [null],
+      'bo_image': [null],
+      'bo_available': [null],
+      'id': [null]
+    } )
+  
+
    this.booksSubscription = this.booksService.get().subscribe(
         books => {
         this.books = books;
         this.newID = this.booksService.maxIDFinder(this.books);
-        this.bookNewSignupForm = this.booksService.createBookNewSignupForm();
         console.log(this.bookNewSignupForm.value);
         this.bookNewSignupForm.patchValue({id: this.newID});
         this.bookNewSignupForm.statusChanges.subscribe(
@@ -62,7 +70,6 @@ export class BookNewComponent implements OnInit, OnDestroy{
 */
 
  ngOnDestroy(): void {
-   this.bookFormSubscription.unsubscribe();
    this.booksSubscription.unsubscribe();
  }
 }

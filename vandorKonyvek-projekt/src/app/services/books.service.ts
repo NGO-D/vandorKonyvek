@@ -11,22 +11,13 @@ import { Books } from '../models/books.model';
 })
 export class BooksService {
   //books: Array<Books>;
-  bookSignupForm: FormGroup;
+ 
   //maxID: Number;
 
   constructor(private httpClient: HttpClient,
               private formBuilder: FormBuilder) { }
 
 
-  createBookNewSignupForm() {
-    return this.bookSignupForm = this.formBuilder.group( {
-      'bo_author': [null],
-      'bo_title': [null],
-      'bo_image': [null],
-      'bo_available': [null],
-      'id': [null]
-    } )
-  } 
 
   maxIDFinder(books) {
     let maxID = books.reduce((max, element) => (element.id > max ? element.id : max),
