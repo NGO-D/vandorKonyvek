@@ -20,6 +20,7 @@ import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-
 
 import { BooksService } from './services/books.service';
 import { MockService } from './services/mock.service';
+import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MockService } from './services/mock.service';
     BookListComponent,
     BookEditComponent,
     BookDetailsComponent,
-    BookNewComponent
+    BookNewComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,
