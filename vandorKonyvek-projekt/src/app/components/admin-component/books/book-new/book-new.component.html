@@ -7,14 +7,19 @@
                         <h2 class="heading">Új könyv létrehozása</h2>
                     </div>
                   </div>
+                  <button class="btn btn-outline-primary mr-2" (click)="open('focusFirst')">
+  <div>Open confirm modal</div>
+  <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+</button>
+
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-11">
-                  <form [formGroup]="bookNewSignupForm" (ngSubmit)="onChanges()">
+                  <form [formGroup]="bookNewSignupForm" (ngSubmit)="open('focusFirst')">
                     <button type="submit" class="float-right">
                         <i class="fa fa-bolt"></i>
                     </button>
-                    <br>
+                    <br> 
                       <div class="form-group">
                           <label for="bo_author"></label>
                           <p>&nbsp;&nbsp;Író</p>
