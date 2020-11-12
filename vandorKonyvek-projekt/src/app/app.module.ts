@@ -21,6 +21,7 @@ import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-
 import { BooksService } from './services/books.service';
 import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
+import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DeleteModalComponent } from './components/modals/delete-modal/delete-mo
     BookEditComponent,
     BookDetailsComponent,
     BookNewComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    AffirmModalComponent
   ],
   imports: [
     BrowserModule,

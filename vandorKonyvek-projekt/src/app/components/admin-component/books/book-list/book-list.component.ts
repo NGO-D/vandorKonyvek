@@ -1,10 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Type } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { BooksService } from '../../../../services/books.service';
 import { Books } from '../../../../models/books.model';
+import { DeleteModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/delete-modal/delete-modal.component';
+
+const MODALS: {[name: string]: Type<any>} = {
+  deleteModalComponent: DeleteModalComponent
+};
 
 @Component({
   selector: 'app-book-list',
@@ -12,18 +17,16 @@ import { Books } from '../../../../models/books.model';
   styleUrls: ['./book-list.component.css'],
   providers: [BooksService]
 })
+
 export class BookListComponent implements OnInit, OnDestroy {
    
   books: Array<Books>;
- 
-
   booksSubscription: Subscription;
-  changeCounter: number = 0; //ez minek, kell egyáltalán ide?
-
 
   constructor(private booksService: BooksService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) 
+              private activatedRoute: ActivatedRoute,
+              private modalService: NgbModal) 
               { }
 
   ngOnInit(): void {
@@ -34,6 +37,10 @@ export class BookListComponent implements OnInit, OnDestroy {
       },
       err => console.error(err)
     );
+  }
+
+  onOpenDeleteModal(name: string) {
+    this.modalService.open(MODALS[name], { centered: true });
   }
 
   onDelete(obj: any): void {

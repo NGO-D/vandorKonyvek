@@ -68,7 +68,7 @@
         <td><button class="btn btn-light" type="button" [routerLink]="[book.id]">
 <i class="fa fa-eye"></i>
         </button></td>
-        <td><button class="btn btn-danger" (click)="onDelete(book)">
+        <td><button class="btn btn-danger" (click)="openDeleteModal(deleteModalComponent)">
             <i class="fa fa-skull"></i>
         </button></td>
     </tr>

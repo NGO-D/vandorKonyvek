@@ -1,5 +1,6 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BookListComponent } from '../../admin-component/books/book-list/book-list.component';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class DeleteModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ 
 }
 
 

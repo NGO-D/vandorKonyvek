@@ -5,7 +5,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Books } from '../../../../models/books.model';
 import { BooksService } from '../../../../services/books.service';
-import { DeleteModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/delete-modal/delete-modal.component';
+import { AffirmModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/affirm-modal/affirm-modal.component';
 
 // @Component({
 //   selector: 'ngbd-modal-confirm',
@@ -30,7 +30,7 @@ import { DeleteModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src
 // };
 
 const MODALS: {[name: string]: Type<any>} = {
-   focusFirst: DeleteModalComponent
+   affirmaModalComponent: AffirmModalComponent
 };
 
 @Component({
@@ -40,15 +40,14 @@ const MODALS: {[name: string]: Type<any>} = {
   providers: [BooksService]
 })  
 
-export class BookNewComponent implements OnInit, OnDestroy{
+export class BookNewComponent implements OnInit {
   books: Array<Books>;
-  booksSubscription: Subscription;
   bookNewSignupForm: FormGroup; 
   newID: any;
 
   constructor(private booksService: BooksService,
               private formBuilder: FormBuilder,
-              private _modalService: NgbModal) {}
+              private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.bookNewSignupForm = this.formBuilder.group( {
@@ -67,21 +66,23 @@ export class BookNewComponent implements OnInit, OnDestroy{
     )
   }
 
-  open(name: string) {
-    this._modalService.open(MODALS[name]);
+  openAffirmationModal(name: string) {
+    this.modalService.open(MODALS[name], { centered: true });
   }
 
   onSubmit(): void {
     console.log(this.bookNewSignupForm.value);
     this.booksService.createNew(this.bookNewSignupForm.value).subscribe(
-      response => console.log('new book added to database')
-    )
+      response => {
+      console.log('new book added to database');
+      /* az alábbi nem működik, kitörli a form elemeit, de nem törli ki az oldalon, és nem ad új ID-t se.
+      this.bookNewSignupForm.reset();
+      console.log(this.bookNewSignupForm.value);
+      */
+    })
    
   }
   
 
-  ngOnDestroy(): void {
-    this.booksSubscription.unsubscribe();
-  }
 }
 
