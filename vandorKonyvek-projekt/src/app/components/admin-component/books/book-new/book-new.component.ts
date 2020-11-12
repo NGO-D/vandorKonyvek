@@ -30,7 +30,7 @@ import { AffirmModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src
 // };
 
 const MODALS: {[name: string]: Type<any>} = {
-   affirmaModalComponent: AffirmModalComponent
+   affirmModalComponent: AffirmModalComponent
 };
 
 @Component({
@@ -66,7 +66,7 @@ export class BookNewComponent implements OnInit {
     )
   }
 
-  openAffirmationModal(name: string) {
+  openAffirmModal(name: string) {
     this.modalService.open(MODALS[name], { centered: true });
   }
 
