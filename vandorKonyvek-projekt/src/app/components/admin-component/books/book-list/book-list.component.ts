@@ -1,15 +1,11 @@
-import { Component, OnInit, OnDestroy, Type } from '@angular/core';
+import { Component, OnInit, OnDestroy, Type, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BooksService } from '../../../../services/books.service';
 import { Books } from '../../../../models/books.model';
-import { DeleteModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/delete-modal/delete-modal.component';
-
-const MODALS: {[name: string]: Type<any>} = {
-  deleteModalComponent: DeleteModalComponent
-};
 
 @Component({
   selector: 'app-book-list',
@@ -19,7 +15,7 @@ const MODALS: {[name: string]: Type<any>} = {
 })
 
 export class BookListComponent implements OnInit, OnDestroy {
-   
+  // closeResult = '';
   books: Array<Books>;
   booksSubscription: Subscription;
 
@@ -39,12 +35,30 @@ export class BookListComponent implements OnInit, OnDestroy {
     );
   }
 
-  onOpenDeleteModal(name: string) {
-    this.modalService.open(MODALS[name], { centered: true });
+/* a modal under construction
+  open(content) {
+    console.log(content);
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+*/
+
   onDelete(obj: any): void {
-  console.log(obj.id);
+  console.log(obj);
     this.booksService.delete(obj).forEach(data => {
       let index = this.books.findIndex(book => book.id == obj.id);
       console.log(index);

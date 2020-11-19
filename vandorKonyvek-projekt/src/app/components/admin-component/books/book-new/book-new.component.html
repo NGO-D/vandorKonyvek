@@ -12,9 +12,17 @@
                     <div class="row justify-content-center">
                         <div class="col-11">
                   <form [formGroup]="bookNewSignupForm" (ngSubmit)="openAffirmModal('affirmModalComponent')">
-                    <button type="submit" class="float-right">
-                        <i class="fa fa-bolt"></i>
-                    </button>
+                    
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-11">&nbsp;</div>
+                        <div class="col-1">
+                          <button type="submit" class="float-right btn btn-outline-dark btn-block btn-lg">
+                            <i class="fa fa-bolt"></i>
+                        </button>
+                        </div>
+                      </div>
+                    </div>
                     <br> 
                       <div class="form-group">
                           <label for="bo_author"></label>
@@ -32,7 +40,7 @@
                         </span>
                       </div>
                       <div class="form-group">
-                          <label for="bo_title">
+                          <label for="bo_title"> </label>
                             <p>&nbsp;&nbsp;Cím</p>
                               <input 
                               type="text"
@@ -45,7 +53,7 @@
                         <span *ngIf="bookNewSignupForm.get('bo_title').errors['required']">Ez a mező nem lehet üres.</span>
           
                         </span>
-                          </label>
+                         
                       </div>
                       <div class="form-group">
                           <label for="bo_image"></label>
@@ -63,7 +71,7 @@
                         </span>
                       </div>
                       <div class="form-group">
-                          <label for="bo_available">
+                          <label for="bo_available"> </label>
                             <p>&nbsp;&nbsp;Készlet</p>
                               <input 
                               type="text"
@@ -76,10 +84,9 @@
                         <span *ngIf="bookNewSignupForm.get('bo_available').errors['required']">Ez a mező nem lehet üres.</span>
           
                         </span>
-                          </label>
                       </div>
                       <div class="form-group">
-                          <label for="id">
+                          <label for="id"> </label>
                             <p>&nbsp;&nbsp;ID</p>
                               <input 
                               type="text"
@@ -93,7 +100,6 @@
                         <span *ngIf="bookNewSignupForm.get('id').errors['required']">Ez a mező nem lehet üres.</span>
           
                         </span>
-                          </label>
                       </div>
                       
                   </form>

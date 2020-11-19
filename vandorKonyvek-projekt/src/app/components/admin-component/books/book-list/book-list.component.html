@@ -4,12 +4,13 @@
   <div class="row mt-5 justify-content-center">
       <h2 class="heading">Könyvlista</h2>
   </div>
+  
 </div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-11">&nbsp;</div>
     <div class="col-1">
-  <button class="btn btn-outline-dark" routerLink='/admin/books/new'>
+  <button class="btn btn-outline-dark btn-lg btn-block" routerLink='/admin/books/new'>
     <i class="fa fa-bolt"></i>
   </button>
 </div>
@@ -19,32 +20,6 @@
     <div class="row">
         <div class="col-12">
  
-            
-<!-- 
-<br>
-<div class="container">
-  <div id="searchActive">
-    <div class="row">
-      <div class="col-4">
-        <input class="form-control"
-               type="text"
-               placeholder="Search.."
-            
-      </div>
-      <div class="col-2">
-        <button class="btn btn-primary"
-                routerLink="/new-product">New product</button>
-      </div>
-      <div class="col-6 text-white"
-           id="checkBox">
-        <input type="checkbox"
-               name="active"
-               id="active"
-            
-      </div>
-    </div>
-  </div>
-</div> -->
 <br>
 <table class="table table-striped">
   <thead>
@@ -68,13 +43,40 @@
         <td><button class="btn btn-light" type="button" [routerLink]="[book.id]">
 <i class="fa fa-eye"></i>
         </button></td>
-        <td><button class="btn btn-danger" (click)="openDeleteModal(deleteModalComponent)">
+       
+        <!-- <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="dateOfBirth">Date of birth</label>
+                <div class="input-group">
+                  <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+          </div>
+        </ng-template> -->
+        <td><button class="btn btn-danger"
+          (click)="onDelete(book)">
             <i class="fa fa-skull"></i>
         </button></td>
     </tr>
   </tbody>
 </table>
-   
+<br>
+
 </div>
 </div>
 </div>
