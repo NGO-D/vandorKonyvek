@@ -22,6 +22,7 @@ import { BooksService } from './services/books.service';
 import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
+import { AlphabeticalOrderPipe } from './pipes/alphabetical-order.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
     BookDetailsComponent,
     BookNewComponent,
     DeleteModalComponent,
-    AffirmModalComponent
+    AffirmModalComponent,
+    AlphabeticalOrderPipe
   ],
   imports: [
     BrowserModule,
