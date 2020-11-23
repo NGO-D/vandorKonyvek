@@ -15,9 +15,11 @@ import { Books } from '../../../../models/books.model';
 })
 
 export class BookListComponent implements OnInit, OnDestroy {
-  // closeResult = '';
+  columnName: String = 'id';
   books: Array<Books>;
   booksSubscription: Subscription;
+  pipeSubscription: Subscription;
+  toggle: Boolean = false;
 
   constructor(private booksService: BooksService,
               private router: Router,
@@ -33,6 +35,29 @@ export class BookListComponent implements OnInit, OnDestroy {
       },
       err => console.error(err)
     );
+  }
+
+  onColumnName(col: any): any {
+    this.toggle = !this.toggle;
+    if (this.columnName != col) {
+      this.toggle = true;
+      this.columnName = col;
+     
+    }
+    this.books.sort((a: any, b: any) => {
+      if (a[col] < b[col]) {
+        return -1;
+      } else if (a[col] > b[col]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    if (this.toggle) {
+      return this.books;
+    } else {
+      return this.books.reverse();
+    }
   }
 
 /* a modal under construction

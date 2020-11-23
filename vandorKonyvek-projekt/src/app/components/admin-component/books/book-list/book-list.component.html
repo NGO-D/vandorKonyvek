@@ -24,17 +24,17 @@
 <table class="table table-striped">
   <thead>
     <tr>
-        <th>Borító</th>
-      <th>ID</th>
-      <th>Szerző</th>
-      <th>Cím</th>
-      <th>Elérhető</th>
+      <th type="button" (click)="onColumnName('bo_image')">Borító</th>
+      <th type="button" (click)="onColumnName('id')">ID</th>
+      <th type="button" (click)="onColumnName('bo_author')">Szerző</th>
+      <th type="button" (click)="onColumnName('bo_title')">Cím</th>
+      <th type="button" (click)="onColumnName('bo_available')">Elérhető</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let book of books | alphabeticalOrder: 'desc'">
+    <tr *ngFor="let book of books">
         <td>{{book.bo_image}}</td>
         <td>{{book.id}}</td>
         <td>{{book.bo_author}}</td>
