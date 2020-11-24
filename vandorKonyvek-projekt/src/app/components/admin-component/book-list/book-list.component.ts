@@ -4,8 +4,8 @@ import { Observable, Subscription } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { BooksService } from '../../../../services/books.service';
-import { Books } from '../../../../models/books.model';
+import { BooksService } from './books.service';
+import { Books } from '../../../models/books.model';
 
 @Component({
   selector: 'app-book-list',

@@ -5,10 +5,9 @@ import { MockComponent } from './mock/mock.component';
 import { LoginComponent } from './components/admin-component/auth/login/login.component';
 import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
 import { AdminLandingComponent} from './components/admin-component/admin-landing/admin-landing.component';
-import { BookListComponent } from './components/admin-component/books/book-list/book-list.component';
-import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
-import { BookDetailsComponent } from './components/admin-component/books/book-details/book-details.component';
-import { BookNewComponent } from './components/admin-component/books/book-new/book-new.component';
+import { BookListComponent } from './components/admin-component/book-list/book-list.component';
+import { BookDetailsComponent } from './components/admin-component/book-list/book-details/book-details.component';
+import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 
 const routes: Routes = [
   { path: 'mock', redirectTo: 'admin', pathMatch: 'full'},// only redirect is the full path is empty

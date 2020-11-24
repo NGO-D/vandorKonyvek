@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Books } from '../../../../models/books.model';
-import { BooksService } from '../../../../services/books.service';
+import { BooksService } from '../books.service';
 import { AffirmModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/affirm-modal/affirm-modal.component';
 
 // @Component({

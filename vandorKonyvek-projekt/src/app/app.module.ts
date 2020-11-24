@@ -10,15 +10,14 @@ import { AdminHeaderComponent } from './components/admin-component/admin-header/
 import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
 import { AdminNavigationComponent } from './components/admin-component/admin-landing/admin-navigation/admin-navigation.component';
 import { AppComponent } from './app.component';
-import { BookDetailsComponent } from './components/admin-component/books/book-details/book-details.component';
-import { BookEditComponent } from './components/admin-component/books/book-edit/book-edit.component';
-import { BookListComponent } from './components/admin-component/books/book-list/book-list.component';
-import { BookNewComponent } from './components/admin-component/books/book-new/book-new.component';
+import { BookDetailsComponent } from './components/admin-component/book-list/book-details/book-details.component';
+import { BookListComponent } from './components/admin-component/book-list/book-list.component';
+import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 import { LoginComponent } from './components/admin-component/auth/login/login.component';
 import { MockComponent } from './mock/mock.component';
 import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
 
-import { BooksService } from './services/books.service';
+import { BooksService } from './components/admin-component/book-list/books.service';
 import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
@@ -34,7 +33,6 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
     AdminLandingComponent,
     AdminNavigationComponent,
     BookListComponent,
-    BookEditComponent,
     BookDetailsComponent,
     BookNewComponent,
     DeleteModalComponent,

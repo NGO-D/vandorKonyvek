@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
 import { Books } from '../../../../models/books.model';
-import { BooksService } from '../../../../services/books.service';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-book-details',
