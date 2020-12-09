@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { BooksService } from './books.service';
 import { Books } from '../../../models/books.model';
+import { OrderService } from '../shared/order/order-service.service';
 
 @Component({
   selector: 'app-book-list',
@@ -16,15 +17,20 @@ import { Books } from '../../../models/books.model';
 
 export class BookListComponent implements OnInit, OnDestroy {
   columnName: String = 'id';
+  columnNameImput: String;
   books: Array<Books>;
   booksSubscription: Subscription;
   pipeSubscription: Subscription;
   toggle: Boolean = false;
+  searchText = '';
+  message:string;
+  data: any;
 
   constructor(private booksService: BooksService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
-              private modalService: NgbModal) 
+              private modalService: NgbModal,
+              private orderService: OrderService) 
               { }
 
   ngOnInit(): void {
@@ -35,30 +41,23 @@ export class BookListComponent implements OnInit, OnDestroy {
       },
       err => console.error(err)
     );
+
+   
+
+    this.orderService.currentMessage.subscribe(message => {
+      this.message = message;
+      console.log(this.message);
+    });
+
+     this.orderService.orderData().subscribe( data => {
+      data = this.data;
+      console.log(this.data);
+    });
+
+   
   }
 
-  onColumnName(col: any): any {
-    this.toggle = !this.toggle;
-    if (this.columnName != col) {
-      this.toggle = true;
-      this.columnName = col;
-     
-    }
-    this.books.sort((a: any, b: any) => {
-      if (a[col] < b[col]) {
-        return -1;
-      } else if (a[col] > b[col]) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-    if (this.toggle) {
-      return this.books;
-    } else {
-      return this.books.reverse();
-    }
-  }
+ 
 
 /* a modal under construction
   open(content) {

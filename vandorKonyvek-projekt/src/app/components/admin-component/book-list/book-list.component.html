@@ -10,6 +10,15 @@
   <div class="row">
     <div class="col-11">&nbsp;</div>
     <div class="col-1">
+      <div class="form-group">
+        <label for="search-text">Search Text</label>
+        <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+          [(ngModel)]="searchText" placeholder="Enter text to search" 
+          autofocus>
+      </div>
+    </div>
+   
+    <div class="col-1">
   <button class="btn btn-outline-dark btn-lg btn-block" routerLink='/admin/books/new'>
     <i class="fa fa-bolt"></i>
   </button>
@@ -22,17 +31,8 @@
  
 <br>
 <table class="table table-striped">
-  <thead>
-    <tr>
-      <th type="button" (click)="onColumnName('bo_image')">Borító</th>
-      <th type="button" (click)="onColumnName('id')">ID</th>
-      <th type="button" (click)="onColumnName('bo_author')">Szerző</th>
-      <th type="button" (click)="onColumnName('bo_title')">Cím</th>
-      <th type="button" (click)="onColumnName('bo_available')">Elérhető</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
+  <app-order></app-order>
+  
   <tbody>
     <tr *ngFor="let book of books">
         <td>{{book.bo_image}}</td>

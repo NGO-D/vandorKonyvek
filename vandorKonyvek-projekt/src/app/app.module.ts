@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AdminEditComponent } from './components/admin-component/users/admin-edit/admin-edit.component';
 import { AdminHeaderComponent } from './components/admin-component/admin-header/admin-header.component';
@@ -21,6 +21,8 @@ import { BooksService } from './components/admin-component/book-list/books.servi
 import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
+import { SearchComponent } from './components/admin-component/shared/search/search.component';
+import { OrderComponent } from './components/admin-component/shared/order/order.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +38,17 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
     BookDetailsComponent,
     BookNewComponent,
     DeleteModalComponent,
-    AffirmModalComponent
+    AffirmModalComponent,
+    SearchComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     ],
   providers: [MockService,
               BooksService],
