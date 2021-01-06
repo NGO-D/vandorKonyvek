@@ -31,10 +31,9 @@
  
 <br>
 <table class="table table-striped">
-  <app-order></app-order>
   
   <tbody>
-    <tr *ngFor="let book of books | orderPipe: desc : book.id">
+    <tr *ngFor="let book of books">
         <td>{{book.bo_image}}</td>
         <td>{{book.id}}</td>
         <td>{{book.bo_author}}</td>

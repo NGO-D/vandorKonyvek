@@ -21,9 +21,7 @@ import { BooksService } from './components/admin-component/book-list/books.servi
 import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
-import { SearchComponent } from './components/admin-component/shared/search/search.component';
-import { OrderComponent } from './components/admin-component/shared/order/order.component';
-import { OrderByPipe } from './components/admin-component/shared/pipes/order-pipe.pipe';
+
 
 @NgModule({
   declarations: [
@@ -39,10 +37,7 @@ import { OrderByPipe } from './components/admin-component/shared/pipes/order-pip
     BookDetailsComponent,
     BookNewComponent,
     DeleteModalComponent,
-    AffirmModalComponent,
-    SearchComponent,
-    OrderComponent,
-    OrderByPipe
+    AffirmModalComponent
   ],
   imports: [
     BrowserModule,
