@@ -23,6 +23,7 @@ import { DeleteModalComponent } from './components/modals/delete-modal/delete-mo
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 import { SearchComponent } from './components/admin-component/shared/search/search.component';
 import { OrderComponent } from './components/admin-component/shared/order/order.component';
+import { OrderByPipe } from './components/admin-component/shared/pipes/order-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { OrderComponent } from './components/admin-component/shared/order/order.
     DeleteModalComponent,
     AffirmModalComponent,
     SearchComponent,
-    OrderComponent
+    OrderComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

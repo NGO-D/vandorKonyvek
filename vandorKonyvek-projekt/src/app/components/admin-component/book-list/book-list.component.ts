@@ -7,12 +7,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BooksService } from './books.service';
 import { Books } from '../../../models/books.model';
 import { OrderService } from '../shared/order/order-service.service';
+import { OrderByPipe } from '../shared/pipes/order-pipe.pipe'
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css'],
-  providers: [BooksService]
+  providers: [BooksService, OrderByPipe]
 })
 
 export class BookListComponent implements OnInit, OnDestroy {
@@ -30,7 +31,8 @@ export class BookListComponent implements OnInit, OnDestroy {
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private modalService: NgbModal,
-              private orderService: OrderService) 
+              private orderService: OrderService,
+              private orderbyPipe: OrderByPipe) 
               { }
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ export class BookListComponent implements OnInit, OnDestroy {
     );
 
    
-
+/*
     this.orderService.currentMessage.subscribe(message => {
       this.message = message;
       console.log(this.message);
@@ -53,7 +55,7 @@ export class BookListComponent implements OnInit, OnDestroy {
       data = this.data;
       console.log(this.data);
     });
-
+*/
    
   }
 

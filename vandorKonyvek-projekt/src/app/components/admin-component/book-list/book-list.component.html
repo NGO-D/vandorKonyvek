@@ -34,7 +34,7 @@
   <app-order></app-order>
   
   <tbody>
-    <tr *ngFor="let book of books">
+    <tr *ngFor="let book of books | orderPipe: desc : book.id">
         <td>{{book.bo_image}}</td>
         <td>{{book.id}}</td>
         <td>{{book.bo_author}}</td>
