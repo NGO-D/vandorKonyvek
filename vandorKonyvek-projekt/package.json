@@ -21,7 +21,9 @@
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "angular-confirm-modal": "^0.1.0",
     "bootstrap": "^4.5.0",
+    "ng-confirmation-modal": "^3.0.0",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

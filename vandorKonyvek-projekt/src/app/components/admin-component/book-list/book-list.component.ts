@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularConfirmModalModule } from 'angular-confirm-modal';
 
 import { BooksService } from './books.service';
 import { Books } from '../../../models/books.model';
@@ -42,10 +43,6 @@ export class BookListComponent implements OnInit, OnDestroy {
    
   }
 
- 
-
-
- 
 
   onDelete(obj: any): void {
   console.log(obj);
@@ -64,3 +61,4 @@ export class BookListComponent implements OnInit, OnDestroy {
 
 
 }
+

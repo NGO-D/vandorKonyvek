@@ -22,7 +22,6 @@ import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
