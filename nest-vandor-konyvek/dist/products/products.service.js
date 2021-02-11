@@ -17,6 +17,25 @@ let ProductsService = class ProductsService {
     getAllProducts() {
         return this.products;
     }
+    getProductsWithFilters(filterDto) {
+        const { status, search } = filterDto;
+        let products = this.getAllProducts();
+        if (status) {
+            products = products.filter(product => product.status === status);
+        }
+        if (search) {
+            products = products.filter(product => product.description.includes(search) ||
+                product.title.includes(search));
+            return products;
+        }
+    }
+    getProductById(id) {
+        const found = this.products.find(product => product.id === id);
+        if (!found) {
+            throw new common_1.NotFoundException('Task with ID "${id}" not found.');
+        }
+        return found;
+    }
     createProduct(createProductDto) {
         const { title, description } = createProductDto;
         const product = {
@@ -27,6 +46,15 @@ let ProductsService = class ProductsService {
         };
         this.products.push(product);
         return product;
+    }
+    updateProduct(id, status) {
+        const product = this.getProductById(id);
+        product.status = status;
+        return product;
+    }
+    deleteProduct(id) {
+        const found = this.getProductById(id);
+        this.products = this.products.filter(product => product.id !== found.id);
     }
 };
 ProductsService = __decorate([

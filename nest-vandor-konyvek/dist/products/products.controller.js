@@ -14,32 +14,73 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsController = void 0;
 const common_1 = require("@nestjs/common");
+const products_model_1 = require("../products/products.model");
 const products_service_1 = require("../products/products.service");
 const create_product_dto_1 = require("../products/dto/create-product.dto");
+const product_status_validation_pipe_1 = require("../products/pipes/product-status-validation.pipe");
+const get_products_filter_dto_1 = require("../products/dto/get-products-filter.dto");
 let ProductsController = class ProductsController {
     constructor(productsService) {
         this.productsService = productsService;
     }
-    getAllProducts() {
-        return this.productsService.getAllProducts();
+    getProducts(filterDto) {
+        if (Object.keys(filterDto).length) {
+            return this.productsService.getProductsWithFilters(filterDto);
+        }
+        else {
+            return this.productsService.getAllProducts();
+        }
+    }
+    getProductById(id) {
+        return this.productsService.getProductById(id);
     }
     createProduct(createProductDto) {
         return this.productsService.createProduct(createProductDto);
     }
+    deleteProduct(id) {
+        return this.productsService.deleteProduct(id);
+    }
+    updateProduct(id, status) {
+        return this.productsService.updateProduct(id, status);
+    }
 };
 __decorate([
     common_1.Get(),
+    __param(0, common_1.Query(common_1.ValidationPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], ProductsController.prototype, "getAllProducts", null);
+    __metadata("design:paramtypes", [get_products_filter_dto_1.GetProductsFilterDto]),
+    __metadata("design:returntype", Array)
+], ProductsController.prototype, "getProducts", null);
+__decorate([
+    common_1.Get('/:id'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], ProductsController.prototype, "getProductById", null);
 __decorate([
     common_1.Post(),
+    common_1.UsePipes(common_1.ValidationPipe),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDto]),
     __metadata("design:returntype", Object)
 ], ProductsController.prototype, "createProduct", null);
+__decorate([
+    common_1.Delete('/:id'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], ProductsController.prototype, "deleteProduct", null);
+__decorate([
+    common_1.Patch('/:id/status'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Body('status', product_status_validation_pipe_1.ProductStatusValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Object)
+], ProductsController.prototype, "updateProduct", null);
 ProductsController = __decorate([
     common_1.Controller('products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService])
