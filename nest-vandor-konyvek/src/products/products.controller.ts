@@ -1,5 +1,7 @@
-import { Controller, Get, Post, Body, Patch, Delete, UsePipes, ValidationPipe, Query, Param } from '@nestjs/common';
-import { Product, ProductStatus } from '../products/products.model';
+import { Controller, Get, Post, Body, Patch, Delete, UsePipes, ValidationPipe, 
+    Query, Param, ParseIntPipe } from '@nestjs/common';
+import { Product } from '../products/products.entity';
+import { ProductStatus } from '../products/product-status.enum';
 import { ProductsService } from '../products/products.service';
 import { CreateProductDto } from '../products/dto/create-product.dto';
 import { ProductStatusValidationPipe } from '../products/pipes/product-status-validation.pipe';
@@ -8,7 +10,25 @@ import { GetProductsFilterDto } from '../products/dto/get-products-filter.dto';
 @Controller('products')
 export class ProductsController {
     constructor(private productsService: ProductsService) {}
-    
+
+    @Get('/:id')
+    getProductById(@Param('id', ParseIntPipe) id: number): Promise<Product> {
+        return this.productsService.getProductById(id);
+    }
+
+    @Post()
+    @UsePipes(ValidationPipe)
+    createProduct(@Body() createProductDto:CreateProductDto): Promise<Product> {
+        return this.productsService.createProduct(createProductDto);
+    }
+
+    @Delete('/:id')
+    deleteProduct(@Param('id', ParseIntPipe) id: number): Promise<void> {
+        return this.productsService.deleteProduct(id);
+    }
+
+
+  /*  
     @Get()
     getProducts(@Query(ValidationPipe) filterDto: GetProductsFilterDto): Product[] {
         if (Object.keys(filterDto).length) {
@@ -41,4 +61,5 @@ export class ProductsController {
         @Body('status', ProductStatusValidationPipe) status: ProductStatus): Product {
         return this.productsService.updateProduct(id, status);
     }
+    */
 }

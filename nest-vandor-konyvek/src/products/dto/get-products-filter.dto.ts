@@ -1,4 +1,4 @@
-import { ProductStatus } from '../products.model';
+import { ProductStatus } from '../product-status.enum';
 import { IsOptional, IsIn, IsNotEmpty } from 'class-validator';
 
 export class GetProductsFilterDto {

@@ -1,12 +1,10 @@
 import { CreateProductDto } from '../products/dto/create-product.dto';
-import { Product, ProductStatus } from '../products/products.model';
-import { GetProductsFilterDto } from './dto/get-products-filter.dto';
+import { Product } from '../products/products.entity';
+import { ProductRepository } from './products.repository';
 export declare class ProductsService {
-    private products;
-    getAllProducts(): Product[];
-    getProductsWithFilters(filterDto: GetProductsFilterDto): Product[];
-    getProductById(id: string): Product;
-    createProduct(createProductDto: CreateProductDto): Product;
-    updateProduct(id: string, status: ProductStatus): Product;
-    deleteProduct(id: string): void;
+    private productRepository;
+    constructor(productRepository: ProductRepository);
+    getProductById(id: number): Promise<Product>;
+    createProduct(createProductDto: CreateProductDto): Promise<Product>;
+    deleteProduct(id: number): Promise<void>;
 }

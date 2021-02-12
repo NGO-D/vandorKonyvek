@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductStatusValidationPipe = void 0;
 const common_1 = require("@nestjs/common");
-const products_model_1 = require("../products.model");
+const product_status_enum_1 = require("../product-status.enum");
 class ProductStatusValidationPipe {
     constructor() {
         this.allowedStatuses = [
-            products_model_1.ProductStatus.OPEN,
-            products_model_1.ProductStatus.IN_PROGRESS,
-            products_model_1.ProductStatus.DONE,
+            product_status_enum_1.ProductStatus.OPEN,
+            product_status_enum_1.ProductStatus.IN_PROGRESS,
+            product_status_enum_1.ProductStatus.DONE,
         ];
     }
     transform(value, metadata) {

@@ -1,13 +1,46 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-//import * as uuid from 'uuid/v1';
-import { v4 as uuidv4 } from 'uuid';
 import { CreateProductDto } from '../products/dto/create-product.dto';
-import { Product, ProductStatus } from '../products/products.model';
+import { Product } from '../products/products.entity';
+import { ProductStatus } from '../products/product-status.enum';
 import { GetProductsFilterDto } from './dto/get-products-filter.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { ProductRepository } from './products.repository';
 
 @Injectable()
 export class ProductsService {
-    private products: Product[] = [];
+    constructor(
+    @InjectRepository(ProductRepository)
+    private productRepository: ProductRepository) {}
+
+
+
+    async getProductById(id: number): Promise<Product> {
+        const found = await this.productRepository.findOne(id);
+
+         if (!found) {
+                throw new NotFoundException('Task with ID "${id}" not found.');
+            } 
+
+            return found;
+    }
+
+    async createProduct(createProductDto: CreateProductDto): Promise<Product> {
+        return this.productRepository.createProduct(createProductDto);
+    }
+    
+    async deleteProduct(id: number): Promise<void> {
+        const result = await this.productRepository.delete(id);
+        
+        //ez ugyanaz mint az if (!result) {}
+        if (result.affected === 0) {
+            throw new NotFoundException('Task with ID "${id}" not found.');
+        }
+    }
+   
+
+  /*
+
+    withyout typeorm:
 
     getAllProducts(): Product[] {
         return this.products;
@@ -66,4 +99,5 @@ export class ProductsService {
         this.products = this.products.filter(product => product.id !== found.id);
     }
 
+    */
 }

@@ -9,20 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetProductsFilterDto = void 0;
-const product_status_enum_1 = require("../product-status.enum");
-const class_validator_1 = require("class-validator");
-class GetProductsFilterDto {
-}
+exports.Product = void 0;
+const typeorm_1 = require("typeorm");
+const product_status_enum_1 = require("./product-status.enum");
+let Product = class Product extends typeorm_1.BaseEntity {
+};
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsIn([product_status_enum_1.ProductStatus.DONE, product_status_enum_1.ProductStatus.IN_PROGRESS, product_status_enum_1.ProductStatus.OPEN]),
-    __metadata("design:type", String)
-], GetProductsFilterDto.prototype, "status", void 0);
+    typeorm_1.PrimaryGeneratedColumn(),
+    __metadata("design:type", Number)
+], Product.prototype, "id", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsNotEmpty(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
-], GetProductsFilterDto.prototype, "search", void 0);
-exports.GetProductsFilterDto = GetProductsFilterDto;
-//# sourceMappingURL=get-products-filter.dto.js.map
+], Product.prototype, "title", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Product.prototype, "description", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Product.prototype, "status", void 0);
+Product = __decorate([
+    typeorm_1.Entity()
+], Product);
+exports.Product = Product;
+//# sourceMappingURL=products.entity.js.map

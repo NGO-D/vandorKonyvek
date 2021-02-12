@@ -5,60 +5,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsService = void 0;
 const common_1 = require("@nestjs/common");
-const uuid_1 = require("uuid");
-const products_model_1 = require("../products/products.model");
+const typeorm_1 = require("@nestjs/typeorm");
+const products_repository_1 = require("./products.repository");
 let ProductsService = class ProductsService {
-    constructor() {
-        this.products = [];
+    constructor(productRepository) {
+        this.productRepository = productRepository;
     }
-    getAllProducts() {
-        return this.products;
-    }
-    getProductsWithFilters(filterDto) {
-        const { status, search } = filterDto;
-        let products = this.getAllProducts();
-        if (status) {
-            products = products.filter(product => product.status === status);
-        }
-        if (search) {
-            products = products.filter(product => product.description.includes(search) ||
-                product.title.includes(search));
-            return products;
-        }
-    }
-    getProductById(id) {
-        const found = this.products.find(product => product.id === id);
+    async getProductById(id) {
+        const found = await this.productRepository.findOne(id);
         if (!found) {
             throw new common_1.NotFoundException('Task with ID "${id}" not found.');
         }
         return found;
     }
-    createProduct(createProductDto) {
-        const { title, description } = createProductDto;
-        const product = {
-            id: uuid_1.v4(),
-            title,
-            description,
-            status: products_model_1.ProductStatus.OPEN,
-        };
-        this.products.push(product);
-        return product;
+    async createProduct(createProductDto) {
+        return this.productRepository.createProduct(createProductDto);
     }
-    updateProduct(id, status) {
-        const product = this.getProductById(id);
-        product.status = status;
-        return product;
-    }
-    deleteProduct(id) {
-        const found = this.getProductById(id);
-        this.products = this.products.filter(product => product.id !== found.id);
+    async deleteProduct(id) {
+        const result = await this.productRepository.delete(id);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException('Task with ID "${id}" not found.');
+        }
     }
 };
 ProductsService = __decorate([
-    common_1.Injectable()
+    common_1.Injectable(),
+    __param(0, typeorm_1.InjectRepository(products_repository_1.ProductRepository)),
+    __metadata("design:paramtypes", [products_repository_1.ProductRepository])
 ], ProductsService);
 exports.ProductsService = ProductsService;
 //# sourceMappingURL=products.service.js.map
