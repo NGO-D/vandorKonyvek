@@ -20,20 +20,30 @@ let ProductsService = class ProductsService {
     constructor(productRepository) {
         this.productRepository = productRepository;
     }
+    getProducts(getProductsFilterDto) {
+        return this.productRepository.getProducts(getProductsFilterDto);
+    }
     async getProductById(id) {
         const found = await this.productRepository.findOne(id);
         if (!found) {
-            throw new common_1.NotFoundException('Task with ID "${id}" not found.');
+            throw new common_1.NotFoundException(`Task with ID '${id}' not found.`);
         }
         return found;
     }
     async createProduct(createProductDto) {
+        console.log(createProductDto);
         return this.productRepository.createProduct(createProductDto);
+    }
+    async updateProduct(id, status) {
+        const product = await this.getProductById(id);
+        product.status = status;
+        await product.save();
+        return product;
     }
     async deleteProduct(id) {
         const result = await this.productRepository.delete(id);
         if (result.affected === 0) {
-            throw new common_1.NotFoundException('Task with ID "${id}" not found.');
+            throw new common_1.NotFoundException(`Task with ID '${id}' not found.`);
         }
     }
 };

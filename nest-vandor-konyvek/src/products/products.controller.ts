@@ -11,55 +11,33 @@ import { GetProductsFilterDto } from '../products/dto/get-products-filter.dto';
 export class ProductsController {
     constructor(private productsService: ProductsService) {}
 
+
+    @Get()
+    getProducts(@Query(ValidationPipe) filterDto: GetProductsFilterDto): Promise<Product[]> {
+      return this.productsService.getProducts(filterDto);
+    }
+
     @Get('/:id')
     getProductById(@Param('id', ParseIntPipe) id: number): Promise<Product> {
         return this.productsService.getProductById(id);
     }
 
-    @Post()
-    @UsePipes(ValidationPipe)
+    @Post() 
+    //@UsePipes(ValidationPipe)
     createProduct(@Body() createProductDto:CreateProductDto): Promise<Product> {
         return this.productsService.createProduct(createProductDto);
     }
+   
+    @Patch('/:id/status')
+    updateProduct(
+        @Param('id', ParseIntPipe) id: number,
+        @Body('status', ProductStatusValidationPipe) status: ProductStatus): Promise<Product> {
+            return this.productsService.updateProduct(id, status);
+        }
 
     @Delete('/:id')
     deleteProduct(@Param('id', ParseIntPipe) id: number): Promise<void> {
         return this.productsService.deleteProduct(id);
     }
-
-
-  /*  
-    @Get()
-    getProducts(@Query(ValidationPipe) filterDto: GetProductsFilterDto): Product[] {
-        if (Object.keys(filterDto).length) {
-            return this.productsService.getProductsWithFilters(filterDto);
-        } else {
-            return this.productsService.getAllProducts();
-        }
-    }
-
-    @Get('/:id')
-    getProductById(@Param('id') id: string): Product {
-        return this.productsService.getProductById(id);
-    }
-
-    @Post()
-    @UsePipes(ValidationPipe)
-    createProduct(@Body() createProductDto:CreateProductDto): Product {
-        return this.productsService.createProduct(createProductDto);
-    }
-
-    @Delete('/:id')
-    deleteProduct(@Param('id') id: string): void {
-        return this.productsService.deleteProduct(id);
-    }
-
-
-    @Patch('/:id/status')
-    updateProduct(
-        @Param('id') id: string,
-        @Body('status', ProductStatusValidationPipe) status: ProductStatus): Product {
-        return this.productsService.updateProduct(id, status);
-    }
-    */
+ 
 }

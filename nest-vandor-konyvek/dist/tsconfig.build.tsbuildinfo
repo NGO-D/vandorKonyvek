@@ -3481,24 +3481,24 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "../src/products/products.repository.ts": {
-        "version": "1998d7749f1530a2e70a72c64eb1eb06d875a40271e597f669ce54aa42e61e46",
-        "signature": "152d3e476d374f504d0300cce1078540e336d3db1202ad840b29156b8292cdde",
-        "affectsGlobalScope": false
-      },
-      "../src/products/products.service.ts": {
-        "version": "2fc8b040f8af59b57dc2c094b8ddc996f8c99ccf02378b3fad977584b7f9c4c3",
-        "signature": "cfe2dff3dbda2cda5fe6cb5bec3bc44a5df64d1ba423ccd24f47e5fd2b92f83f",
-        "affectsGlobalScope": false
-      },
       "../src/products/pipes/product-status-validation.pipe.ts": {
         "version": "edf01d8f49364eb4b2ac456ca59943065fb2df8783fc0b86454951c698953e81",
         "signature": "28baa456fee06f8f0fa81cbbb57f59d03dd449c699814daa560997eae8c9b1b0",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "537b1a99a1b0e6ac911c8a790a471ef8518c97d4d0596c861bf794f32a6d87d8",
-        "signature": "8a2d45e1c67c707748cae085dcbf1e8949ed8f11eff2ad00621bb571d2561ba9",
+        "version": "414d8c41956d62ec878d40a0759cb9a162a6c92559725c9dd8fd5c7151a2e7c1",
+        "signature": "e4887ddec9300fbee60c5f5f82cdda1337381895ed67e88b88d782319c2fc49b",
+        "affectsGlobalScope": false
+      },
+      "../src/products/products.repository.ts": {
+        "version": "7643005a7dcaaa1b254d660620f67c4bc071a9d3aa2c977be3262114e062164f",
+        "signature": "9a1aecee0ee050e02dab056163923857d0d86258586358c5832df0a0903e1aef",
+        "affectsGlobalScope": false
+      },
+      "../src/products/products.service.ts": {
+        "version": "09064d510d15ab61a6ee9bce56eea0faa97d0d10119b84f7e5c0c45eb36cf359",
+        "signature": "743250e3009fe60ca34ee34844e42fbdf8431726acd1a447a65006deff7bdd9a",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -7339,7 +7339,9 @@
       "../src/products/products.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/dto/get-products-filter.dto.ts",
         "../src/products/product-status.enum.ts",
+        "../src/products/products.controller.ts",
         "../src/products/products.entity.ts",
         "../src/products/products.service.ts"
       ],
@@ -10396,6 +10398,8 @@
       ],
       "../src/products/products.controller.ts": [
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/dto/get-products-filter.dto.ts",
+        "../src/products/product-status.enum.ts",
         "../src/products/products.entity.ts",
         "../src/products/products.service.ts"
       ],
@@ -10406,10 +10410,13 @@
       "../src/products/products.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/dto/get-products-filter.dto.ts",
         "../src/products/products.entity.ts"
       ],
       "../src/products/products.service.ts": [
         "../src/products/dto/create-product.dto.ts",
+        "../src/products/dto/get-products-filter.dto.ts",
+        "../src/products/product-status.enum.ts",
         "../src/products/products.entity.ts",
         "../src/products/products.repository.ts"
       ]

@@ -11,6 +11,18 @@ const typeorm_1 = require("typeorm");
 const products_entity_1 = require("./products.entity");
 const product_status_enum_1 = require("./product-status.enum");
 let ProductRepository = class ProductRepository extends typeorm_1.Repository {
+    async getProducts(filterDto) {
+        const { status, search } = filterDto;
+        const query = this.createQueryBuilder('product');
+        if (status) {
+            query.andWhere('product.status = :status', { status });
+        }
+        if (search) {
+            query.andWhere('product.title LIKE :search OR product.description LIKE :search', { search: `%${search}%` });
+        }
+        const products = await query.getMany();
+        return products;
+    }
     async createProduct(createProductDto) {
         const { title, description } = createProductDto;
         const product = new products_entity_1.Product();
