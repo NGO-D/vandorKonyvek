@@ -3517,12 +3517,12 @@
         "affectsGlobalScope": false
       },
       "../src/auth/user.entity.ts": {
-        "version": "a1c19a665634b2cde180526ef8395be24f32ee936e4014b7396e215d67b761a9",
+        "version": "5d5253214bc406427622da3483a8a1fa099c8c57e04d0a6fc16c0ea68e48e4ba",
         "signature": "3aabdd667a287b3507f9b0bcd3f3ad9496293401daeafb8c3414a71cd923ef65",
         "affectsGlobalScope": false
       },
       "../src/auth/user.repository.ts": {
-        "version": "bcfe1f9d47f545de6e31fdac7fe95cde14e48564e523cc2040291f4e9c31fa94",
+        "version": "a25730a2960f80ba4904c88b7e5f8edd1083f3575a853bb1339920846208209e",
         "signature": "2b9a633b6a811f9cf4a24ceb7abf4120c108d53d744fa40ed8a28ee1b1b38c6e",
         "affectsGlobalScope": false
       },
@@ -7354,6 +7354,7 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../src/auth/user.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/user.entity.ts"
