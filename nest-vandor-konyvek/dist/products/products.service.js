@@ -20,7 +20,7 @@ let ProductsService = class ProductsService {
     constructor(productRepository) {
         this.productRepository = productRepository;
     }
-    getProducts(getProductsFilterDto) {
+    async getProducts(getProductsFilterDto) {
         return this.productRepository.getProducts(getProductsFilterDto);
     }
     async getProductById(id) {
@@ -31,7 +31,7 @@ let ProductsService = class ProductsService {
         return found;
     }
     async createProduct(createProductDto) {
-        console.log(createProductDto);
+        console.log('service');
         return this.productRepository.createProduct(createProductDto);
     }
     async updateProduct(id, status) {

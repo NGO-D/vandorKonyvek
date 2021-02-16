@@ -14,7 +14,7 @@ export class ProductsController {
 
     @Get()
     getProducts(@Query(ValidationPipe) filterDto: GetProductsFilterDto): Promise<Product[]> {
-      return this.productsService.getProducts(filterDto);
+        return this.productsService.getProducts(filterDto);
     }
 
     @Get('/:id')
@@ -25,6 +25,7 @@ export class ProductsController {
     @Post() 
     //@UsePipes(ValidationPipe)
     createProduct(@Body() createProductDto:CreateProductDto): Promise<Product> {
+        console.log('controller');
         return this.productsService.createProduct(createProductDto);
     }
    

@@ -30,6 +30,7 @@ let ProductRepository = class ProductRepository extends typeorm_1.Repository {
         product.description = description;
         product.status = product_status_enum_1.ProductStatus.OPEN;
         await product.save();
+        console.log('respo');
         return product;
     }
 };

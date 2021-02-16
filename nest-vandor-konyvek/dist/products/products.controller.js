@@ -30,6 +30,7 @@ let ProductsController = class ProductsController {
         return this.productsService.getProductById(id);
     }
     createProduct(createProductDto) {
+        console.log('controller');
         return this.productsService.createProduct(createProductDto);
     }
     updateProduct(id, status) {

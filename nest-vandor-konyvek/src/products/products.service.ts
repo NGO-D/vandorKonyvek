@@ -12,7 +12,7 @@ export class ProductsService {
     @InjectRepository(ProductRepository)
     private productRepository: ProductRepository) {}
 
-    getProducts(getProductsFilterDto: GetProductsFilterDto): Promise<Product[]> {
+    async getProducts(getProductsFilterDto: GetProductsFilterDto): Promise<Product[]> {
         return this.productRepository.getProducts(getProductsFilterDto);
     }
 
@@ -22,11 +22,11 @@ export class ProductsService {
                 throw new NotFoundException(`Task with ID '${id}' not found.`);
             } 
 
-            return found;
+        return found;
     }
 
     async createProduct(createProductDto: CreateProductDto): Promise<Product> {
-        console.log(createProductDto);
+        console.log('service');
         return this.productRepository.createProduct(createProductDto);
     }
     
