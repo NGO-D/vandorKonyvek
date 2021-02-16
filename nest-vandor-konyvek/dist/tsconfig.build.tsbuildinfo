@@ -3512,7 +3512,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "6d399a7f7e05c28a90a39e190a897f43144151b3ef198415b36f16ef6a27de6e",
+        "version": "fea1fad126b211e458440e0460ac4de2aa561adb92d68e12161e53166b5d1cd1",
         "signature": "7ccdb2e640465be4a5da5981da1af54c8fc78fb54200505e31c09bc658299df8",
         "affectsGlobalScope": false
       },
@@ -3532,7 +3532,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "05efb266cfcd6c1cca4a47d178c3a0b76f78db040fe6c5b034e0dafcd15b80f6",
+        "version": "65e8f2221efcddf9a5c487b76e33cf8a0d939faacff3950d5ccb85eec2e78c04",
         "signature": "f5afdac4305cdbbf1dff41bccf2b0e52a045888d9208d325ae4828d99913ae33",
         "affectsGlobalScope": false
       },
@@ -7346,6 +7346,9 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/user.repository.ts"
+      ],
+      "../src/auth/dto/auth-credentials.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/auth/user.entity.ts": [
         "../node_modules/typeorm/index.d.ts"
