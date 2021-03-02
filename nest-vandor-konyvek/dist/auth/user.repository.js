@@ -10,12 +10,16 @@ exports.UserRepository = void 0;
 const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
 const common_1 = require("@nestjs/common");
+const bcrypt = require("bcrypt");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async signUp(authCredentialsDto) {
         const { username, password } = authCredentialsDto;
         const user = new user_entity_1.User();
         user.username = username;
-        user.password = password;
+        user.salt = await bcrypt.genSalt();
+        user.password = await this.hashPassword(password, user.salt);
+        console.log(password);
+        console.log(user.password);
         try {
             await user.save();
         }
@@ -28,6 +32,9 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
             }
         }
         await user.save();
+    }
+    async hashPassword(password, salt) {
+        return bcrypt.hash(password, salt);
     }
 };
 UserRepository = __decorate([
