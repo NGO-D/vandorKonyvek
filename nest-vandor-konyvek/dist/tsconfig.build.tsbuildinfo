@@ -3856,9 +3856,14 @@
         "signature": "4a222aade131d5d938df3c13b1ef3aec0cfa7c12ed75117e4e706c7c540fec16",
         "affectsGlobalScope": false
       },
+      "../src/auth/get-user.decorator.ts": {
+        "version": "0a0747ac6e02fc1c3594f40850049dbb5cb870d5c52c95b81e0d4373a1a1fe9b",
+        "signature": "9c0e831c191af5cb4a765fa287f20b4abef8bdabb757c5e5fface4e843a857f9",
+        "affectsGlobalScope": false
+      },
       "../src/auth/auth.controller.ts": {
-        "version": "7c9b34669ea22c7a4ef96f2949f140347f86fa17dcdf568f078aa81b14ae5f32",
-        "signature": "c39ec3ffa7ee0249c340a578326b05cfeb60ef708fbef7bcf11e9f17b65c1068",
+        "version": "a71473f9d1108276c6710e1d4906486ec6be44072b7345b6cab64087f90acdad",
+        "signature": "6e5fb8378c8c1e25bf9b736a57c132639f89d7710ec33e7e24c64c3bbf845c78",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
@@ -7486,7 +7491,9 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/auth.service.ts",
-        "../src/auth/dto/auth-credentials.dto.ts"
+        "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/get-user.decorator.ts",
+        "../src/auth/user.entity.ts"
       ],
       "../src/auth/auth.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7508,6 +7515,10 @@
       ],
       "../src/auth/dto/auth-credentials.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/auth/get-user.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/user.entity.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -10674,7 +10685,8 @@
       ],
       "../src/auth/auth.controller.ts": [
         "../src/auth/auth.service.ts",
-        "../src/auth/dto/auth-credentials.dto.ts"
+        "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/user.entity.ts"
       ],
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/jwt/index.d.ts",
@@ -11589,6 +11601,7 @@
       "../src/auth/auth.module.ts",
       "../src/auth/auth.service.ts",
       "../src/auth/dto/auth-credentials.dto.ts",
+      "../src/auth/get-user.decorator.ts",
       "../src/auth/jwt-payload.interface.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/user.entity.ts",
