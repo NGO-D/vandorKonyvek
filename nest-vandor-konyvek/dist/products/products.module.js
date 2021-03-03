@@ -12,12 +12,14 @@ const products_service_1 = require("./products.service");
 const products_controller_1 = require("./products.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const products_repository_1 = require("./products.repository");
+const auth_module_1 = require("../auth/auth.module");
 let ProductsModule = class ProductsModule {
 };
 ProductsModule = __decorate([
     common_1.Module({
         imports: [
-            typeorm_1.TypeOrmModule.forFeature([products_repository_1.ProductRepository])
+            typeorm_1.TypeOrmModule.forFeature([products_repository_1.ProductRepository]),
+            auth_module_1.AuthModule,
         ],
         controllers: [products_controller_1.ProductsController],
         providers: [products_service_1.ProductsService]

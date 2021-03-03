@@ -19,6 +19,7 @@ const products_service_1 = require("../products/products.service");
 const create_product_dto_1 = require("../products/dto/create-product.dto");
 const product_status_validation_pipe_1 = require("../products/pipes/product-status-validation.pipe");
 const get_products_filter_dto_1 = require("../products/dto/get-products-filter.dto");
+const passport_1 = require("@nestjs/passport");
 let ProductsController = class ProductsController {
     constructor(productsService) {
         this.productsService = productsService;
@@ -78,6 +79,7 @@ __decorate([
 ], ProductsController.prototype, "deleteProduct", null);
 ProductsController = __decorate([
     common_1.Controller('products'),
+    common_1.UseGuards(passport_1.AuthGuard()),
     __metadata("design:paramtypes", [products_service_1.ProductsService])
 ], ProductsController);
 exports.ProductsController = ProductsController;

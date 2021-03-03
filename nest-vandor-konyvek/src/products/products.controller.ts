@@ -1,13 +1,16 @@
 import { Controller, Get, Post, Body, Patch, Delete, UsePipes, ValidationPipe, 
-    Query, Param, ParseIntPipe } from '@nestjs/common';
+    Query, Param, ParseIntPipe, UseGuards } from '@nestjs/common';
 import { Product } from '../products/products.entity';
 import { ProductStatus } from '../products/product-status.enum';
 import { ProductsService } from '../products/products.service';
 import { CreateProductDto } from '../products/dto/create-product.dto';
 import { ProductStatusValidationPipe } from '../products/pipes/product-status-validation.pipe';
 import { GetProductsFilterDto } from '../products/dto/get-products-filter.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { GetUser } from '../auth/get-user.decorator';
 
 @Controller('products')
+@UseGuards(AuthGuard())
 export class ProductsController {
     constructor(private productsService: ProductsService) {}
 
