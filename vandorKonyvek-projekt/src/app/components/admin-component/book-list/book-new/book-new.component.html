@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container-flud">
+                    <div class="row mt-5 justify-content-center">
+                        <h2 class="heading">Új könyv létrehozása</h2>
+                    </div>
+                  </div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-11">
+                  <form [formGroup]="bookNewSignupForm" (ngSubmit)="openAffirmModal('affirmModalComponent')">
+                    
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-11">&nbsp;</div>
+                        <div class="col-1">
+                          <button type="submit" class="float-right btn btn-outline-dark btn-block btn-lg">
+                            <i class="fa fa-bolt"></i>
+                        </button>
+                        </div>
+                      </div>
+                    </div>
+                    <br> 
+                      <div class="form-group">
+                          <label for="bo_author"></label>
+                          <p>&nbsp;&nbsp;Író</p>
+                          <input
+                          type="text" 
+                          id="bo_author"
+                          formControlName="bo_author" 
+                          class="form-control">
+                        <span *ngIf="!bookNewSignupForm.get('bo_author').valid 
+                        && bookNewSignupForm.get('bo_author').touched"
+                        class="help-block">
+                        <span *ngIf="bookNewSignupForm.get('bo_author').errors['required']">Ez a mező nem lehet üres.</span>
+          
+                        </span>
+                      </div>
+                      <div class="form-group">
+                          <label for="bo_title"> </label>
+                            <p>&nbsp;&nbsp;Cím</p>
+                              <input 
+                              type="text"
+                              id="bo_title"
+                              formControlName="bo_title"
+                              class="form-control">
+                              <span *ngIf="!bookNewSignupForm.get('bo_title').valid 
+                        && bookNewSignupForm.get('bo_title').touched"
+                        class="help-block">
+                        <span *ngIf="bookNewSignupForm.get('bo_title').errors['required']">Ez a mező nem lehet üres.</span>
+          
+                        </span>
+                         
+                      </div>
+                      <div class="form-group">
+                          <label for="bo_image"></label>
+                          <p>&nbsp;&nbsp;Borító</p>
+                          <input 
+                          type="text"
+                          id="bo_image"
+                          formControlName="bo_image"
+                          class="form-control">
+                          <span *ngIf="!bookNewSignupForm.get('bo_image').valid 
+                        && bookNewSignupForm.get('bo_image').touched"
+                        class="help-block">
+                        <span *ngIf="bookNewSignupForm.get('bo_image').errors['required']">Ez a mező nem lehet üres.</span>
+          
+                        </span>
+                      </div>
+                      <div class="form-group">
+                          <label for="bo_available"> </label>
+                            <p>&nbsp;&nbsp;Készlet</p>
+                              <input 
+                              type="text"
+                              id="bo_available"
+                              formControlName="bo_available"
+                              class="form-control">
+                              <span *ngIf="!bookNewSignupForm.get('bo_available').valid 
+                        && bookNewSignupForm.get('bo_available').touched"
+                        class="help-block">
+                        <span *ngIf="bookNewSignupForm.get('bo_available').errors['required']">Ez a mező nem lehet üres.</span>
+          
+                        </span>
+                      </div>
+                      <div class="form-group">
+                          <label for="id"> </label>
+                            <p>&nbsp;&nbsp;ID</p>
+                              <input 
+                              type="text"
+                              id="id"
+                              formControlName="id"
+                              class="form-control"
+                              >
+                              <span *ngIf="!bookNewSignupForm.get('id').valid 
+                        && bookNewSignupForm.get('id').touched"
+                        class="help-block">
+                        <span *ngIf="bookNewSignupForm.get('id').errors['required']">Ez a mező nem lehet üres.</span>
+          
+                        </span>
+                      </div>
+                      
+                  </form>
+                </div>
+            </div>
+            </div>
+              </div>
+        </div>
+    </div>
+</div>
