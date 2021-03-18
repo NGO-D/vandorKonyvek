@@ -12,6 +12,7 @@ const products_module_1 = require("./products/products.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_config_1 = require("./config/typeorm.config");
 const auth_module_1 = require("./auth/auth.module");
+const books_module_1 = require("./books/books.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -19,7 +20,8 @@ AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig),
             products_module_1.ProductsModule,
-            auth_module_1.AuthModule
+            auth_module_1.AuthModule,
+            books_module_1.BooksModule
         ],
     })
 ], AppModule);
