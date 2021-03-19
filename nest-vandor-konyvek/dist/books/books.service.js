@@ -9,6 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BooksService = void 0;
 const common_1 = require("@nestjs/common");
 let BooksService = class BooksService {
+    constructor() {
+        this.books = [];
+    }
+    getAllBooks(filterDto) {
+        return this.books;
+    }
 };
 BooksService = __decorate([
     common_1.Injectable()

@@ -3876,16 +3876,6 @@
         "signature": "20c66cb320b090f75350bcdcde9479a854dd2e2e4051814c0dd31af2a8db9977",
         "affectsGlobalScope": false
       },
-      "../src/books/books.controller.ts": {
-        "version": "efac86db2bd4ea749f32aa9c7db3e3d23d9f75dcf2cd0a825caecf3764f9cec6",
-        "signature": "90ad83ae2aa5aa830455edcfcea26f5fa69e947cee30a32257c951c138a5dc06",
-        "affectsGlobalScope": false
-      },
-      "../src/books/books.service.ts": {
-        "version": "8e78bd6ba8c00f66ddbeff2f7b42077dfde3785f87bbd22302629de00753e105",
-        "signature": "6f10ce9c54cac7d3a9a5915fbc52f0f350d404aaa82f72bc6eebeb40434c59fd",
-        "affectsGlobalScope": false
-      },
       "../src/books/book-available.enum.ts": {
         "version": "ad1567d9c92657024f0776ceb04eb5a3fc9cc151eda7c0e471a78851ca9c11d5",
         "signature": "bed851306be1937ff5e03f7b943702266ece27a89007fe07c00c74ea702bc488",
@@ -3894,6 +3884,21 @@
       "../src/books/books.entity.ts": {
         "version": "702e669082c8aa05d24f1ddf1875649b1c2a0974d9003c312a0033e83daa0e14",
         "signature": "a9ed9ce89b9279a09a485265487e5a36b8ccefb1da6e1e8ca2fcf379af309168",
+        "affectsGlobalScope": false
+      },
+      "../src/books/dto/get-books-filter.dto.ts": {
+        "version": "b2d4e511f282c7c48c8c38c400d35537ffa1abed2d1a1c91c52c16032106214a",
+        "signature": "a91396b6f46d68df36821d9fc8ab3da4e6f8945d3aadede8bc11482e2bb5b135",
+        "affectsGlobalScope": false
+      },
+      "../src/books/books.service.ts": {
+        "version": "8adccccf331ffdc8a82eeef64a25d83f91ec100755be1da4e93b3112b9d2ae0a",
+        "signature": "58d01cef59ceabe662afb4d1772f4f034134a98d9ab8f5efd865eb3a1ac44a6a",
+        "affectsGlobalScope": false
+      },
+      "../src/books/books.controller.ts": {
+        "version": "0bd5d7709008254a3a74f0f200473fda45905276a1bb2193dc36c2fa6d2ebd8f",
+        "signature": "62f3c89c890e59e0aa90d24cbd207d76fae2f4f18cd6e94d2056f1034d7c5167",
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
@@ -4092,7 +4097,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "8fd4e1ebb5a5f151ad9e6eaa3129259d0ffb64ef8ae31b99bcea6519d4b4a0fb",
+        "version": "3c8967198a459fe0868276c735fb4ecbe75c3ed2bbda02d4dcee787c5c448528",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -7569,7 +7574,10 @@
         "../src/auth/user.entity.ts"
       ],
       "../src/books/books.controller.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/books/books.entity.ts",
+        "../src/books/books.service.ts",
+        "../src/books/dto/get-books-filter.dto.ts"
       ],
       "../src/books/books.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -7589,7 +7597,12 @@
         "../src/books/books.entity.ts"
       ],
       "../src/books/books.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/books/books.entity.ts",
+        "../src/books/dto/get-books-filter.dto.ts"
+      ],
+      "../src/books/dto/get-books-filter.dto.ts": [
+        "../src/books/book-available.enum.ts"
       ],
       "../src/config/typeorm.config.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
@@ -10762,6 +10775,10 @@
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/user.entity.ts"
       ],
+      "../src/books/books.controller.ts": [
+        "../src/books/books.service.ts",
+        "../src/books/dto/get-books-filter.dto.ts"
+      ],
       "../src/books/books.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/books/book-available.enum.ts"
@@ -10769,6 +10786,12 @@
       "../src/books/books.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/books/books.entity.ts"
+      ],
+      "../src/books/books.service.ts": [
+        "../src/books/dto/get-books-filter.dto.ts"
+      ],
+      "../src/books/dto/get-books-filter.dto.ts": [
+        "../src/books/book-available.enum.ts"
       ],
       "../src/config/typeorm.config.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
@@ -11676,6 +11699,7 @@
       "../src/books/books.module.ts",
       "../src/books/books.repository.ts",
       "../src/books/books.service.ts",
+      "../src/books/dto/get-books-filter.dto.ts",
       "../src/config/typeorm.config.ts",
       "../src/main.ts",
       "../src/products/dto/create-product.dto.ts",
