@@ -29,7 +29,7 @@ __decorate([
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [get_books_filter_dto_1.GetBooksFilterDto]),
-    __metadata("design:returntype", Object)
+    __metadata("design:returntype", Promise)
 ], BooksController.prototype, "getAllBooks", null);
 BooksController = __decorate([
     common_1.Controller('books'),

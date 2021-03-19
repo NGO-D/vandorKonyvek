@@ -25,6 +25,10 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
+], Book.prototype, "book_description", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
 ], Book.prototype, "book_image", void 0);
 __decorate([
     typeorm_1.Column(),

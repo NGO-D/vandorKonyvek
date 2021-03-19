@@ -8,7 +8,7 @@ export class BooksController {
     constructor(private booksService: BooksService) {}
 
     @Get()
-    getAllBooks(@Param() filterDto:GetBooksFilterDto): any {
+    getAllBooks(@Param() filterDto:GetBooksFilterDto): Promise<Book[]> {
         return this.booksService.getAllBooks(filterDto);
     }  
 }

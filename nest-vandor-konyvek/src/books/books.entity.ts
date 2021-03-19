@@ -10,6 +10,9 @@ export class Book extends BaseEntity {
     book_title: string;
 
     @Column()
+    book_description: string;
+
+    @Column()
     book_image: string;
 
     @Column()

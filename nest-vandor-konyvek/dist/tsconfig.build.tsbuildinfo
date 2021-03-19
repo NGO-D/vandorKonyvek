@@ -3882,28 +3882,28 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.entity.ts": {
-        "version": "702e669082c8aa05d24f1ddf1875649b1c2a0974d9003c312a0033e83daa0e14",
-        "signature": "a9ed9ce89b9279a09a485265487e5a36b8ccefb1da6e1e8ca2fcf379af309168",
+        "version": "46974c0ea745f1a008447cfcfab2440c7a669fdc1a9738ca8682d86e06311fef",
+        "signature": "a55dc03fea16f9494848f4a5db6b3c4762bfd8621bf32464d8033dce9818b989",
         "affectsGlobalScope": false
       },
       "../src/books/dto/get-books-filter.dto.ts": {
-        "version": "b2d4e511f282c7c48c8c38c400d35537ffa1abed2d1a1c91c52c16032106214a",
-        "signature": "a91396b6f46d68df36821d9fc8ab3da4e6f8945d3aadede8bc11482e2bb5b135",
-        "affectsGlobalScope": false
-      },
-      "../src/books/books.service.ts": {
-        "version": "8adccccf331ffdc8a82eeef64a25d83f91ec100755be1da4e93b3112b9d2ae0a",
-        "signature": "58d01cef59ceabe662afb4d1772f4f034134a98d9ab8f5efd865eb3a1ac44a6a",
-        "affectsGlobalScope": false
-      },
-      "../src/books/books.controller.ts": {
-        "version": "0bd5d7709008254a3a74f0f200473fda45905276a1bb2193dc36c2fa6d2ebd8f",
-        "signature": "62f3c89c890e59e0aa90d24cbd207d76fae2f4f18cd6e94d2056f1034d7c5167",
+        "version": "42f989b3bd83d2cbc282a3e5548aa4d3b6916905eb9f67c860edb27bc38b2a65",
+        "signature": "6a28d5d9c8882822951c9534a57462ab8c1c39cfe4f209d000a8db7985c56aa9",
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "f031ba0d31e7a7c1b98ef331a47eadcd423ab3d8ce2128356e0f9249f8e82daa",
-        "signature": "6b561fb2483ea643bc0043beda5f0d80bde2ef99df4833ee3e82c884cc1f341f",
+        "version": "41ae6ade8ed00f3f362f61b82de0464e0717b277d51793beca933ceadb1e11bb",
+        "signature": "1edab23b889062a8ebaba55452d2fbbb40d3baf28e39475d741180b15e67385a",
+        "affectsGlobalScope": false
+      },
+      "../src/books/books.service.ts": {
+        "version": "0030d7e62a2b2fb3da719afcceb947143c198d0028916d74fbd221812b99d99c",
+        "signature": "288215c8b81b8e6d1f44117db2ba7b2a3b427ba65963296de2e3defa2d4ae042",
+        "affectsGlobalScope": false
+      },
+      "../src/books/books.controller.ts": {
+        "version": "1ed847ae0b4417e753142f6a04b163be02818157d0c54e610f662ddf69907248",
+        "signature": "73c41df0e55f786df8b1cd396f52b6f4490341b198a0ecd33444e553ee7ca7be",
         "affectsGlobalScope": false
       },
       "../src/books/books.module.ts": {
@@ -7594,11 +7594,13 @@
       "../src/books/books.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/books/book-available.enum.ts",
-        "../src/books/books.entity.ts"
+        "../src/books/books.entity.ts",
+        "../src/books/dto/get-books-filter.dto.ts"
       ],
       "../src/books/books.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/books/books.entity.ts",
+        "../src/books/books.repository.ts",
         "../src/books/dto/get-books-filter.dto.ts"
       ],
       "../src/books/dto/get-books-filter.dto.ts": [
@@ -10776,6 +10778,7 @@
         "../src/auth/user.entity.ts"
       ],
       "../src/books/books.controller.ts": [
+        "../src/books/books.entity.ts",
         "../src/books/books.service.ts",
         "../src/books/dto/get-books-filter.dto.ts"
       ],
@@ -10785,9 +10788,12 @@
       ],
       "../src/books/books.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/books/books.entity.ts"
+        "../src/books/books.entity.ts",
+        "../src/books/dto/get-books-filter.dto.ts"
       ],
       "../src/books/books.service.ts": [
+        "../src/books/books.entity.ts",
+        "../src/books/books.repository.ts",
         "../src/books/dto/get-books-filter.dto.ts"
       ],
       "../src/books/dto/get-books-filter.dto.ts": [
