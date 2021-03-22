@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetBooksFilterDto = void 0;
-const book_available_enum_1 = require("../book-available.enum");
+exports.CreateBookDto = void 0;
 const class_validator_1 = require("class-validator");
-class GetBooksFilterDto {
+class CreateBookDto {
 }
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsIn([book_available_enum_1.BookAvailable.YES, book_available_enum_1.BookAvailable.NO]),
-    __metadata("design:type", String)
-], GetBooksFilterDto.prototype, "book_available", void 0);
-__decorate([
-    class_validator_1.IsOptional(),
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], GetBooksFilterDto.prototype, "search", void 0);
-exports.GetBooksFilterDto = GetBooksFilterDto;
-//# sourceMappingURL=get-books-filter.dto.js.map
+], CreateBookDto.prototype, "book_title", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], CreateBookDto.prototype, "book_description", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], CreateBookDto.prototype, "book_image", void 0);
+exports.CreateBookDto = CreateBookDto;
+//# sourceMappingURL=create-book.dto.js.map

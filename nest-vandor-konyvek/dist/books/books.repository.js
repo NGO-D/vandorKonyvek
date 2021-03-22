@@ -17,7 +17,7 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
             query.andWhere('book.book_available = :book_available', { book_available });
         }
         if (search) {
-            query.andWhere('book.book_id LIKE :search OR book.book_title LIKE :search OR book.book_description LIKE :search OR book.book_image LIKE :search', { search: `%${search}%` });
+            query.andWhere('book.book_id = :search OR book.book_title LIKE :search OR book.book_description LIKE :search OR book.book_image = :search', { search: `%${search}%` });
         }
         const books = await query.getMany();
         return books;

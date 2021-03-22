@@ -3887,12 +3887,12 @@
         "affectsGlobalScope": false
       },
       "../src/books/dto/get-books-filter.dto.ts": {
-        "version": "42f989b3bd83d2cbc282a3e5548aa4d3b6916905eb9f67c860edb27bc38b2a65",
+        "version": "ea4cb8fbd5ae2e40b4a2065953ae9c4a92484f6c10addb2886180a1a10465fab",
         "signature": "6a28d5d9c8882822951c9534a57462ab8c1c39cfe4f209d000a8db7985c56aa9",
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "41ae6ade8ed00f3f362f61b82de0464e0717b277d51793beca933ceadb1e11bb",
+        "version": "5753f2a00e5d8bbbea8a263817b5e68acbaf6c78c432663bfdd169094bcb0340",
         "signature": "1edab23b889062a8ebaba55452d2fbbb40d3baf28e39475d741180b15e67385a",
         "affectsGlobalScope": false
       },
@@ -4099,6 +4099,11 @@
       "../src/main.ts": {
         "version": "3c8967198a459fe0868276c735fb4ecbe75c3ed2bbda02d4dcee787c5c448528",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "../src/books/dto/create-book.dto.ts": {
+        "version": "4b741b01524b2619efe96bbaf3555b5c1c9c17ad5652e83bbc084430f13fc09a",
+        "signature": "a3d4883911651134a4efba2219c4371b2d46730c09f23b0b4ebfd0a5a0902612",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -7603,7 +7608,11 @@
         "../src/books/books.repository.ts",
         "../src/books/dto/get-books-filter.dto.ts"
       ],
+      "../src/books/dto/create-book.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
       "../src/books/dto/get-books-filter.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
         "../src/books/book-available.enum.ts"
       ],
       "../src/config/typeorm.config.ts": [
@@ -11705,6 +11714,7 @@
       "../src/books/books.module.ts",
       "../src/books/books.repository.ts",
       "../src/books/books.service.ts",
+      "../src/books/dto/create-book.dto.ts",
       "../src/books/dto/get-books-filter.dto.ts",
       "../src/config/typeorm.config.ts",
       "../src/main.ts",
