@@ -27,6 +27,10 @@ let BooksController = class BooksController {
     createBook(createBookDto) {
         return this.booksService.createBook(createBookDto);
     }
+    deleteBook(id) {
+        console.log('controller');
+        return this.booksService.deleteBook(id);
+    }
 };
 __decorate([
     common_1.Get(),
@@ -42,6 +46,13 @@ __decorate([
     __metadata("design:paramtypes", [create_book_dto_1.CreateBookDto]),
     __metadata("design:returntype", Promise)
 ], BooksController.prototype, "createBook", null);
+__decorate([
+    common_1.Delete('/:id'),
+    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], BooksController.prototype, "deleteBook", null);
 BooksController = __decorate([
     common_1.Controller('books'),
     __metadata("design:paramtypes", [books_service_1.BooksService])

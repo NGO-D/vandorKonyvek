@@ -8,4 +8,5 @@ export declare class BooksService {
     private books;
     getAllBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
     createBook(createBookDto: CreateBookDto): Promise<Book>;
+    deleteBook(id: number): Promise<void>;
 }

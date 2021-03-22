@@ -27,6 +27,12 @@ let BooksService = class BooksService {
     async createBook(createBookDto) {
         return await this.bookRepository.createBook(createBookDto);
     }
+    async deleteBook(id) {
+        const result = await this.bookRepository.delete(id);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException(`Task with ID '${id}' not found.`);
+        }
+    }
 };
 BooksService = __decorate([
     common_1.Injectable(),

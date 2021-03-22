@@ -7,4 +7,5 @@ export declare class BooksController {
     constructor(booksService: BooksService);
     getAllBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
     createBook(createBookDto: CreateBookDto): Promise<Book>;
+    deleteBook(id: number): Promise<void>;
 }

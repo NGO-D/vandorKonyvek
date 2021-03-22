@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Book } from './books.entity';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { BookRepository } from './books.repository';
@@ -19,5 +19,15 @@ export class BooksService {
 
     async createBook(createBookDto: CreateBookDto): Promise<Book> {
         return await this.bookRepository.createBook(createBookDto);
+    }
+
+    async deleteBook(id: number) {
+        const result = await this.bookRepository.delete(id);
+
+         //ez ugyanaz mint az if (!result) {}
+         if (result.affected === 0) {
+            throw new NotFoundException(`Task with ID '${id}' not found.`);
+        }
+
     }
 } 
