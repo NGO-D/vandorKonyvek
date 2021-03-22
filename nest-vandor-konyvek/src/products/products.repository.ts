@@ -36,7 +36,6 @@ export class ProductRepository extends Repository<Product> {
         product.description = description;
         product.status = ProductStatus.OPEN;
         await product.save();
-        console.log('respo');
         return product;
     }
 

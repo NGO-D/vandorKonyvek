@@ -8,10 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BooksService = void 0;
 const common_1 = require("@nestjs/common");
 const books_repository_1 = require("./books.repository");
+const typeorm_1 = require("@nestjs/typeorm");
 let BooksService = class BooksService {
     constructor(bookRepository) {
         this.bookRepository = bookRepository;
@@ -20,9 +24,13 @@ let BooksService = class BooksService {
     async getAllBooks(filterDto) {
         return await this.bookRepository.getBooks(filterDto);
     }
+    async createBook(createBookDto) {
+        return await this.bookRepository.createBook(createBookDto);
+    }
 };
 BooksService = __decorate([
     common_1.Injectable(),
+    __param(0, typeorm_1.InjectRepository(books_repository_1.BookRepository)),
     __metadata("design:paramtypes", [books_repository_1.BookRepository])
 ], BooksService);
 exports.BooksService = BooksService;

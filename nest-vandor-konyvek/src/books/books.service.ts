@@ -2,14 +2,22 @@ import { Injectable } from '@nestjs/common';
 import { Book } from './books.entity';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { BookRepository } from './books.repository';
+import { CreateBookDto } from './dto/create-book.dto';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class BooksService {
-    constructor(private bookRepository: BookRepository) {}
+    constructor(
+        @InjectRepository(BookRepository)
+        private bookRepository: BookRepository) {}
 
     private books = [];
 
     async getAllBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
         return await this.bookRepository.getBooks(filterDto);
+    }
+
+    async createBook(createBookDto: CreateBookDto): Promise<Book> {
+        return await this.bookRepository.createBook(createBookDto);
     }
 } 

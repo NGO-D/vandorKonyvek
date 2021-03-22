@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BookRepository = void 0;
 const typeorm_1 = require("typeorm");
 const books_entity_1 = require("./books.entity");
+const book_available_enum_1 = require("./book-available.enum");
 let BookRepository = class BookRepository extends typeorm_1.Repository {
     async getBooks(filterDto) {
         const { book_available, search } = filterDto;
@@ -21,6 +22,17 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         }
         const books = await query.getMany();
         return books;
+    }
+    async createBook(createBookDto) {
+        const { book_title, book_description, book_image } = createBookDto;
+        const book = new books_entity_1.Book();
+        book.book_title = book_title;
+        book.book_description = book_description;
+        book.book_image = book_image;
+        book.book_available = book_available_enum_1.BookAvailable.YES;
+        await book.save();
+        console.log('respo');
+        return book;
     }
 };
 BookRepository = __decorate([
