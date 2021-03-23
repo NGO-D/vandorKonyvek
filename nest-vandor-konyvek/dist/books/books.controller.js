@@ -21,8 +21,11 @@ let BooksController = class BooksController {
     constructor(booksService) {
         this.booksService = booksService;
     }
-    getAllBooks(filterDto) {
-        return this.booksService.getAllBooks(filterDto);
+    getBooks(filterDto) {
+        return this.booksService.getBooks(filterDto);
+    }
+    getOneBook(id) {
+        return this.booksService.getOneBook(id);
     }
     createBook(createBookDto) {
         return this.booksService.createBook(createBookDto);
@@ -38,7 +41,14 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [get_books_filter_dto_1.GetBooksFilterDto]),
     __metadata("design:returntype", Promise)
-], BooksController.prototype, "getAllBooks", null);
+], BooksController.prototype, "getBooks", null);
+__decorate([
+    common_1.Get('/:id'),
+    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], BooksController.prototype, "getOneBook", null);
 __decorate([
     common_1.Post(),
     __param(0, common_1.Body()),

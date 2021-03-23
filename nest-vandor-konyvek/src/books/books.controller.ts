@@ -9,9 +9,14 @@ export class BooksController {
     constructor(private booksService: BooksService) {}
 
     @Get()
-    getAllBooks(@Param() filterDto: GetBooksFilterDto): Promise<Book[]> {
-        return this.booksService.getAllBooks(filterDto);
+    getBooks(@Param() filterDto: GetBooksFilterDto): Promise<Book[]> {
+        return this.booksService.getBooks(filterDto);
     }  
+
+    @Get('/:id')
+    getOneBook(@Param('id', ParseIntPipe) id: number): Promise<Book> {
+        return this.booksService.getOneBook(id);
+    }
 
     @Post()
     createBook(@Body() createBookDto: CreateBookDto): Promise<Book> {

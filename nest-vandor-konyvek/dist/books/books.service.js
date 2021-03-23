@@ -19,10 +19,12 @@ const typeorm_1 = require("@nestjs/typeorm");
 let BooksService = class BooksService {
     constructor(bookRepository) {
         this.bookRepository = bookRepository;
-        this.books = [];
     }
-    async getAllBooks(filterDto) {
+    async getBooks(filterDto) {
         return await this.bookRepository.getBooks(filterDto);
+    }
+    async getOneBook(id) {
+        return await this.bookRepository.findOne(id);
     }
     async createBook(createBookDto) {
         return await this.bookRepository.createBook(createBookDto);

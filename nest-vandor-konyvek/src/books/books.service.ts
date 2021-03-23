@@ -11,10 +11,12 @@ export class BooksService {
         @InjectRepository(BookRepository)
         private bookRepository: BookRepository) {}
 
-    private books = [];
-
-    async getAllBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
+    async getBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
         return await this.bookRepository.getBooks(filterDto);
+    }
+
+    async getOneBook(id: number): Promise<Book> {
+        return await this.bookRepository.findOne(id);
     }
 
     async createBook(createBookDto: CreateBookDto): Promise<Book> {

@@ -5,7 +5,8 @@ import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 export declare class BooksController {
     private booksService;
     constructor(booksService: BooksService);
-    getAllBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
+    getBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
+    getOneBook(id: number): Promise<Book>;
     createBook(createBookDto: CreateBookDto): Promise<Book>;
     deleteBook(id: number): Promise<void>;
 }
