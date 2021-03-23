@@ -8,5 +8,6 @@ export declare class BooksController {
     getBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
     getOneBook(id: number): Promise<Book>;
     createBook(createBookDto: CreateBookDto): Promise<Book>;
+    updateBook(id: number, body: any): Promise<import("typeorm").UpdateResult>;
     deleteBook(id: number): Promise<void>;
 }

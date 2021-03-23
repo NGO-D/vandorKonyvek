@@ -23,6 +23,11 @@ export class BooksService {
         return await this.bookRepository.createBook(createBookDto);
     }
 
+    async updateBook(id: number, body: any) {
+        console.log('ize');
+        return await this.bookRepository.update(id, body);
+    }
+
     async deleteBook(id: number) {
         const result = await this.bookRepository.delete(id);
 
