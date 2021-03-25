@@ -34,12 +34,12 @@
   
   <tbody>
     <tr *ngFor="let book of books">
-        <td>{{book.bo_image}}</td>
-        <td>{{book.id}}</td>
-        <td>{{book.bo_author}}</td>
-        <td>{{book.bo_title}}</td>
-        <td>{{book.bo_available}}</td>
-        <td><button class="btn btn-light" type="button" [routerLink]="[book.id]">
+        <td>{{book.book_image}}</td>
+        <td>{{book.book_id}}</td>
+        <td>{{book.book_author}}</td>
+        <td>{{book.book_title}}</td>
+        <td>{{book.book_available}}</td>
+        <td><button class="btn btn-light" type="button" [routerLink]="[book.book_id]">
 <i class="fa fa-eye"></i>
         </button></td>
         <td>

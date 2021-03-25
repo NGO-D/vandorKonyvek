@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Books } from '../../../models/books.model';
+import { Books } from './books.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +13,12 @@ export class BooksService {
 
   constructor(private httpClient: HttpClient) { }
 
-
    // list: BehaviorSubject<any> = new BehaviorSubject([]);
-   url: string = 'http://localhost:3000/api/books';
+   url: string = 'http://localhost:3000/books';
 
   findMax(list: Books[]): number | undefined {
-    return (list.reduce((max, book) => (book.id > max ? book.id : max ), list[0].id)) + 1;
-}
+    return (list.reduce((max, book) => (book.book_id > max ? book.book_id : max ), list[0].book_id)) + 1;
+  }
 
   getMaxID(): Observable<any> {
   return this.httpClient.get(this.url).pipe(map(this.findMax));
@@ -29,18 +28,16 @@ export class BooksService {
      return this.httpClient.get(this.url);
    }
 
-   //POST
    createNew(books: Books): Observable<any> {
      return this.httpClient.post(`${this.url}/${'new'}`, books);
    }
 
-   //PUT
    update(books: Books): Observable<any> {
-     return this.httpClient.put(`${this.url}/${books.id}`, books);
+     return this.httpClient.put(`${this.url}/${books.book_id}`, books);
    }
 
    delete(book: any): Observable<Books> {
-      return this.httpClient.delete<Books>(`${this.url}/${book.id}`);
+      return this.httpClient.delete<Books>(`${this.url}/${book.book_id}`);
   }
 
 }

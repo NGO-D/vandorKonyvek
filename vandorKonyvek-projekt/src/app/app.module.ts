@@ -5,7 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { AdminEditComponent } from './components/admin-component/users/admin-edit/admin-edit.component';
 import { AdminHeaderComponent } from './components/admin-component/admin-header/admin-header.component';
 import { AdminLandingComponent } from './components/admin-component/admin-landing/admin-landing.component';
 import { AdminNavigationComponent } from './components/admin-component/admin-landing/admin-navigation/admin-navigation.component';
@@ -14,20 +13,16 @@ import { BookDetailsComponent } from './components/admin-component/book-list/boo
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 import { LoginComponent } from './components/admin-component/auth/login/login.component';
-import { MockComponent } from './mock/mock.component';
 import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
 
 import { BooksService } from './components/admin-component/book-list/books.service';
-import { MockService } from './services/mock.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MockComponent,
     AdminHeaderComponent,
-    AdminEditComponent,
     SignUpComponent,
     LoginComponent,
     AdminLandingComponent,
@@ -46,8 +41,7 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
     ReactiveFormsModule,
     FormsModule
     ],
-  providers: [MockService,
-              BooksService],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
