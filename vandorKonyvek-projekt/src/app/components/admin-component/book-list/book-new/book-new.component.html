@@ -25,17 +25,17 @@
                     </div>
                     <br> 
                       <div class="form-group">
-                          <label for="book_author"></label>
+                          <label for="book_description"></label>
                           <p>&nbsp;&nbsp;Író</p>
                           <input
                           type="text" 
-                          id="book_author"
-                          formControlName="book_author" 
+                          id="book_description"
+                          formControlName="book_description" 
                           class="form-control">
-                        <span *ngIf="!bookNewSignupForm.get('book_author').valid 
-                        && bookNewSignupForm.get('book_author').touched"
+                        <span *ngIf="!bookNewSignupForm.get('book_description').valid 
+                        && bookNewSignupForm.get('book_description').touched"
                         class="help-block">
-                        <span *ngIf="bookNewSignupForm.get('book_author').errors['required']">Ez a mező nem lehet üres.</span>
+                        <span *ngIf="bookNewSignupForm.get('book_description').errors['required']">Ez a mező nem lehet üres.</span>
           
                         </span>
                       </div>
@@ -70,6 +70,7 @@
           
                         </span>
                       </div>
+                      <!--
                       <div class="form-group">
                           <label for="book_available"> </label>
                             <p>&nbsp;&nbsp;Készlet</p>
@@ -85,6 +86,7 @@
           
                         </span>
                       </div>
+                      
                       <div class="form-group">
                           <label for="book_id"> </label>
                             <p>&nbsp;&nbsp;ID</p>
@@ -100,7 +102,7 @@
                         <span *ngIf="bookNewSignupForm.get('book_id').errors['required']">Ez a mező nem lehet üres.</span>
           
                         </span>
-                      </div>
+                      </div> -->
                       
                   </form>
                 </div>

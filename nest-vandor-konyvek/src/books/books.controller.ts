@@ -18,8 +18,9 @@ export class BooksController {
         return this.booksService.getOneBook(id);
     }
 
-    @Post()
+    @Post('/new')
     createBook(@Body() createBookDto: CreateBookDto): Promise<Book> {
+        console.log(createBookDto);
         return this.booksService.createBook(createBookDto);
     }
 

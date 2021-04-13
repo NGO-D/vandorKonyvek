@@ -4,7 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Books } from '../books.model';
 import { BooksService } from '../books.service';
-import { AffirmModalComponent } from 'D:/vandorKonyvek/vandorKonyvek-projekt/src/app/components/modals/affirm-modal/affirm-modal.component';
+import { AffirmModalComponent } from '../../../modals/affirm-modal/affirm-modal.component';
 
 
 const MODALS: {[name: string]: Type<any>} = {
@@ -29,11 +29,9 @@ export class BookNewComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookNewSignupForm = this.formBuilder.group( {
-      'book_author': [null],
+      'book_description': [null],
       'book_title': [null],
       'book_image': [null],
-      'book_available': [null],
-      'book_id': [null]
     } )
   
     this.newID = this.booksService.getMaxID().subscribe(
@@ -44,10 +42,13 @@ export class BookNewComponent implements OnInit {
   }
 
   openAffirmModal(name: string) {
+    console.log('open');
     this.modalService.open(MODALS[name], { centered: true });
+    console.log(name);
   }
 
   onSubmit(): void {
+    console.log(this.bookNewSignupForm.value);
     this.booksService.createNew(this.bookNewSignupForm.value).subscribe(
       response => {
       console.log('new book added to database');

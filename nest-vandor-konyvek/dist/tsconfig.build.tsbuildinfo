@@ -3872,7 +3872,7 @@
         "affectsGlobalScope": false
       },
       "../src/config/typeorm.config.ts": {
-        "version": "501dba70b51a9489164d91d2f89aea80bc5d59894ad4cb3b1782f9e60b28135e",
+        "version": "f54d11d9abff6d7c2f63be8d3829f980fde41afcc0b9e2759b5712b6609ab837",
         "signature": "20c66cb320b090f75350bcdcde9479a854dd2e2e4051814c0dd31af2a8db9977",
         "affectsGlobalScope": false
       },
@@ -3907,17 +3907,17 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.controller.ts": {
-        "version": "61d6aeaad117fbec92a66fddf74140fd0c9b9a1a84ee0f5851aaf55029c8ae08",
+        "version": "8933ffea570c181430c33d110b9178a172918257ee88cabe988dd543cf52e4aa",
         "signature": "589ea7fe5d0e1f089c1fca5b9f69ef05b53741a4420e26ddd5ae67ff049f45b8",
         "affectsGlobalScope": false
       },
       "../src/books/books.module.ts": {
-        "version": "a827a7a037582d6b2fef2816ba20d0b8c79f3f1b6243b8cb0597ef9ac5e63740",
+        "version": "8adc89e0dabb3b7d9bd61a8c40e187e8b7cc443ec3f1e115fb68374de2b661f4",
         "signature": "827e8ecdc7854dc685d7ea2b7672a57d60e3b43f8437d9cab902a2c5a11b457c",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "a42626ebbc01fdef5ac4fee165a982ec59c2ad63bcd1246d49ead38913c637ed",
+        "version": "7783fb6e59e5692fc4a63921f4f12dd4f0b78d6ef38991b97f2e82c4029516d2",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },

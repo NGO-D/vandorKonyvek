@@ -28,6 +28,7 @@ let BooksController = class BooksController {
         return this.booksService.getOneBook(id);
     }
     createBook(createBookDto) {
+        console.log(createBookDto);
         return this.booksService.createBook(createBookDto);
     }
     updateBook(id, body) {
@@ -54,7 +55,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], BooksController.prototype, "getOneBook", null);
 __decorate([
-    common_1.Post(),
+    common_1.Post('/new'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_book_dto_1.CreateBookDto]),
