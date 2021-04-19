@@ -3,10 +3,14 @@ import { Book } from './books.entity';
 import { BookAvailable } from './book-available.enum';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { CreateBookDto } from "./dto/create-book.dto";
+import { InternalServerErrorException, Logger } from "@nestjs/common";
 
 @EntityRepository(Book)
 export class BookRepository extends Repository<Book> {
+    private logger = new Logger('BookRepositroy');
+
     async getBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
+        
         const { book_available, search } = filterDto;
         const query = this.createQueryBuilder('book');
 
@@ -21,8 +25,14 @@ export class BookRepository extends Repository<Book> {
             
         }
 
-        const books = await query.getMany();
-        return books;
+        try {
+            const books = await query.getMany();
+            return books;
+        } catch (error) {
+            this.logger.error(`Failed to get books. Dto: ${JSON.stringify(filterDto)},`, error.stack);
+            throw new InternalServerErrorException();
+        }
+        
     }
 
     async createBook(createBookDto: CreateBookDto): Promise<Book> {
@@ -33,8 +43,14 @@ export class BookRepository extends Repository<Book> {
         book.book_description = book_description;
         book.book_image = book_image;
         book.book_available = BookAvailable.YES;
-        await book.save();
-        console.log('respo');
+
+        try {
+            await book.save();
+        } catch (error) {
+            this.logger.error(`Failed to create book ${createBookDto}`, error.stack);
+            throw new InternalServerErrorException();
+        }
+        
         return book;
     }
 }

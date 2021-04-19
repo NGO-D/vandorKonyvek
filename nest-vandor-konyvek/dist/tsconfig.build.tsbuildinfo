@@ -3847,7 +3847,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "c53a0a71ccc5324e799279ca41ce7b9dbeca0ad0c129972250466089c0d3d500",
+        "version": "df55b9274db839989a95c8c8c12168a919dedac6c311319b85de0e0d92ee6f8a",
         "signature": "4a222aade131d5d938df3c13b1ef3aec0cfa7c12ed75117e4e706c7c540fec16",
         "affectsGlobalScope": false
       },
@@ -3897,8 +3897,8 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "5261c4011271649793edb1ae87a182ee8e90c381c8db28a7ee2c147534428971",
-        "signature": "39820ca5fe613c2dcea2f259985461b57b470fec054c83ede0aa3dc74126a8b0",
+        "version": "e3b38daaa7391d89bce0de8b589dd2a363a5a89284449c7934a1ed06a796e8f8",
+        "signature": "6f15d61980de654f39a894b8b15e97e70d3a6d2863f5dce1f1627ec640707ccb",
         "affectsGlobalScope": false
       },
       "../src/books/books.service.ts": {
@@ -3907,8 +3907,8 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.controller.ts": {
-        "version": "8933ffea570c181430c33d110b9178a172918257ee88cabe988dd543cf52e4aa",
-        "signature": "589ea7fe5d0e1f089c1fca5b9f69ef05b53741a4420e26ddd5ae67ff049f45b8",
+        "version": "6a60ba7910757c3c9ba5a33acdb49b93a07db30bd45a6966dc1a5cc8330e04b5",
+        "signature": "ef3a97d3d060fbbb05b43cf1c832a62c85e0205f92713faa708aecdcc3d40b73",
         "affectsGlobalScope": false
       },
       "../src/books/books.module.ts": {
@@ -4102,7 +4102,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "a56a115fdc6579a53d003e228ae75614c8d78e6a2c834549b45af7d50facdfb2",
+        "version": "5cb61f378ad6be86af99b1c881322408a65eb96feaad0fc04b7dd5ab983ec6b8",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -7598,6 +7598,7 @@
         "../src/books/books.service.ts"
       ],
       "../src/books/books.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
@@ -7623,6 +7624,7 @@
         "../node_modules/@nestjs/typeorm/index.d.ts"
       ],
       "../src/main.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
       ],

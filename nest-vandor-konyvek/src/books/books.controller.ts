@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Logger, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
 import { Book } from './books.entity';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -6,10 +6,14 @@ import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 
 @Controller('books')
 export class BooksController {
+    private logger = new Logger('BooksController');
+
     constructor(private booksService: BooksService) {}
 
     @Get()
     getBooks(@Param() filterDto: GetBooksFilterDto): Promise<Book[]> {
+        console.log(filterDto);
+        this.logger.verbose(`FilterDto is: ${JSON.stringify(filterDto)}`)
         return this.booksService.getBooks(filterDto);
     }  
 

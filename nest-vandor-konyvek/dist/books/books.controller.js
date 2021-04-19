@@ -20,8 +20,11 @@ const get_books_filter_dto_1 = require("./dto/get-books-filter.dto");
 let BooksController = class BooksController {
     constructor(booksService) {
         this.booksService = booksService;
+        this.logger = new common_1.Logger('BooksController');
     }
     getBooks(filterDto) {
+        console.log(filterDto);
+        this.logger.verbose(`FilterDto is: ${JSON.stringify(filterDto)}`);
         return this.booksService.getBooks(filterDto);
     }
     getOneBook(id) {

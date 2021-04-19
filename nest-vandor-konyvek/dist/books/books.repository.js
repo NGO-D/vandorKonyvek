@@ -10,7 +10,12 @@ exports.BookRepository = void 0;
 const typeorm_1 = require("typeorm");
 const books_entity_1 = require("./books.entity");
 const book_available_enum_1 = require("./book-available.enum");
+const common_1 = require("@nestjs/common");
 let BookRepository = class BookRepository extends typeorm_1.Repository {
+    constructor() {
+        super(...arguments);
+        this.logger = new common_1.Logger('BookRepositroy');
+    }
     async getBooks(filterDto) {
         const { book_available, search } = filterDto;
         const query = this.createQueryBuilder('book');
@@ -20,8 +25,14 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         if (search) {
             query.andWhere('book.book_id = :search OR book.book_title LIKE :search OR book.book_description LIKE :search OR book.book_image = :search', { search: `%${search}%` });
         }
-        const books = await query.getMany();
-        return books;
+        try {
+            const books = await query.getMany();
+            return books;
+        }
+        catch (error) {
+            this.logger.error(`Failed to get books. Dto: ${JSON.stringify(filterDto)},`, error.stack);
+            throw new common_1.InternalServerErrorException();
+        }
     }
     async createBook(createBookDto) {
         const { book_title, book_description, book_image } = createBookDto;
@@ -30,8 +41,13 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         book.book_description = book_description;
         book.book_image = book_image;
         book.book_available = book_available_enum_1.BookAvailable.YES;
-        await book.save();
-        console.log('respo');
+        try {
+            await book.save();
+        }
+        catch (error) {
+            this.logger.error(`Failed to create book ${createBookDto}`, error.stack);
+            throw new common_1.InternalServerErrorException();
+        }
         return book;
     }
 };
