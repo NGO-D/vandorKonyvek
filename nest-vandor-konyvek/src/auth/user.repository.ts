@@ -18,7 +18,7 @@ export class UserRepository extends Repository<User> {
             await user.save();
         } catch (error) {
             if (error.code === '23505') { // duplicate username. 
-                // az error.codokat mindig '' közé kell tenni
+                // error.code needs to be a string
                 throw new ConflictException('Duplicate username');
             } else {
                 throw new InternalServerErrorException();

@@ -7,7 +7,7 @@ import { InternalServerErrorException, Logger } from "@nestjs/common";
 
 @EntityRepository(Book)
 export class BookRepository extends Repository<Book> {
-    private logger = new Logger('BookRepositroy');
+    private logger = new Logger('BookRepository');
 
     async getBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
         
