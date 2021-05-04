@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BooksController = void 0;
 const common_1 = require("@nestjs/common");
+const passport_1 = require("@nestjs/passport");
 const books_service_1 = require("./books.service");
 const create_book_dto_1 = require("./dto/create-book.dto");
 const get_books_filter_dto_1 = require("./dto/get-books-filter.dto");
@@ -81,6 +82,7 @@ __decorate([
 ], BooksController.prototype, "deleteBook", null);
 BooksController = __decorate([
     common_1.Controller('books'),
+    common_1.UseGuards(passport_1.AuthGuard()),
     __metadata("design:paramtypes", [books_service_1.BooksService])
 ], BooksController);
 exports.BooksController = BooksController;

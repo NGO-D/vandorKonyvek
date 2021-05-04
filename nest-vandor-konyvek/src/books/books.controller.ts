@@ -1,10 +1,12 @@
-import { Body, Controller, Delete, Get, Logger, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Logger, Param, ParseIntPipe, Patch, Post, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { Book } from './books.entity';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 
 @Controller('books')
+@UseGuards(AuthGuard())
 export class BooksController {
     private logger = new Logger('BooksController');
 

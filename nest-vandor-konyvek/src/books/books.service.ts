@@ -24,7 +24,6 @@ export class BooksService {
     }
 
     async updateBook(id: number, body: any) {
-        console.log('ize');
         return await this.bookRepository.update(id, body);
     }
 

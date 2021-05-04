@@ -14,7 +14,7 @@ const common_1 = require("@nestjs/common");
 let BookRepository = class BookRepository extends typeorm_1.Repository {
     constructor() {
         super(...arguments);
-        this.logger = new common_1.Logger('BookRepositroy');
+        this.logger = new common_1.Logger('BookRepository');
     }
     async getBooks(filterDto) {
         const { book_available, search } = filterDto;

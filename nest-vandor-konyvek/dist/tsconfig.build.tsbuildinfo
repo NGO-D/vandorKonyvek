@@ -3537,7 +3537,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/user.entity.ts": {
-        "version": "174a6a7c0f957d0e30c25cda2a5d81614aae1a1cc662acbb1570a174dda9d8a5",
+        "version": "8c3385a5693e5cd773760f4e94c4c09eb92369c6997090a8b8e7b186c5a236ec",
         "signature": "8ba3c41dfcde98fa2e35c15e04ee44c9fa257e809c092c1cd676e825439680b2",
         "affectsGlobalScope": false
       },
@@ -3837,7 +3837,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/user.repository.ts": {
-        "version": "a0abd2af4106e5bcbc7397c566f26500816a7ea384578420bb972f2a6a897985",
+        "version": "5f10307b836010232ac09ca3b981793ebb041f0b6ded79844d0db78526ddf324",
         "signature": "c4123004152a5437c427d8112669c44464d0ed362db9e597518e8035fdbe72a7",
         "affectsGlobalScope": false
       },
@@ -3847,7 +3847,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "df55b9274db839989a95c8c8c12168a919dedac6c311319b85de0e0d92ee6f8a",
+        "version": "0146ef68d6bdfa866e08d02706deef5410a187bb91f392ac5c353c711eb629a9",
         "signature": "4a222aade131d5d938df3c13b1ef3aec0cfa7c12ed75117e4e706c7c540fec16",
         "affectsGlobalScope": false
       },
@@ -3857,12 +3857,12 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "955ecc68f8eb9353d5a61475418bfa8a5826a69e59348461af4a8cb4f65c4859",
+        "version": "84b62f16ce4da291fb95769584fc08c0b1a5fc7f7a8b1fbc6dc8967c8f659c61",
         "signature": "3c9b4761fb3b6befc3d23f06a1a252102fed2f73ef9637e818112458a2140205",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "195f491afd72d9b001f1a16492929b81bdd99cc5bebb1859aa0e0bb9c9f005d4",
+        "version": "8f6402e9d92d4332e5cde130ca9e8859d6626dcfb8bb045d84d607187ea377e8",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
@@ -3872,7 +3872,7 @@
         "affectsGlobalScope": false
       },
       "../src/config/typeorm.config.ts": {
-        "version": "f54d11d9abff6d7c2f63be8d3829f980fde41afcc0b9e2759b5712b6609ab837",
+        "version": "c45b3942aee952f543debe860ccb927cb2c452ec82ca49e6b76bb533f2a6e5e3",
         "signature": "20c66cb320b090f75350bcdcde9479a854dd2e2e4051814c0dd31af2a8db9977",
         "affectsGlobalScope": false
       },
@@ -3897,17 +3897,17 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "e3b38daaa7391d89bce0de8b589dd2a363a5a89284449c7934a1ed06a796e8f8",
+        "version": "988480b69213b5887002ef3c06fdd469d88ca089782da0f2088346bd5aac17f6",
         "signature": "6f15d61980de654f39a894b8b15e97e70d3a6d2863f5dce1f1627ec640707ccb",
         "affectsGlobalScope": false
       },
       "../src/books/books.service.ts": {
-        "version": "1e5a59094947b5d9727f0422137055730ec36d3081969880574d0338ea3d5a21",
+        "version": "fa44ce17f06027354b0086d18703b9666d276972dcbf6b49d1f355062e204499",
         "signature": "939f208fffcee97b8cb1b5d4862939664edbcce05a46e94645556a3be2268dfa",
         "affectsGlobalScope": false
       },
       "../src/books/books.controller.ts": {
-        "version": "6a60ba7910757c3c9ba5a33acdb49b93a07db30bd45a6966dc1a5cc8330e04b5",
+        "version": "38ca37525bfb0251443ceb90c13dbc746e87889d7d2f2521c3203b506391f584",
         "signature": "ef3a97d3d060fbbb05b43cf1c832a62c85e0205f92713faa708aecdcc3d40b73",
         "affectsGlobalScope": false
       },
@@ -4102,7 +4102,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "5cb61f378ad6be86af99b1c881322408a65eb96feaad0fc04b7dd5ab983ec6b8",
+        "version": "59dac053197b2ee0fc3df0e6aa46c5ce425c3ea3caf4077209fbd4efb0a628e7",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -7580,6 +7580,7 @@
       ],
       "../src/books/books.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
         "../src/books/books.entity.ts",
         "../src/books/books.service.ts",
         "../src/books/dto/create-book.dto.ts",

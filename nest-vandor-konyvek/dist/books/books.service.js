@@ -30,7 +30,6 @@ let BooksService = class BooksService {
         return await this.bookRepository.createBook(createBookDto);
     }
     async updateBook(id, body) {
-        console.log('ize');
         return await this.bookRepository.update(id, body);
     }
     async deleteBook(id) {
