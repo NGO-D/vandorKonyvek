@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Book = void 0;
+const user_entity_1 = require("../auth/user.entity");
 const typeorm_1 = require("typeorm");
 const book_available_enum_1 = require("./book-available.enum");
 let Book = class Book extends typeorm_1.BaseEntity {
@@ -34,6 +35,14 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Book.prototype, "book_available", void 0);
+__decorate([
+    typeorm_1.ManyToOne(type => user_entity_1.User, user => user.user_books, { eager: false }),
+    __metadata("design:type", user_entity_1.User)
+], Book.prototype, "book_user", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Number)
+], Book.prototype, "bookUserId", void 0);
 Book = __decorate([
     typeorm_1.Entity()
 ], Book);

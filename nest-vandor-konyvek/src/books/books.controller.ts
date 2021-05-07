@@ -1,9 +1,13 @@
 import { Body, Controller, Delete, Get, Logger, Param, ParseIntPipe, Patch, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { GetUser } from 'src/auth/get-user.decorator';
+import { User } from 'src/auth/user.entity';
+import { BookAvailable } from './book-available.enum';
 import { Book } from './books.entity';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
+import { BookAvailableValidationPipe } from './pipes/book-available-validation.pipe';
 
 @Controller('books')
 @UseGuards(AuthGuard())
@@ -13,35 +17,45 @@ export class BooksController {
     constructor(private booksService: BooksService) {}
 
     @Get()
-    getBooks(@Param() filterDto: GetBooksFilterDto): Promise<Book[]> {
-        console.log(filterDto);
+    getBooks(
+        @Param() filterDto: GetBooksFilterDto,
+        @GetUser() user: User
+        ): Promise<Book[]> {
         this.logger.verbose(`FilterDto is: ${JSON.stringify(filterDto)}`)
-        return this.booksService.getBooks(filterDto);
+        return this.booksService.getBooks(filterDto, user);
     }  
 
     @Get('/:id')
-    getOneBook(@Param('id', ParseIntPipe) id: number): Promise<Book> {
-        return this.booksService.getOneBook(id);
+    getBookById(
+        @Param('id', ParseIntPipe) book_id: number,
+        @GetUser() user: User
+        ): Promise<Book>{
+        return this.booksService.getBookById(book_id, user);
     }
 
     @Post('/new')
-    createBook(@Body() createBookDto: CreateBookDto): Promise<Book> {
-        console.log(createBookDto);
-        return this.booksService.createBook(createBookDto);
+    createBook(
+        @Body() createBookDto: CreateBookDto,
+        @GetUser() user: User
+        ): Promise<Book> {
+        return this.booksService.createBook(createBookDto, user);
     }
 
-    @Patch('/:id')
-    updateBook(
-        @Param('id', ParseIntPipe) id: number,
-        @Body() body: any ) {
-            console.log(body);
-        return this.booksService.updateBook(id, body);
+    @Patch('/:id/update')
+    updateBookStatus(
+        @Param('id', ParseIntPipe) book_id: number,
+        @Body('book_available', BookAvailableValidationPipe) book_available: BookAvailable,
+        @GetUser() user: User
+        ) {
+        return this.booksService.updateBookStatus(book_id, book_available, user);
     }
 
     @Delete('/:id')
-    deleteBook(@Param('id', ParseIntPipe) id: number) {
-        console.log('controller');
-        return this.booksService.deleteBook(id);
+    deleteBook(
+        @Param('id', ParseIntPipe) book_id: number,
+        @GetUser() user: User
+        ): Promise<void> {
+        return this.booksService.deleteBook(book_id, user);
     }
 
 }

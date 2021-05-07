@@ -1,9 +1,11 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { Book } from './books.entity';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { BookRepository } from './books.repository';
 import { CreateBookDto } from './dto/create-book.dto';
 import { InjectRepository } from '@nestjs/typeorm';
+import { User } from 'src/auth/user.entity';
+import { BookAvailable } from './book-available.enum';
 
 @Injectable()
 export class BooksService {
@@ -11,28 +13,53 @@ export class BooksService {
         @InjectRepository(BookRepository)
         private bookRepository: BookRepository) {}
 
-    async getBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
-        return await this.bookRepository.getBooks(filterDto);
+    async getBooks(
+        filterDto: GetBooksFilterDto,
+        user: User): Promise<Book[]> {
+        return await this.bookRepository.getBooks(filterDto, user);
     }
 
-    async getOneBook(id: number): Promise<Book> {
-        return await this.bookRepository.findOne(id);
+    async getBookById(
+        book_id: number,
+        user: User
+        ): Promise<Book>{
+       
+        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.id }});
+        
+            if (!found) {
+                throw new NotFoundException(`Task with ID '${book_id}' not found.`);
+            }
+        
+        return found;
     }
 
-    async createBook(createBookDto: CreateBookDto): Promise<Book> {
-        return await this.bookRepository.createBook(createBookDto);
+    async createBook(
+        createBookDto: CreateBookDto, 
+        user: User
+        ): Promise<Book> {
+        return await this.bookRepository.createBook(createBookDto, user);
     }
 
-    async updateBook(id: number, body: any) {
-        return await this.bookRepository.update(id, body);
+    async updateBookStatus
+        (book_id: number, 
+        book_available: BookAvailable,
+        user: User
+        ) {
+        const book = this.getBookById(book_id, user);
+        (await book).book_available = book_available;
+       
+        return book;
     }
 
-    async deleteBook(id: number) {
-        const result = await this.bookRepository.delete(id);
+    async deleteBook(
+        book_id: number,
+        user: User
+        ): Promise<void> {
+        const result = await this.bookRepository.delete({book_id, bookUserId: user.id});
 
          //ez ugyanaz mint az if (!result) {}
          if (result.affected === 0) {
-            throw new NotFoundException(`Task with ID '${id}' not found.`);
+            throw new NotFoundException(`Task with ID '${book_id}' not found.`);
         }
 
     }

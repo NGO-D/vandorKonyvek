@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const books_entity_1 = require("./../books/books.entity");
 let User = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
         const hash = await bcrypt.hash(password, this.salt);
@@ -34,6 +35,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], User.prototype, "salt", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => books_entity_1.Book, book => book.book_user, { eager: true }),
+    __metadata("design:type", Array)
+], User.prototype, "user_books", void 0);
 User = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['username'])

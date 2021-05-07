@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "src/auth/user.entity";
+import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { BookAvailable } from "./book-available.enum";
 
 @Entity()
@@ -17,6 +18,12 @@ export class Book extends BaseEntity {
 
     @Column()
     book_available: BookAvailable;
+
+    @ManyToOne(type => User, user => user.user_books, { eager: false })
+    book_user: User;
+
+    @Column()
+    bookUserId: number;
 
 }
 

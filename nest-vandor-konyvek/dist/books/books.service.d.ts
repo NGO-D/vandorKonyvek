@@ -2,12 +2,14 @@ import { Book } from './books.entity';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { BookRepository } from './books.repository';
 import { CreateBookDto } from './dto/create-book.dto';
+import { User } from 'src/auth/user.entity';
+import { BookAvailable } from './book-available.enum';
 export declare class BooksService {
     private bookRepository;
     constructor(bookRepository: BookRepository);
-    getBooks(filterDto: GetBooksFilterDto): Promise<Book[]>;
-    getOneBook(id: number): Promise<Book>;
-    createBook(createBookDto: CreateBookDto): Promise<Book>;
-    updateBook(id: number, body: any): Promise<import("typeorm").UpdateResult>;
-    deleteBook(id: number): Promise<void>;
+    getBooks(filterDto: GetBooksFilterDto, user: User): Promise<Book[]>;
+    getBookById(book_id: number, user: User): Promise<Book>;
+    createBook(createBookDto: CreateBookDto, user: User): Promise<Book>;
+    updateBookStatus(book_id: number, book_available: BookAvailable, user: User): Promise<Book>;
+    deleteBook(book_id: number, user: User): Promise<void>;
 }

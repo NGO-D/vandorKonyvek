@@ -15,70 +15,77 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BooksController = void 0;
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
+const get_user_decorator_1 = require("../auth/get-user.decorator");
+const user_entity_1 = require("../auth/user.entity");
+const book_available_enum_1 = require("./book-available.enum");
 const books_service_1 = require("./books.service");
 const create_book_dto_1 = require("./dto/create-book.dto");
 const get_books_filter_dto_1 = require("./dto/get-books-filter.dto");
+const book_available_validation_pipe_1 = require("./pipes/book-available-validation.pipe");
 let BooksController = class BooksController {
     constructor(booksService) {
         this.booksService = booksService;
         this.logger = new common_1.Logger('BooksController');
     }
-    getBooks(filterDto) {
-        console.log(filterDto);
+    getBooks(filterDto, user) {
         this.logger.verbose(`FilterDto is: ${JSON.stringify(filterDto)}`);
-        return this.booksService.getBooks(filterDto);
+        return this.booksService.getBooks(filterDto, user);
     }
-    getOneBook(id) {
-        return this.booksService.getOneBook(id);
+    getBookById(book_id, user) {
+        return this.booksService.getBookById(book_id, user);
     }
-    createBook(createBookDto) {
-        console.log(createBookDto);
-        return this.booksService.createBook(createBookDto);
+    createBook(createBookDto, user) {
+        return this.booksService.createBook(createBookDto, user);
     }
-    updateBook(id, body) {
-        console.log(body);
-        return this.booksService.updateBook(id, body);
+    updateBookStatus(book_id, book_available, user) {
+        return this.booksService.updateBookStatus(book_id, book_available, user);
     }
-    deleteBook(id) {
-        console.log('controller');
-        return this.booksService.deleteBook(id);
+    deleteBook(book_id, user) {
+        return this.booksService.deleteBook(book_id, user);
     }
 };
 __decorate([
     common_1.Get(),
     __param(0, common_1.Param()),
+    __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [get_books_filter_dto_1.GetBooksFilterDto]),
+    __metadata("design:paramtypes", [get_books_filter_dto_1.GetBooksFilterDto,
+        user_entity_1.User]),
     __metadata("design:returntype", Promise)
 ], BooksController.prototype, "getBooks", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [Number, user_entity_1.User]),
     __metadata("design:returntype", Promise)
-], BooksController.prototype, "getOneBook", null);
+], BooksController.prototype, "getBookById", null);
 __decorate([
     common_1.Post('/new'),
     __param(0, common_1.Body()),
+    __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_book_dto_1.CreateBookDto]),
+    __metadata("design:paramtypes", [create_book_dto_1.CreateBookDto,
+        user_entity_1.User]),
     __metadata("design:returntype", Promise)
 ], BooksController.prototype, "createBook", null);
 __decorate([
-    common_1.Patch('/:id'),
+    common_1.Patch('/:id/update'),
     __param(0, common_1.Param('id', common_1.ParseIntPipe)),
-    __param(1, common_1.Body()),
+    __param(1, common_1.Body('book_available', book_available_validation_pipe_1.BookAvailableValidationPipe)),
+    __param(2, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:paramtypes", [Number, String, user_entity_1.User]),
     __metadata("design:returntype", void 0)
-], BooksController.prototype, "updateBook", null);
+], BooksController.prototype, "updateBookStatus", null);
 __decorate([
     common_1.Delete('/:id'),
     __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [Number, user_entity_1.User]),
+    __metadata("design:returntype", Promise)
 ], BooksController.prototype, "deleteBook", null);
 BooksController = __decorate([
     common_1.Controller('books'),

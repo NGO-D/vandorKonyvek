@@ -16,26 +16,33 @@ exports.BooksService = void 0;
 const common_1 = require("@nestjs/common");
 const books_repository_1 = require("./books.repository");
 const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("../auth/user.entity");
 let BooksService = class BooksService {
     constructor(bookRepository) {
         this.bookRepository = bookRepository;
     }
-    async getBooks(filterDto) {
-        return await this.bookRepository.getBooks(filterDto);
+    async getBooks(filterDto, user) {
+        return await this.bookRepository.getBooks(filterDto, user);
     }
-    async getOneBook(id) {
-        return await this.bookRepository.findOne(id);
+    async getBookById(book_id, user) {
+        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.id } });
+        if (!found) {
+            throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
+        }
+        return found;
     }
-    async createBook(createBookDto) {
-        return await this.bookRepository.createBook(createBookDto);
+    async createBook(createBookDto, user) {
+        return await this.bookRepository.createBook(createBookDto, user);
     }
-    async updateBook(id, body) {
-        return await this.bookRepository.update(id, body);
+    async updateBookStatus(book_id, book_available, user) {
+        const book = this.getBookById(book_id, user);
+        (await book).book_available = book_available;
+        return book;
     }
-    async deleteBook(id) {
-        const result = await this.bookRepository.delete(id);
+    async deleteBook(book_id, user) {
+        const result = await this.bookRepository.delete({ book_id, bookUserId: user.id });
         if (result.affected === 0) {
-            throw new common_1.NotFoundException(`Task with ID '${id}' not found.`);
+            throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
         }
     }
 };

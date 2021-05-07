@@ -4,15 +4,21 @@ import { BookAvailable } from './book-available.enum';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { CreateBookDto } from "./dto/create-book.dto";
 import { InternalServerErrorException, Logger } from "@nestjs/common";
+import { User } from "src/auth/user.entity";
 
 @EntityRepository(Book)
 export class BookRepository extends Repository<Book> {
     private logger = new Logger('BookRepository');
 
-    async getBooks(filterDto: GetBooksFilterDto): Promise<Book[]> {
+    async getBooks(
+        filterDto: GetBooksFilterDto,
+        user: User
+        ): Promise<Book[]>{
         
         const { book_available, search } = filterDto;
         const query = this.createQueryBuilder('book');
+
+        query.where('book.bookUserId = :bookUserId', { bookUserId: user.id });
 
         if (book_available) {
 
@@ -35,7 +41,10 @@ export class BookRepository extends Repository<Book> {
         
     }
 
-    async createBook(createBookDto: CreateBookDto): Promise<Book> {
+    async createBook(
+        createBookDto: CreateBookDto,
+        user: User
+        ): Promise<Book> {
         const { book_title, book_description, book_image } = createBookDto;
 
         const book = new Book();
@@ -43,6 +52,7 @@ export class BookRepository extends Repository<Book> {
         book.book_description = book_description;
         book.book_image = book_image;
         book.book_available = BookAvailable.YES;
+        book.book_user = user;
 
         try {
             await book.save();
@@ -51,6 +61,7 @@ export class BookRepository extends Repository<Book> {
             throw new InternalServerErrorException();
         }
         
+        delete book.book_user;
         return book;
     }
 }
