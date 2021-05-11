@@ -6,24 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.ChatModule = void 0;
 const common_1 = require("@nestjs/common");
+const chat_controller_1 = require("./chat.controller");
+const chat_service_1 = require("./chat.service");
 const typeorm_1 = require("@nestjs/typeorm");
-const typeorm_config_1 = require("./config/typeorm.config");
-const auth_module_1 = require("./auth/auth.module");
-const books_module_1 = require("./books/books.module");
-const chat_module_1 = require("./chat/chat.module");
-let AppModule = class AppModule {
+const auth_module_1 = require("../auth/auth.module");
+const chat_repostiory_1 = require("./chat.repostiory");
+let ChatModule = class ChatModule {
 };
-AppModule = __decorate([
+ChatModule = __decorate([
     common_1.Module({
         imports: [
-            typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig),
-            chat_module_1.ChatModule,
+            typeorm_1.TypeOrmModule.forFeature([chat_repostiory_1.ChatRepository]),
             auth_module_1.AuthModule,
-            books_module_1.BooksModule
+        ],
+        controllers: [
+            chat_controller_1.ChatController,
+        ],
+        providers: [
+            chat_service_1.ChatService,
         ],
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], ChatModule);
+exports.ChatModule = ChatModule;
+//# sourceMappingURL=chat.module.js.map

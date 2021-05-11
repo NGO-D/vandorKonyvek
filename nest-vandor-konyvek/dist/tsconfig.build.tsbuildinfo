@@ -3857,7 +3857,7 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.service.ts": {
-        "version": "8abc3fe0dc9c4c5aa5c5b43735992cc3229b5d6160a6b4adac610eb30c6b3e4f",
+        "version": "c856a43a9983e09414d1326fcb11301d7e14063440d01d43bcf1f399794f68d4",
         "signature": "68b3988073e229ff20cab9fc1e4b380d8afd28c6b60ce55e50c075335ac2c5cf",
         "affectsGlobalScope": false
       },
@@ -3876,8 +3876,33 @@
         "signature": "827e8ecdc7854dc685d7ea2b7672a57d60e3b43f8437d9cab902a2c5a11b457c",
         "affectsGlobalScope": false
       },
+      "../src/chat/chat.controller.ts": {
+        "version": "04cc4ff9da2b106858bcde8b96dbf6586feee5b20db77ea59fcd4ec3b20d96de",
+        "signature": "50ef58f622f1e88c0798b547db6392bacd3ec7aad21a26bcecc156e73c7be9fc",
+        "affectsGlobalScope": false
+      },
+      "../src/chat/chat.service.ts": {
+        "version": "f1ea80ae99f703fc3f7491272b6cac22e3a0c8473f9c023337cb00012308fc2f",
+        "signature": "3b1bd215bdc961234be2b2fe55194fdcf05344ae521c8f473df8ee9f6b22d3fd",
+        "affectsGlobalScope": false
+      },
+      "../src/chat/conversation.entity.ts": {
+        "version": "4a39ede374de804056ba32453212b26e14c78d6a3a0dde091af0f3d356e2df3f",
+        "signature": "2b2e4aea502bebc45f9c96ddf3c930d13abbb8bada25c899c5988768d2b8c971",
+        "affectsGlobalScope": false
+      },
+      "../src/chat/chat.repostiory.ts": {
+        "version": "4108d2048bbfb2ec42d40c6198bd959a820ef1858146989cb53bd7570448361e",
+        "signature": "3dd0d1865509d2ec9ed5abf2a4b3ebbaf64c881fc58aea7b1263b0ff40373cee",
+        "affectsGlobalScope": false
+      },
+      "../src/chat/chat.module.ts": {
+        "version": "b5fc391c6370b78adc6a5819a3f47e9f0225188e07da00ca0a27827391094b85",
+        "signature": "22ab5f26ff2aa4cf463102b34ea2612bbc72dda2e516552cdd44a23ce806fa74",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "719d82778a1ba878147ab43cea68044e82593388bc7d7bd5a7382bfda8e73472",
+        "version": "f237c177f9e89d4b90893dccc20de5dc8590b6fdd22481228943e05037a6ee23",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -7485,6 +7510,7 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/auth.module.ts",
         "../src/books/books.module.ts",
+        "../src/chat/chat.module.ts",
         "../src/config/typeorm.config.ts"
       ],
       "../src/auth/auth.controller.ts": [
@@ -7592,6 +7618,28 @@
       "../src/books/pipes/book-available-validation.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/books/book-available.enum.ts"
+      ],
+      "../src/chat/chat.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/chat/chat.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/auth/auth.module.ts",
+        "../src/chat/chat.controller.ts",
+        "../src/chat/chat.repostiory.ts",
+        "../src/chat/chat.service.ts"
+      ],
+      "../src/chat/chat.repostiory.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/chat/conversation.entity.ts"
+      ],
+      "../src/chat/chat.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/chat/conversation.entity.ts": [
+        "../node_modules/class-validator/types/index.d.ts",
+        "../node_modules/typeorm/index.d.ts"
       ],
       "../src/config/typeorm.config.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
@@ -10749,6 +10797,13 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/books/book-available.enum.ts"
       ],
+      "../src/chat/chat.repostiory.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/chat/conversation.entity.ts"
+      ],
+      "../src/chat/conversation.entity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
       "../src/config/typeorm.config.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
       ]
@@ -11627,6 +11682,11 @@
       "../src/books/dto/create-book.dto.ts",
       "../src/books/dto/get-books-filter.dto.ts",
       "../src/books/pipes/book-available-validation.pipe.ts",
+      "../src/chat/chat.controller.ts",
+      "../src/chat/chat.module.ts",
+      "../src/chat/chat.repostiory.ts",
+      "../src/chat/chat.service.ts",
+      "../src/chat/conversation.entity.ts",
       "../src/config/typeorm.config.ts",
       "../src/main.ts"
     ]

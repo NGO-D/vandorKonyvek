@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Book } from './books.entity';
 import { GetBooksFilterDto } from './dto/get-books-filter.dto';
 import { BookRepository } from './books.repository';
