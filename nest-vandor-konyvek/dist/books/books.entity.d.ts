@@ -1,4 +1,4 @@
-import { User } from "src/auth/user.entity";
+import { User } from '../user/user.entity';
 import { BaseEntity } from "typeorm";
 import { BookAvailable } from "./book-available.enum";
 export declare class Book extends BaseEntity {

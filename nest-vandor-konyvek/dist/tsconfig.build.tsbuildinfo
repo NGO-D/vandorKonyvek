@@ -3797,18 +3797,18 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.entity.ts": {
-        "version": "26bb63d90772fdafe0b61ad8fa4c738522619e01c12c6fc1a6bf5a37beae4e48",
-        "signature": "bdfc35d72ee9eeaa4553638bf8e1325f7b545b95f6d02f5e4e20b5c2db086a77",
+        "version": "fda407efb7fbd7d3cdbfca6ef78f16d1e97bffd75d10510d43dd05451beda484",
+        "signature": "293560351885396dc6b2b0ba82569ac47cf66c348e3b49bda87b178866ea30e5",
         "affectsGlobalScope": false
       },
-      "../src/auth/user.entity.ts": {
+      "../src/user/user.entity.ts": {
         "version": "6662ff2365defdfe853e73c4b28ba6ab2814aeba36b2d6c3c5f0a4f7a016e9ec",
         "signature": "8dad4905596c79ae1dcca6546cff49d02815c6d86c12f1de1ee6d8cfdf2a0ff0",
         "affectsGlobalScope": false
       },
-      "../src/auth/user.repository.ts": {
-        "version": "5f10307b836010232ac09ca3b981793ebb041f0b6ded79844d0db78526ddf324",
-        "signature": "c4123004152a5437c427d8112669c44464d0ed362db9e597518e8035fdbe72a7",
+      "../src/user/user.repository.ts": {
+        "version": "09943f662c4e22fac68f03f0210b4042c9caab3b2695586328810d5ff9f37b37",
+        "signature": "a96c83b62c88bea1386ab8d3d466ae6065cd4102298325141a632d7d0aa54674",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt-payload.interface.ts": {
@@ -3817,27 +3817,32 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "0146ef68d6bdfa866e08d02706deef5410a187bb91f392ac5c353c711eb629a9",
-        "signature": "4a222aade131d5d938df3c13b1ef3aec0cfa7c12ed75117e4e706c7c540fec16",
+        "version": "a927f03e314aebfc762ad4e15b6a2a3ab931d56209b2fedddbf3656dcddcea1d",
+        "signature": "8ebccca924866daa2558aa03e2a82320474ad083b3d1dd20f83be4a7f3ce03a3",
         "affectsGlobalScope": false
       },
       "../src/auth/get-user.decorator.ts": {
-        "version": "0a0747ac6e02fc1c3594f40850049dbb5cb870d5c52c95b81e0d4373a1a1fe9b",
+        "version": "02546cde340cba73a6eabb160ee8ed844a4e5baef73e454d1294887a3d682a1a",
         "signature": "9c0e831c191af5cb4a765fa287f20b4abef8bdabb757c5e5fface4e843a857f9",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "5524831ca3d38b827c1a06028dc94f4a98df57d6ad1be2aedcdca4c309b12df4",
+        "version": "1aecbfc277c310dd769db3268bb907f7696794d2553ca7e4bc30d53292d01786",
         "signature": "8c2861166eb1c66d851567bea6e87aa8190f169c10b09869b8f145c27e9bbb05",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "84b62f16ce4da291fb95769584fc08c0b1a5fc7f7a8b1fbc6dc8967c8f659c61",
-        "signature": "3c9b4761fb3b6befc3d23f06a1a252102fed2f73ef9637e818112458a2140205",
+        "version": "af78b1aef75f5ede0714e7812c0556ca42cf9ef41af5036d675a59de7e309c22",
+        "signature": "65466ae825365f75106b7701b9901f091e0dcf2ffa447f499e79436538c4c751",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.module.ts": {
+        "version": "742daeab874a10c30cb72af654f2dbb129d75736a4bc0e42315b813af16f36c5",
+        "signature": "9e36626cb39f17790cf2403e2e54d8a74542da63e2a49aba7061133a1af26dcd",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.module.ts": {
-        "version": "8f6402e9d92d4332e5cde130ca9e8859d6626dcfb8bb045d84d607187ea377e8",
+        "version": "3e2b7dcff9edc8e8b0b6faae98d0aaf92973c748979e6b7b78e2d986ba48a38f",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
@@ -3852,13 +3857,13 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "b44c84c763d8c35a486322e73c77d2a0811321152bf233528852a6113e78b503",
-        "signature": "731cb6b0e991e66932c1b7cdf3a6ae668129376e2fed37debabfde19295cc4c8",
+        "version": "db702f6dda8a73ceecfd7fd270214ac54571e584f839f4e0b1a3b8d650670c97",
+        "signature": "12d9eafc73495782e29edc89f166c42a42299db036488fd60d785b131006b6fe",
         "affectsGlobalScope": false
       },
       "../src/books/books.service.ts": {
-        "version": "c856a43a9983e09414d1326fcb11301d7e14063440d01d43bcf1f399794f68d4",
-        "signature": "68b3988073e229ff20cab9fc1e4b380d8afd28c6b60ce55e50c075335ac2c5cf",
+        "version": "1c7aed70a76ba1e9aad19f71feb49564f0a77f895c7c618bd2b703a142a66e10",
+        "signature": "356517e2fb4a3b480ee8fdbc355cd4f3bb45e08ac2a636c7b53ebf8e27c0cd18",
         "affectsGlobalScope": false
       },
       "../src/books/pipes/book-available-validation.pipe.ts": {
@@ -3867,8 +3872,8 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.controller.ts": {
-        "version": "58bac94e210109d68bc441afbe5dd32f04a8d7c767c7cf50efa22e4b7b5f9778",
-        "signature": "9b63b4b2866d0b6915f6a8a4a7bd0c53c763235a9d62245d64bf10bf4e0f8b40",
+        "version": "c468e0efad27ba272cd51cf40f1c317c06ba954e1aefb7b2ddf9c6e262498a15",
+        "signature": "c07626dec16da2cf50927dd85d07ccd957479b7467d249e6eaa1711ef2291846",
         "affectsGlobalScope": false
       },
       "../src/books/books.module.ts": {
@@ -3902,7 +3907,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "f237c177f9e89d4b90893dccc20de5dc8590b6fdd22481228943e05037a6ee23",
+        "version": "8485221d51ba81409b307c430e3d87d6e81b09af98040fc692807a74ef56d754",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -7799,7 +7804,8 @@
         "../src/auth/auth.module.ts",
         "../src/books/books.module.ts",
         "../src/chat/chat.module.ts",
-        "../src/config/typeorm.config.ts"
+        "../src/config/typeorm.config.ts",
+        "../src/user/user.module.ts"
       ],
       "../src/auth/auth.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7807,7 +7813,7 @@
         "../src/auth/auth.service.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/get-user.decorator.ts",
-        "../src/auth/user.entity.ts"
+        "../src/user/user.entity.ts"
       ],
       "../src/auth/auth.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7817,7 +7823,8 @@
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/jwt.strategy.ts",
-        "../src/auth/user.repository.ts"
+        "../src/user/user.module.ts",
+        "../src/user/user.repository.ts"
       ],
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7825,49 +7832,39 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
         "../src/auth/jwt-payload.interface.ts",
-        "../src/auth/user.repository.ts"
+        "../src/user/user.repository.ts"
       ],
       "../src/auth/dto/auth-credentials.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/auth/get-user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/auth/user.entity.ts"
+        "../src/user/user.entity.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/jwt-payload.interface.ts",
-        "../src/auth/user.entity.ts",
-        "../src/auth/user.repository.ts"
-      ],
-      "../src/auth/user.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/books/books.entity.ts"
-      ],
-      "../src/auth/user.repository.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/typeorm/index.d.ts",
-        "../src/auth/dto/auth-credentials.dto.ts",
-        "../src/auth/user.entity.ts"
+        "../src/user/user.entity.ts",
+        "../src/user/user.repository.ts"
       ],
       "../src/books/books.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/get-user.decorator.ts",
-        "../src/auth/user.entity.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
         "../src/books/books.service.ts",
         "../src/books/dto/create-book.dto.ts",
         "../src/books/dto/get-books-filter.dto.ts",
-        "../src/books/pipes/book-available-validation.pipe.ts"
+        "../src/books/pipes/book-available-validation.pipe.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/auth/user.entity.ts",
-        "../src/books/book-available.enum.ts"
+        "../src/books/book-available.enum.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7880,21 +7877,21 @@
       "../src/books/books.repository.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/auth/user.entity.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
         "../src/books/dto/create-book.dto.ts",
-        "../src/books/dto/get-books-filter.dto.ts"
+        "../src/books/dto/get-books-filter.dto.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
-        "../src/auth/user.entity.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
         "../src/books/books.repository.ts",
         "../src/books/dto/create-book.dto.ts",
-        "../src/books/dto/get-books-filter.dto.ts"
+        "../src/books/dto/get-books-filter.dto.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/dto/create-book.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
@@ -7937,6 +7934,22 @@
         "../node_modules/@nestjs/core/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/user/user.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/books/books.entity.ts"
+      ],
+      "../src/user/user.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/auth/auth.module.ts",
+        "../src/user/user.repository.ts"
+      ],
+      "../src/user/user.repository.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/user/user.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -11138,49 +11151,40 @@
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
-        "../src/auth/user.repository.ts"
+        "../src/user/user.repository.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../src/auth/jwt-payload.interface.ts",
-        "../src/auth/user.entity.ts",
-        "../src/auth/user.repository.ts"
-      ],
-      "../src/auth/user.entity.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/books/books.entity.ts"
-      ],
-      "../src/auth/user.repository.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/auth/dto/auth-credentials.dto.ts",
-        "../src/auth/user.entity.ts"
+        "../src/user/user.entity.ts",
+        "../src/user/user.repository.ts"
       ],
       "../src/books/books.controller.ts": [
-        "../src/auth/user.entity.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
         "../src/books/books.service.ts",
         "../src/books/dto/create-book.dto.ts",
-        "../src/books/dto/get-books-filter.dto.ts"
+        "../src/books/dto/get-books-filter.dto.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/auth/user.entity.ts",
-        "../src/books/book-available.enum.ts"
+        "../src/books/book-available.enum.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/auth/user.entity.ts",
         "../src/books/books.entity.ts",
         "../src/books/dto/create-book.dto.ts",
-        "../src/books/dto/get-books-filter.dto.ts"
+        "../src/books/dto/get-books-filter.dto.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.service.ts": [
-        "../src/auth/user.entity.ts",
         "../src/books/book-available.enum.ts",
         "../src/books/books.entity.ts",
         "../src/books/books.repository.ts",
         "../src/books/dto/create-book.dto.ts",
-        "../src/books/dto/get-books-filter.dto.ts"
+        "../src/books/dto/get-books-filter.dto.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/dto/get-books-filter.dto.ts": [
         "../src/books/book-available.enum.ts"
@@ -11198,6 +11202,15 @@
       ],
       "../src/config/typeorm.config.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
+      ],
+      "../src/user/user.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/books/books.entity.ts"
+      ],
+      "../src/user/user.repository.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/user/user.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -12100,8 +12113,6 @@
       "../src/auth/get-user.decorator.ts",
       "../src/auth/jwt-payload.interface.ts",
       "../src/auth/jwt.strategy.ts",
-      "../src/auth/user.entity.ts",
-      "../src/auth/user.repository.ts",
       "../src/books/book-available.enum.ts",
       "../src/books/books.controller.ts",
       "../src/books/books.entity.ts",
@@ -12117,7 +12128,10 @@
       "../src/chat/chat.service.ts",
       "../src/chat/conversation.entity.ts",
       "../src/config/typeorm.config.ts",
-      "../src/main.ts"
+      "../src/main.ts",
+      "../src/user/user.entity.ts",
+      "../src/user/user.module.ts",
+      "../src/user/user.repository.ts"
     ]
   },
   "version": "4.1.3"

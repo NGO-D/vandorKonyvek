@@ -11,7 +11,6 @@ const typeorm_1 = require("typeorm");
 const books_entity_1 = require("./books.entity");
 const book_available_enum_1 = require("./book-available.enum");
 const common_1 = require("@nestjs/common");
-const user_entity_1 = require("../auth/user.entity");
 let BookRepository = class BookRepository extends typeorm_1.Repository {
     constructor() {
         super(...arguments);

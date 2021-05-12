@@ -4,9 +4,11 @@ import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { UserRepository } from './user.repository';
+import { UserRepository } from '../user/user.repository';
 import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config';
+import { UserModule } from 'src/user/user.module';
+
 
 const jwtConfig = config.get('jwt'); 
 
@@ -20,6 +22,7 @@ const jwtConfig = config.get('jwt');
       },
     }),
     TypeOrmModule.forFeature([UserRepository]),
+    UserModule,
   ],
   controllers: [AuthController],
   providers: 

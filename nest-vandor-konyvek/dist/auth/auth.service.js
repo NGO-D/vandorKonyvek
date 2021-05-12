@@ -16,7 +16,7 @@ exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_repository_1 = require("./user.repository");
+const user_repository_1 = require("../user/user.repository");
 let AuthService = class AuthService {
     constructor(userRepository, jwtService) {
         this.userRepository = userRepository;
@@ -32,9 +32,6 @@ let AuthService = class AuthService {
         }
         const payload = { username };
         const accessToken = await this.jwtService.sign(payload);
-        console.log(accessToken);
-        console.log({ accessToken });
-        console.log({ username });
         return { accessToken };
     }
 };

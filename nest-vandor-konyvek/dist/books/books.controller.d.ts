@@ -1,4 +1,4 @@
-import { User } from 'src/auth/user.entity';
+import { User } from '../user/user.entity';
 import { BookAvailable } from './book-available.enum';
 import { Book } from './books.entity';
 import { BooksService } from './books.service';

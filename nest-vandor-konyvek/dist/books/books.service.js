@@ -16,7 +16,6 @@ exports.BooksService = void 0;
 const common_1 = require("@nestjs/common");
 const books_repository_1 = require("./books.repository");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("../auth/user.entity");
 let BooksService = class BooksService {
     constructor(bookRepository) {
         this.bookRepository = bookRepository;

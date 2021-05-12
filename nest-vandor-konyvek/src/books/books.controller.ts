@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Logger, Param, ParseIntPipe, Patch, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from 'src/auth/get-user.decorator';
-import { User } from 'src/auth/user.entity';
+import { User } from '../user/user.entity';
 import { BookAvailable } from './book-available.enum';
 import { Book } from './books.entity';
 import { BooksService } from './books.service';
