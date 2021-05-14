@@ -9,6 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatService = void 0;
 const common_1 = require("@nestjs/common");
 let ChatService = class ChatService {
+    constructor() {
+        this.messages = [];
+    }
+    getMessages() {
+        return this.messages;
+    }
+    storeMessage(message) {
+        this.messages.push(message);
+    }
 };
 ChatService = __decorate([
     common_1.Injectable()
