@@ -18,6 +18,7 @@ import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-
 import { BooksService } from './components/admin-component/book-list/books.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
     ],
   providers: [BooksService],
   bootstrap: [AppComponent]
