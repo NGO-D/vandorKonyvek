@@ -12,13 +12,14 @@ import { AppComponent } from './app.component';
 import { BookDetailsComponent } from './components/admin-component/book-list/book-details/book-details.component';
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
-import { LoginComponent } from './components/admin-component/auth/login/login.component';
-import { SignUpComponent } from './components/admin-component/auth/sign-up/sign-up.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 
 import { BooksService } from './components/admin-component/book-list/books.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyMaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MyMaterialModule
     ],
   providers: [BooksService],
   bootstrap: [AppComponent]
