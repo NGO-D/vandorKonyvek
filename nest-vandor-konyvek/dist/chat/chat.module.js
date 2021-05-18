@@ -13,6 +13,7 @@ const chat_service_1 = require("./chat.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const auth_module_1 = require("../auth/auth.module");
 const chat_repostiory_1 = require("./chat.repostiory");
+const chat_gateway_1 = require("./chat.gateway");
 let ChatModule = class ChatModule {
 };
 ChatModule = __decorate([
@@ -20,6 +21,7 @@ ChatModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forFeature([chat_repostiory_1.ChatRepository]),
             auth_module_1.AuthModule,
+            chat_gateway_1.ChatGateway,
         ],
         controllers: [
             chat_controller_1.ChatController,

@@ -17,6 +17,7 @@ const user_repository_1 = require("../user/user.repository");
 const jwt_strategy_1 = require("./jwt.strategy");
 const config = require("config");
 const user_module_1 = require("../user/user.module");
+const auth_credentials_dto_1 = require("./dto/auth-credentials.dto");
 const jwtConfig = config.get('jwt');
 let AuthModule = class AuthModule {
 };
@@ -32,14 +33,19 @@ AuthModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forFeature([user_repository_1.UserRepository]),
             user_module_1.UserModule,
+            auth_credentials_dto_1.AuthCredentialsDto,
         ],
-        controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService,
+        controllers: [
+            auth_controller_1.AuthController
+        ],
+        providers: [
+            auth_service_1.AuthService,
             jwt_strategy_1.JwtStrategy,
         ],
         exports: [
             jwt_strategy_1.JwtStrategy,
             passport_1.PassportModule,
+            auth_credentials_dto_1.AuthCredentialsDto,
         ],
     })
 ], AuthModule);

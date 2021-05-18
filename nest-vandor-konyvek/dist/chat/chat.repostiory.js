@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatRepository = void 0;
 const typeorm_1 = require("typeorm");
-const conversation_entity_1 = require("./conversation.entity");
+const message_entity_1 = require("../chat/message.entity");
 let ChatRepository = class ChatRepository extends typeorm_1.Repository {
 };
 ChatRepository = __decorate([
-    typeorm_1.EntityRepository(conversation_entity_1.Conversation)
+    typeorm_1.EntityRepository(message_entity_1.Message)
 ], ChatRepository);
 exports.ChatRepository = ChatRepository;
 //# sourceMappingURL=chat.repostiory.js.map

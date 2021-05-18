@@ -9,7 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const auth_module_1 = require("../auth/auth.module");
+const auth_credentials_dto_1 = require("../auth/dto/auth-credentials.dto");
+const user_entity_1 = require("./user.entity");
 const user_repository_1 = require("./user.repository");
 let UserModule = class UserModule {
 };
@@ -17,9 +18,16 @@ UserModule = __decorate([
     common_1.Module({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([user_repository_1.UserRepository]),
+            user_repository_1.UserRepository,
+            user_entity_1.User,
+            auth_credentials_dto_1.AuthCredentialsDto,
         ],
         controllers: [],
         providers: [],
+        exports: [
+            user_repository_1.UserRepository,
+            user_entity_1.User,
+        ]
     })
 ], UserModule);
 exports.UserModule = UserModule;

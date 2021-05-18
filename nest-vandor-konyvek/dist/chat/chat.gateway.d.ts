@@ -1,9 +1,8 @@
-/// <reference types="socket.io" />
 import { NestGateway } from '@nestjs/websockets/interfaces/nest-gateway.interface';
 import { ChatService } from './chat.service';
 import { Message } from './message.entity';
-import Socket = SocketIO.Socket;
 import { Logger } from '@nestjs/common';
+import { Socket } from 'socket.io';
 export declare class ChatGateway implements NestGateway {
     private chatService;
     logger: Logger;

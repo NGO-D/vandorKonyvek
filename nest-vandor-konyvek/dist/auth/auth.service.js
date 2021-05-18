@@ -26,11 +26,11 @@ let AuthService = class AuthService {
         return this.userRepository.signUp(authCredentialsDto);
     }
     async signIn(authCredentialsDto) {
-        const username = await this.userRepository.validateUserPassword(authCredentialsDto);
-        if (!username) {
+        const user_userName = await this.userRepository.validateUserPassword(authCredentialsDto);
+        if (!user_userName) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        const payload = { username };
+        const payload = { user_userName };
         const accessToken = await this.jwtService.sign(payload);
         return { accessToken };
     }

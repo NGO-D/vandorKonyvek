@@ -1,4 +1,4 @@
 import { Repository } from "typeorm";
-import { Conversation } from "./conversation.entity";
-export declare class ChatRepository extends Repository<Conversation> {
+import { Message } from '../chat/message.entity';
+export declare class ChatRepository extends Repository<Message> {
 }

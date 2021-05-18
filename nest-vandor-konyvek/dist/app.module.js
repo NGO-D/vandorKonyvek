@@ -12,7 +12,6 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_config_1 = require("./config/typeorm.config");
 const auth_module_1 = require("./auth/auth.module");
 const books_module_1 = require("./books/books.module");
-const chat_module_1 = require("./chat/chat.module");
 const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
@@ -20,7 +19,6 @@ AppModule = __decorate([
     common_1.Module({
         imports: [
             typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig),
-            chat_module_1.ChatModule,
             auth_module_1.AuthModule,
             books_module_1.BooksModule,
             user_module_1.UserModule,

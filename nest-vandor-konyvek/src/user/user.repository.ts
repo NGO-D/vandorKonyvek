@@ -7,12 +7,23 @@ import * as bcrypt from 'bcrypt';
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
     async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-        const { username, password } = authCredentialsDto;
+        const { user_firstName,
+                user_lastName,
+                user_region,
+                user_city,
+                user_postcode,
+                user_userName, 
+                user_password } = authCredentialsDto;
 
         const user = new User();
-        user.username = username;
-        user.salt = await bcrypt.genSalt();
-        user.password = await this.hashPassword(password, user.salt);
+        user.user_firstName = user_firstName;
+        user.user_lastName = user_lastName;
+        user.user_region = user_region;
+        user.user_city = user_city;
+        user.user_postcode = user_postcode;
+        user.user_userName = user_userName;
+        user.user_salt = await bcrypt.genSalt();
+        user.user_password = await this.hashPassword(user_password, user.user_salt);
 
         try { 
             await user.save();
@@ -28,11 +39,11 @@ export class UserRepository extends Repository<User> {
     }
 
     async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
-        const { username, password } = authCredentialsDto;
-        const user = await this.findOne({username});
+        const { user_userName, user_password } = authCredentialsDto;
+        const user = await this.findOne({user_userName});
 
-        if (user && await user.validatePassword(password)) {
-            return user.username;
+        if (user && await user.validatePassword(user_password)) {
+            return user.user_userName;
         } else {
             return null;
         }

@@ -8,6 +8,7 @@ import { UserRepository } from '../user/user.repository';
 import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config';
 import { UserModule } from 'src/user/user.module';
+import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 
 
 const jwtConfig = config.get('jwt'); 
@@ -23,15 +24,23 @@ const jwtConfig = config.get('jwt');
     }),
     TypeOrmModule.forFeature([UserRepository]),
     UserModule,
+    AuthCredentialsDto,
   ],
-  controllers: [AuthController],
-  providers: 
-  [AuthService,
-  JwtStrategy,
+
+  controllers: [
+    AuthController
   ],
+
+  providers: [
+    AuthService,
+    JwtStrategy,
+  ],
+
   exports: [
     JwtStrategy,
     PassportModule,
+    AuthCredentialsDto,
   ],
+
 })
 export class AuthModule {}

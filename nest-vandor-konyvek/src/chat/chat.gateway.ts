@@ -3,9 +3,10 @@ import { SubscribeMessage, WebSocketGateway } from '@nestjs/websockets';
 import { NestGateway } from '@nestjs/websockets/interfaces/nest-gateway.interface';
 import { User } from '../user/user.entity';
 import { ChatService } from './chat.service';
+//import Socket = SocketIO.Socket;
 import { Message } from './message.entity';
-import Socket = SocketIO.Socket;
 import { Logger } from '@nestjs/common';
+import { Socket, Server } from 'socket.io';
 
 
 @WebSocketGateway({ namespace: 'messages' })
@@ -14,7 +15,8 @@ export class ChatGateway implements NestGateway {
 
     socket:Socket;
 
-    constructor (private chatService:ChatService) {}
+    constructor (private chatService: ChatService) 
+    {}
 
     afterInit (server) {
         this.logger.log(this.socket);
