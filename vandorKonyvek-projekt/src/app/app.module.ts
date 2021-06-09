@@ -13,7 +13,7 @@ import { BookDetailsComponent } from './components/admin-component/book-list/boo
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 import { BooksService } from './components/admin-component/book-list/books.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
@@ -25,7 +25,7 @@ import { MyMaterialModule } from './material.module';
   declarations: [
     AppComponent,
     AdminHeaderComponent,
-    SignUpComponent,
+    RegisterComponent,
     LoginComponent,
     AdminLandingComponent,
     AdminNavigationComponent,

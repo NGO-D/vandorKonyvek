@@ -1,0 +1,151 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profile-img-card"
+    />
+    <form
+      *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+    <div class="form-group">
+      <label for="user_lastName">Vezetéknév</label>
+      <input
+        type="user_lastName"
+        class="form-control"
+        name="user_lastName"
+        [(ngModel)]="form.user_lastName"
+        required
+        email
+        #email="ngModel"
+      />
+    </div>
+
+      <div class="form-group">
+        <label for="user_firstName">Keresztnév</label>
+        <input
+          type="text"
+          class="form-control"
+          name="user_firstName"
+          [(ngModel)]="form.user_firstName"
+          required
+          minlength="3"
+          maxlength="20"
+          #username="ngModel"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="user_region">Megye</label>
+        <input
+          type="user_region"
+          class="form-control"
+          name="user_region"
+          [(ngModel)]="form.user_region"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="user_city">Város</label>
+        <input
+          type="user_city"
+          class="form-control"
+          name="user_city"
+          [(ngModel)]="form.user_city"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="user_postcode">Irányítószám</label>
+        <input
+          type="user_postcode"
+          class="form-control"
+          name="user_postcode"
+          [(ngModel)]="form.user_postcode"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="user_userName">Felhasználónév</label>
+        <input
+          type="user_userName"
+          class="form-control"
+          name="user_userName"
+          [(ngModel)]="form.user_userName"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="user_password">Jelszó</label>
+        <input
+          type="user_password"
+          class="form-control"
+          name="user_password"
+          [(ngModel)]="form.user_password"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+
+      
+    </form>
+
+   
+  </div>
+</div>
+<!--
+  <div class="d-flex align-items-center h-100">
+   <div class="container">
+     <div class="row justify-content-center">
+       <div class="col-sm-5">
+         <mat-card>
+           <h3 class="text-center">Register</h3>
+           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+             <mat-form-field class="w-100">
+               <input type="text" matInput placeholder="First Name" formControlName="firstname">
+               <mat-error *ngIf="data.firstname.errors?.required">First Name is required</mat-error>
+             </mat-form-field>
+             <mat-form-field class="w-100">
+               <input type="text" matInput placeholder="Last Name" formControlName="lastname">
+               <mat-error *ngIf="data.lastname.errors?.required">Last Name is required</mat-error>
+             </mat-form-field>
+             <mat-form-field class="w-100">
+               <input type="text" matInput placeholder="Username" formControlName="username">
+               <mat-error *ngIf="data.username.errors?.required">Username is required</mat-error>
+             </mat-form-field>
+             <mat-form-field class="w-100">
+               <input type="password" matInput placeholder="Password" formControlName="password">
+               <mat-error *ngIf="data.password.errors?.required">Password is required</mat-error>
+             </mat-form-field>
+             <div class="mt-4">
+               <button mat-raised-button color="primary">Register</button>
+               <a [routerLink]="['/login']" class="ml-2" mat-button color="primary">Cancel</a>
+             </div>
+           </form>
+         </mat-card>
+       </div>
+     </div> 
+   </div>
+ </div>
+-->
