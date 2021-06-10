@@ -7,5 +7,6 @@ export declare class AuthCredentialsDto {
     user_city: UserCity;
     user_postcode: number;
     user_userName: string;
+    user_email: string;
     user_password: string;
 }

@@ -20,18 +20,19 @@ let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
-    signUp(authCredentialsDto) {
-        return this.authService.signUp(authCredentialsDto);
+    signUp(body) {
+        console.log('baaaack');
+        return this.authService.signUp(body);
     }
     signIn(authCredentialsDto) {
         return this.authService.signIn(authCredentialsDto);
     }
 };
 __decorate([
-    common_1.Post('/signup'),
-    __param(0, common_1.Body(common_1.ValidationPipe)),
+    common_1.Post('/register'),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [auth_credentials_dto_1.AuthCredentialsDto]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signUp", null);
 __decorate([

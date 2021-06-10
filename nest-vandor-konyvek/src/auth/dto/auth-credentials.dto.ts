@@ -33,6 +33,8 @@ export class AuthCredentialsDto {
     @MaxLength(20)
     user_userName: string;
 
+    user_email:string;
+
     @IsString()
     @MinLength(6)
     @MaxLength(20)

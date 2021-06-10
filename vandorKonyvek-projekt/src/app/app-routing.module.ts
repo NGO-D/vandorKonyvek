@@ -9,13 +9,14 @@ import { BookDetailsComponent } from './components/admin-component/book-list/boo
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 
 const routes: Routes = [
-  { path: '', component: RegisterComponent},// only redirect is the full path is empty
+  { path: 'register', component: RegisterComponent},
+  { path: 'login', component: LoginComponent}, 
   { path: 'admin/books', component: BookListComponent},
   { path: 'admin', component: AdminLandingComponent, children: [
     { path: 'books/new', component: BookNewComponent},
     { path: 'books/:id', component: BookDetailsComponent}
   ]},
-  { path: 'admin/login', component: LoginComponent},   //nem lesz jó, hogy az adminon van
+    
 ]; 
  
 @NgModule({

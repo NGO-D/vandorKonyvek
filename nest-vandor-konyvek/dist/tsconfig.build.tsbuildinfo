@@ -3797,8 +3797,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "53b4952c6084326ada94625a2fec3d83522b69e7da08af2a745e310c8a984aa5",
-        "signature": "f5efa8869ad7fdb1952cb870c410b2d468138351e57e58fb679a6e67dd9fa03d",
+        "version": "0c39db91af9ea4c5ffb5e091c9e0328d4c23223f4bce277f00baa86316ec9c8e",
+        "signature": "e50ce3a04ac2fe0bc9880d8faee72645275133def1f898c0b7da661d3079654a",
         "affectsGlobalScope": false
       },
       "../src/books/book-available.enum.ts": {
@@ -3837,8 +3837,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "1aecbfc277c310dd769db3268bb907f7696794d2553ca7e4bc30d53292d01786",
-        "signature": "8c2861166eb1c66d851567bea6e87aa8190f169c10b09869b8f145c27e9bbb05",
+        "version": "528cba1c87a3f404b4bdf0c6410acf07ade87c4b6b967245891354d149072840",
+        "signature": "2c21c074fdf98599672dd224722ff2ddcadba9104ddbb9dcb9371fb95f50cfa1",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {

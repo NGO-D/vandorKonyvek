@@ -5,8 +5,9 @@ import { environment } from '../../../../environments/environment';
 import { AuthDto } from '../dto/auth.dto';
 import { Router } from '@angular/router';
 
-//nem korrekt ez alábbi elérési útvonal
-const AUTH_API = 'http://localhost:8080/api/auth/';
+
+//nem korrekt ez alábbi elérési útvonal, át is írtam
+//const AUTH_API = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,10 +17,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  private apiUrl: string = environment.apiUrl;
+
   private accessToken: string;
   private isAuthenticated = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getAccessToken(): string {
     return this.accessToken;
@@ -36,21 +39,29 @@ export class AuthService {
     }, httpOptions);
   }*/
 
-  register(user_lastName: string, 
-          user_firstName: string, 
-          user_region: string,
-          user_city: string,
-          user_postcode: string,
-          user_userName: string,
-          user_password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
-            user_firstName,
-            user_lastName,
-            user_region,
-            user_city,
-            user_postcode,
-            user_userName,
-            user_password
-    }, httpOptions);
+  register(authDto: AuthDto): Observable<AuthDto> {
+          const endpoint: string = this.apiUrl + "/auth/register";
+          console.log('serviceben vagyok');
+          const httpParams = { 
+            user_lastName: authDto.user_lastName,
+            user_firstName: authDto.user_firstName,
+            user_region: authDto.user_region,
+            user_city: authDto.user_city,
+            user_postcode: authDto.user_postcode,
+            user_userName: authDto.user_userName,
+            user_email: authDto.user_email,
+            user_password: authDto.user_password
+          };
+          console.log(endpoint);
+          this.httpClient.post(endpoint, httpParams).subscribe(
+            (response) => {
+              console.log('siker');
+            },
+            (error) => {
+              console.error(error);
+            }
+
+          );
+          return;
+    }
   }
-}
