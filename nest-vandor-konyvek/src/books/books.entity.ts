@@ -19,8 +19,8 @@ export class Book extends BaseEntity {
     @Column()
     book_available: BookAvailable;
 
-    @ManyToOne(type => User, user => user.user_books, { eager: false })
-    book_user: User;
+    //@ManyToOne(type => User, user => user.user_books, { eager: false })
+    //book_user: User;
 
     @Column()
     bookUserId: number;

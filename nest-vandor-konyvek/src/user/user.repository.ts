@@ -13,7 +13,9 @@ export class UserRepository extends Repository<User> {
                 user_city,
                 user_postcode,
                 user_userName, 
+                user_email,
                 user_password } = authCredentialsDto;
+console.log('repo');
 
         const user = new User();
         user.user_firstName = user_firstName;
@@ -22,9 +24,10 @@ export class UserRepository extends Repository<User> {
         user.user_city = user_city;
         user.user_postcode = user_postcode;
         user.user_userName = user_userName;
+        user.user_email = user_email;
         user.user_salt = await bcrypt.genSalt();
         user.user_password = await this.hashPassword(user_password, user.user_salt);
-
+console.log(user);
         try { 
             await user.save();
         } catch (error) {
@@ -32,6 +35,7 @@ export class UserRepository extends Repository<User> {
                 // error.code needs to be a string
                 throw new ConflictException('Duplicate username');
             } else {
+                console.log(error.code);
                 throw new InternalServerErrorException();
             }
         }
@@ -39,11 +43,11 @@ export class UserRepository extends Repository<User> {
     }
 
     async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
-        const { user_userName, user_password } = authCredentialsDto;
-        const user = await this.findOne({user_userName});
+        const { user_email, user_password } = authCredentialsDto;
+        const user = await this.findOne({user_email});
 
         if (user && await user.validatePassword(user_password)) {
-            return user.user_userName;
+            return user.user_email;
         } else {
             return null;
         }

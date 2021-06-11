@@ -43,7 +43,7 @@ __decorate([
     class_validator_1.IsString(),
     class_validator_1.MinLength(4),
     class_validator_1.MaxLength(4),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_postcode", void 0);
 __decorate([
     class_validator_1.IsString(),

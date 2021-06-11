@@ -52,7 +52,7 @@ export class BookRepository extends Repository<Book> {
         book.book_description = book_description;
         book.book_image = book_image;
         book.book_available = BookAvailable.YES;
-        book.book_user = user;
+       // book.book_user = user;
 
         try {
             await book.save();
@@ -61,7 +61,7 @@ export class BookRepository extends Repository<Book> {
             throw new InternalServerErrorException();
         }
         
-        delete book.book_user;
+        // delete book.book_user;
         return book;
     }
 }

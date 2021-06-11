@@ -16,17 +16,17 @@ export class AuthCredentialsDto {
     @IsString()
     @MinLength(2)
     @MaxLength(20)
-    user_region: UserRegion;
+    user_region: string // UserRegion;
 
     @IsString()
     @MinLength(2)
     @MaxLength(20)
-    user_city: UserCity
+    user_city: string // UserCity
 
     @IsString()
     @MinLength(4)
     @MaxLength(4)
-    user_postcode: number;
+    user_postcode: string // number;
 
     @IsString()
     @MinLength(6)

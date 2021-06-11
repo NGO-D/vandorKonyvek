@@ -42,7 +42,6 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         book.book_description = book_description;
         book.book_image = book_image;
         book.book_available = book_available_enum_1.BookAvailable.YES;
-        book.book_user = user;
         try {
             await book.save();
         }
@@ -50,7 +49,6 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
             this.logger.error(`Failed to create book ${createBookDto}`, error.stack);
             throw new common_1.InternalServerErrorException();
         }
-        delete book.book_user;
         return book;
     }
 };

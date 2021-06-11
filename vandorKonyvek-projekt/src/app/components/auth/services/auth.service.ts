@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AuthDto } from '../dto/auth.dto';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 
 //nem korrekt ez alábbi elérési útvonal, át is írtam
@@ -32,25 +33,33 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  /*login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
-      username,
-      password
-    }, httpOptions);
-  }*/
+  login(authDto: AuthDto): Observable<any> {
+    console.log('szervíz');
+    console.log(authDto);
+    const endpoint: string = this.apiUrl + "/auth/signin";
+    this.httpClient.post(endpoint, authDto).subscribe(
+      (response) => {
+        console.log('sikerült');
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    return;
+  }
 
-  register(authDto: AuthDto): Observable<AuthDto> {
+  register(user: User): Observable<User> {
           const endpoint: string = this.apiUrl + "/auth/register";
           console.log('serviceben vagyok');
           const httpParams = { 
-            user_lastName: authDto.user_lastName,
-            user_firstName: authDto.user_firstName,
-            user_region: authDto.user_region,
-            user_city: authDto.user_city,
-            user_postcode: authDto.user_postcode,
-            user_userName: authDto.user_userName,
-            user_email: authDto.user_email,
-            user_password: authDto.user_password
+            user_lastName: user.user_lastName,
+            user_firstName: user.user_firstName,
+            user_region: user.user_region,
+            user_city: user.user_city,
+            user_postcode: user.user_postcode,
+            user_userName: user.user_userName,
+            user_email: user.user_email,
+            user_password: user.user_password
           };
           console.log(endpoint);
           this.httpClient.post(endpoint, httpParams).subscribe(

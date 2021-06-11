@@ -3,22 +3,22 @@
       <div class="row justify-content-center">
         <div class="col-sm-5">
           <div class="alert alert-danger" role="alert" *ngIf="submitted">
-            Username or password is incorrect
+            Hibás e-mail cím vagy jelszó.
           </div>
           <mat-card>
-            <h3 class="text-center">Login</h3>
+            <h3 class="text-center">Bejelentkezés</h3>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <mat-form-field class="w-100">
-                <input type="text" matInput placeholder="Username" formControlName="username">
-                <mat-error *ngIf="data.username.errors?.required">Username is required</mat-error>
+                <input type="email" matInput placeholder="E-mail cím" formControlName="user_email">
+                <mat-error *ngIf="data.user_email.errors?.required">E-mail cím megadásak kötelező.</mat-error>
               </mat-form-field>
               <mat-form-field class="w-100">
-                <input type="password" matInput placeholder="Password" formControlName="password">
-                <mat-error *ngIf="data.password.errors?.required">Password is required</mat-error>
+                <input type="password" matInput placeholder="Jelszó" formControlName="user_password">
+                <mat-error *ngIf="data.user_password.errors?.required">Password is required</mat-error>
               </mat-form-field>
               <div class="form-group mt-4">
-                <button mat-raised-button color="primary">Login</button>
-                <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Register</a>
+                <button mat-raised-button color="primary">Bejelentkezés</button>
+                <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Regisztráció</a>
               </div>
             </form>
           </mat-card>
