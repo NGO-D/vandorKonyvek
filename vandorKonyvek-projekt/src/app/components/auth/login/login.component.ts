@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     console.log('comp');
     this.authService.login(this.loginForm.value);
   } 
-  this.router.navigate(['/home']);
+  this.router.navigate(['/admin']);
   }
 }
 

@@ -23,41 +23,53 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_firstName", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_lastName", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_region", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_city", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_postcode", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_userName", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_email", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_password", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_salt", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], User.prototype, "username", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], User.prototype, "password", void 0);
+__decorate([
+    typeorm_1.Column({ type: 'text', nullable: true }),
+    __metadata("design:type", String)
+], User.prototype, "salt", void 0);
 User = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['user_email'])

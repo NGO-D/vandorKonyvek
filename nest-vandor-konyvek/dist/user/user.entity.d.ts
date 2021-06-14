@@ -11,4 +11,7 @@ export declare class User extends BaseEntity {
     user_password: string;
     user_salt: string;
     validatePassword(password: string): Promise<boolean>;
+    username: string;
+    password: string;
+    salt: string;
 }

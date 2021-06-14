@@ -10,31 +10,31 @@ export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_firstName: string;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_lastName: string;
     
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_region: string // UserRegion;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_city: string // UserCity;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_postcode: string // number;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_userName: string;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_email: string;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_password: string;
 
-    @Column()
+    @Column({type: 'text', nullable: false})
     user_salt: string;
 
     //@OneToMany(type => Book, book => book.book_user, { eager: true })
@@ -44,5 +44,20 @@ export class User extends BaseEntity {
         const hash = await bcrypt.hash(password, this.user_salt);
         return hash === this.user_password;
     }
+
+    // These are columnes, I used earlyer and now despite of the fact, 
+    // that they were deleted from the database and the User entity Typeorem somehow still remembers it
+    // and creates user table with these columns. Tryed to clear cache, did not work...
+    // So I creted here these columns with no value and synchronised database as well.
+    // To be fixed later...
+
+    @Column({type: 'text', nullable: true})
+    username: string;
+
+    @Column({type: 'text', nullable: true})
+    password: string;
+
+    @Column({type: 'text', nullable: true})
+    salt: string;
 }
 
