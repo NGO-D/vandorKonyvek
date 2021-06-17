@@ -39,7 +39,8 @@ export class AuthService {
     const endpoint: string = this.apiUrl + "/auth/signin";
     this.httpClient.post(endpoint, authDto).subscribe(
       (response) => {
-        console.log('sikerült');
+        // a response az access token
+        console.log(response);
       },
       (error) => {
         console.error(error);

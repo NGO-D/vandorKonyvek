@@ -7,8 +7,10 @@ import { AdminLandingComponent} from './components/admin-component/admin-landing
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookDetailsComponent } from './components/admin-component/book-list/book-details/book-details.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent}, 
   { path: 'admin/books', component: BookListComponent},

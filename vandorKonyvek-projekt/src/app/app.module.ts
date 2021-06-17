@@ -20,6 +20,7 @@ import { DeleteModalComponent } from './components/modals/delete-modal/delete-mo
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MyMaterialModule } from './material.module';
     BookDetailsComponent,
     BookNewComponent,
     DeleteModalComponent,
-    AffirmModalComponent
+    AffirmModalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
