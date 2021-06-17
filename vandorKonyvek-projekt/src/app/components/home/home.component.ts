@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { AuthService } from '../auth/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +14,12 @@ export class HomeComponent implements OnInit {
   opened: boolean;
   mode: string;
   menubutton = true;
+
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
   constructor(matIconModule: MatIconModule,
               matSideNavModule: MatSidenavModule,
-              matListModule: MatListModule) 
+              matListModule: MatListModule,
+              authService: AuthService) 
               { 
     this.onResize();
   }

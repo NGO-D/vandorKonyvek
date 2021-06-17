@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { AuthDto } from '../dto/auth.dto';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
+import { TokenStorageService } from './token-storage.service';
 
 
 //nem korrekt ez alábbi elérési útvonal, át is írtam
@@ -23,7 +24,8 @@ export class AuthService {
   private accessToken: string;
   private isAuthenticated = false;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private tokenStorageService: TokenStorageService) { }
 
   getAccessToken(): string {
     return this.accessToken;
@@ -39,8 +41,12 @@ export class AuthService {
     const endpoint: string = this.apiUrl + "/auth/signin";
     this.httpClient.post(endpoint, authDto).subscribe(
       (response) => {
-        // a response az access token
-        console.log(response);
+        const token = Object.values(response);
+        console.log(typeof response);
+        this.tokenStorageService.saveToken(token.toString());
+        console.log(token.toString() + 'na');
+        
+
       },
       (error) => {
         console.error(error);

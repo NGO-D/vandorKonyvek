@@ -33,6 +33,7 @@ let AuthService = class AuthService {
         }
         const payload = { user_email };
         const accessToken = await this.jwtService.sign(payload);
+        console.log(accessToken);
         return { accessToken };
     }
 };

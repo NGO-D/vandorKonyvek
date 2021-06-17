@@ -12,8 +12,6 @@ import { AppComponent } from './app.component';
 import { BookDetailsComponent } from './components/admin-component/book-list/book-details/book-details.component';
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
 
 import { BooksService } from './components/admin-component/book-list/books.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
@@ -21,13 +19,12 @@ import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-mo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 import { HomeComponent } from './components/home/home.component';
+import { AuthModule } from './components/auth/auth module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminHeaderComponent,
-    RegisterComponent,
-    LoginComponent,
     AdminLandingComponent,
     AdminNavigationComponent,
     BookListComponent,
@@ -45,7 +42,9 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MyMaterialModule
+    MyMaterialModule,
+    AuthModule
+    
     ],
   providers: [BooksService],
   bootstrap: [AppComponent]
