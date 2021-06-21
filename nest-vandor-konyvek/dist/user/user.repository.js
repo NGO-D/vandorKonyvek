@@ -13,8 +13,9 @@ const common_1 = require("@nestjs/common");
 const bcrypt = require("bcrypt");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async signUp(authCredentialsDto) {
-        const { user_firstName, user_lastName, user_region, user_city, user_postcode, user_userName, user_email, user_password } = authCredentialsDto;
+        const { user_firstName, user_lastName, user_region, user_city, user_postcode, user_userName, user_role, user_email, user_password } = authCredentialsDto;
         console.log('repo');
+        console.log(authCredentialsDto);
         const user = new user_entity_1.User();
         user.user_firstName = user_firstName;
         user.user_lastName = user_lastName;
@@ -22,6 +23,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         user.user_city = user_city;
         user.user_postcode = user_postcode;
         user.user_userName = user_userName;
+        user.user_role = user_role;
         user.user_email = user_email;
         user.user_salt = await bcrypt.genSalt();
         user.user_password = await this.hashPassword(user_password, user.user_salt);
@@ -44,7 +46,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         const { user_email, user_password } = authCredentialsDto;
         const user = await this.findOne({ user_email });
         if (user && await user.validatePassword(user_password)) {
-            return user.user_email;
+            return user;
         }
         else {
             return null;

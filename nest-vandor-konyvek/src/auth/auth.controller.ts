@@ -10,20 +10,22 @@ export class AuthController {
     constructor(
         private authService: AuthService
     ) {}
-
+/*
     @Post('/register')
     signUp(@Body() body): Promise<void> {
         console.log('baaaack');
+        console.log(body);
         return this.authService.signUp(body);
     } 
+ */   
     
-    /*
     @Post('/register')
     signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto ): Promise<any> {
         console.log('baaaack');
+        console.log(authCredentialsDto);
         return this.authService.signUp(authCredentialsDto);
     }
-    */
+    
 
     /*
     @Post('/signin')

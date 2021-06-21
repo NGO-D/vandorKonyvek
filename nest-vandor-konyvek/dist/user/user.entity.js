@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const user_region_enum_1 = require("./user-region.enum");
+const user_role_enum_1 = require("./user-role.enum");
 let User = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
         const hash = await bcrypt.hash(password, this.user_salt);
@@ -21,7 +23,7 @@ let User = class User extends typeorm_1.BaseEntity {
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], User.prototype, "user_id", void 0);
 __decorate([
     typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
@@ -31,7 +33,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "user_lastName", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_region", void 0);
 __decorate([
@@ -40,12 +42,16 @@ __decorate([
 ], User.prototype, "user_city", void 0);
 __decorate([
     typeorm_1.Column({ type: 'text', nullable: false }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], User.prototype, "user_postcode", void 0);
 __decorate([
     typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_userName", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: false }),
+    __metadata("design:type", String)
+], User.prototype, "user_role", void 0);
 __decorate([
     typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
@@ -58,18 +64,6 @@ __decorate([
     typeorm_1.Column({ type: 'text', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "user_salt", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], User.prototype, "username", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-__decorate([
-    typeorm_1.Column({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], User.prototype, "salt", void 0);
 User = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['user_email'])

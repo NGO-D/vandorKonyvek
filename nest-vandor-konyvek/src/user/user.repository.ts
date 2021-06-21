@@ -13,9 +13,11 @@ export class UserRepository extends Repository<User> {
                 user_city,
                 user_postcode,
                 user_userName, 
+                user_role,
                 user_email,
                 user_password } = authCredentialsDto;
 console.log('repo');
+console.log(authCredentialsDto);
 
         const user = new User();
         user.user_firstName = user_firstName;
@@ -24,6 +26,7 @@ console.log('repo');
         user.user_city = user_city;
         user.user_postcode = user_postcode;
         user.user_userName = user_userName;
+        user.user_role = user_role;
         user.user_email = user_email;
         user.user_salt = await bcrypt.genSalt();
         user.user_password = await this.hashPassword(user_password, user.user_salt);
@@ -42,12 +45,12 @@ console.log(user);
         await user.save();
     }
 
-    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
+    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User> {
         const { user_email, user_password } = authCredentialsDto;
         const user = await this.findOne({user_email});
 
         if (user && await user.validatePassword(user_password)) {
-            return user.user_email;
+            return user;
         } else {
             return null;
         }

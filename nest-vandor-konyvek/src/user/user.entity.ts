@@ -2,13 +2,15 @@ import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique }
 import * as bcrypt from 'bcrypt';
 import { Book } from './../books/books.entity';
 import { UserRegion } from "./user-region.enum";
-import { UserCity } from "./user-city.enum";
+import { UserRole } from "./user-role.enum";
+import { IsEmail, Matches, MaxLength, MinLength } from "class-validator";
 
 @Entity()
 @Unique(['user_email'])
 export class User extends BaseEntity {
+   
     @PrimaryGeneratedColumn()
-    id: number;
+    user_id: number;
 
     @Column({type: 'text', nullable: false})
     user_firstName: string;
@@ -16,17 +18,20 @@ export class User extends BaseEntity {
     @Column({type: 'text', nullable: false})
     user_lastName: string;
     
-    @Column({type: 'text', nullable: false})
-    user_region: string // UserRegion;
+    @Column({nullable: false})
+    user_region: UserRegion;
 
     @Column({type: 'text', nullable: false})
-    user_city: string // UserCity;
+    user_city: string 
 
     @Column({type: 'text', nullable: false})
-    user_postcode: string // number;
+    user_postcode: number;
 
     @Column({type: 'text', nullable: false})
     user_userName: string;
+
+    @Column({nullable: false})
+    user_role: UserRole.common;
 
     @Column({type: 'text', nullable: false})
     user_email: string;
@@ -51,13 +56,6 @@ export class User extends BaseEntity {
     // So I creted here these columns with no value and synchronised database as well.
     // To be fixed later...
 
-    @Column({type: 'text', nullable: true})
-    username: string;
-
-    @Column({type: 'text', nullable: true})
-    password: string;
-
-    @Column({type: 'text', nullable: true})
-    salt: string;
+   
 }
 

@@ -24,7 +24,7 @@ let BooksService = class BooksService {
         return await this.bookRepository.getBooks(filterDto, user);
     }
     async getBookById(book_id, user) {
-        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.id } });
+        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.user_id } });
         if (!found) {
             throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
         }
@@ -39,7 +39,7 @@ let BooksService = class BooksService {
         return book;
     }
     async deleteBook(book_id, user) {
-        const result = await this.bookRepository.delete({ book_id, bookUserId: user.id });
+        const result = await this.bookRepository.delete({ book_id, bookUserId: user.user_id });
         if (result.affected === 0) {
             throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
         }

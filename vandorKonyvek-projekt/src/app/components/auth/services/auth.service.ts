@@ -6,6 +6,7 @@ import { AuthDto } from '../dto/auth.dto';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { TokenStorageService } from './token-storage.service';
+import { UserRole } from '../models/user-role.enum';
 
 
 //nem korrekt ez alábbi elérési útvonal, át is írtam
@@ -65,10 +66,11 @@ export class AuthService {
             user_city: user.user_city,
             user_postcode: user.user_postcode,
             user_userName: user.user_userName,
+            user_role: UserRole.common,
             user_email: user.user_email,
             user_password: user.user_password
           };
-          console.log(endpoint);
+          console.log(httpParams);
           this.httpClient.post(endpoint, httpParams).subscribe(
             (response) => {
               console.log('siker');

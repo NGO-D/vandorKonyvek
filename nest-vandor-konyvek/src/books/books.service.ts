@@ -24,7 +24,7 @@ export class BooksService {
         user: User
         ): Promise<Book>{
        
-        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.id }});
+        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.user_id }});
         
             if (!found) {
                 throw new NotFoundException(`Task with ID '${book_id}' not found.`);
@@ -55,7 +55,7 @@ export class BooksService {
         book_id: number,
         user: User
         ): Promise<void> {
-        const result = await this.bookRepository.delete({book_id, bookUserId: user.id});
+        const result = await this.bookRepository.delete({book_id, bookUserId: user.user_id});
 
          //ez ugyanaz mint az if (!result) {}
          if (result.affected === 0) {
