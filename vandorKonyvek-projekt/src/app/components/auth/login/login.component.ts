@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     console.log('comp');
     this.authService.login(this.loginForm.value);
   } 
+  // ez itt nem jó, akkor is átnavigál, amikor nem sikerül a bejelentkezés
   this.router.navigate(['/']);
   }
 }

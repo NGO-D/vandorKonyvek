@@ -27,11 +27,11 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService) { }
-
+/*
   getAccessToken(): string {
     return this.accessToken;
   }
-
+*/
   getIsAuthenticated(): boolean {
     return this.isAuthenticated;
   }
@@ -45,7 +45,7 @@ export class AuthService {
         const token = Object.values(response);
         console.log(typeof response);
         this.tokenStorageService.saveToken(token.toString());
-        console.log(token.toString() + 'na');
+        console.log(token.toString());
         
 
       },

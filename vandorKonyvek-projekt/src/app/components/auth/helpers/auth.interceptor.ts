@@ -7,17 +7,20 @@ import {
   import { Injectable } from '@angular/core';
   import { environment } from '../../../../environments/environment';
   import { AuthService } from '../services/auth.service';
+import { TokenStorageService } from '../services/token-storage.service';
   
   @Injectable()
   export class AuthInterceptor implements HttpInterceptor {
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService,
+                private tokenStorageService: TokenStorageService) {}
   
    intercept(req: HttpRequest<any>, next: HttpHandler) {
-      const authToken = this.authService.getAccessToken();
+      const authToken = this.tokenStorageService.getToken();
+      console.log(`Inceptor: ${authToken}`);
       const authRequest = req.clone({
         headers: req.headers.set('Authorization',  'Bearer ' + authToken),
       });
-      console.log(authRequest)
+      console.log(`Inceptor: ${authRequest}`);
       return next.handle(authRequest);
     }
   }
