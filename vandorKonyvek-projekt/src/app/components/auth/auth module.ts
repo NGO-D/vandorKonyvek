@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from 'src/app/material.module';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuard } from './helpers/auth.guard';
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -20,10 +22,13 @@ import { MyMaterialModule } from 'src/app/material.module';
                   MyMaterialModule
                 ],
   providers:    [ AuthService,
-                  TokenStorageService ],
+                  TokenStorageService,
+                  JwtHelperService,
+                  AuthGuard,
+                  ],
   declarations: [ RegisterComponent,
                   LoginComponent, ],
-  exports:      [  ],
+  exports:      [ ],
   bootstrap:    [  ]
 })
 export class AuthModule { } 

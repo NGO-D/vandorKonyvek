@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 
 //nem korrekt ez alábbi elérési útvonal, át is írtam
@@ -21,20 +23,32 @@ const httpOptions = {
 })
 export class AuthService {
   private apiUrl: string = environment.apiUrl;
-
-  private accessToken: string;
-  private isAuthenticated = false;
+  private jwtHelper = new JwtHelperService();
 
   constructor(private httpClient: HttpClient,
-              private tokenStorageService: TokenStorageService) { }
+              private tokenStorageService: TokenStorageService,
+              //public jwtHelper: JwtHelperService
+              ) { }
 /*
   getAccessToken(): string {
     return this.accessToken;
   }
 */
+
+public isAuthenticated(): boolean {
+  const token = localStorage.getItem('auth-token');
+  console.log('isauthaticated: ');
+  console.log(token);
+  // Check whether the token is expired and return
+  // true or false
+  return !this.jwtHelper.isTokenExpired(token);
+}
+
+/*
   getIsAuthenticated(): boolean {
     return this.isAuthenticated;
   }
+*/
 
   login(authDto: AuthDto): Observable<any> {
     console.log('szervíz');

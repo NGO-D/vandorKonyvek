@@ -13,7 +13,6 @@ import { BookDetailsComponent } from './components/admin-component/book-list/boo
 import { BookListComponent } from './components/admin-component/book-list/book-list.component';
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 
-import { BooksService } from './components/admin-component/book-list/books.service';
 import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 import { AffirmModalComponent } from './components/modals/affirm-modal/affirm-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +20,11 @@ import { MyMaterialModule } from './material.module';
 import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from './components/auth/auth module';
 import { AdminComponent } from './components/admin/admin.component';
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { AuthGuard } from './components/auth/helpers/auth.guard';
+import { AuthService } from './components/auth/services/auth.service';
+import { TokenStorageService } from './components/auth/services/token-storage.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -45,10 +49,15 @@ import { AdminComponent } from './components/admin/admin.component';
     FormsModule,
     BrowserAnimationsModule,
     MyMaterialModule,
-    AuthModule
+    AuthModule,
+    StorageServiceModule,
     
     ],
-  providers: [BooksService],
+  providers: [ AuthGuard,
+              AuthService,
+              TokenStorageService,
+              JwtHelperService,
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

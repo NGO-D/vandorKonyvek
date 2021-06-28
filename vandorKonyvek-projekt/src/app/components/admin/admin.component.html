@@ -1,12 +1,10 @@
 <mat-sidenav-container class="main-container bg-white" (window:resize)="onResize()">
     <mat-sidenav class="border-0 bg-dark" [mode]="mode" [opened]="opened" #sidenav>
-      <h3 class="text-center text-white mt-3">Logo</h3>
+      <h3 class="text-center text-white mt-3">Vándorkönyvek</h3>
       <mat-nav-list>
-        <a class="text-secondary" mat-list-item routerLink="../"><mat-icon class="mr-2">Home</mat-icon>Home</a>
-        <a class="text-secondary" mat-list-item routerLink="../register"><mat-icon class="mr-2">Registration</mat-icon>Registration</a>
+        <a class="text-secondary" mat-list-item routerLink="../"><mat-icon class="mr-2">home</mat-icon>Home</a>
+        <a class="text-secondary" mat-list-item routerLink="../register"><mat-icon class="mr-2">how_to_reg</mat-icon>Registration</a>
         <a class="text-secondary" mat-list-item routerLink="../login"><mat-icon class="mr-2">login</mat-icon>Login</a>
-        <a class="text-secondary" mat-list-item routerLink="."><mat-icon class="mr-2">insert_chart</mat-icon>Chart</a>
-        <a class="text-secondary" mat-list-item routerLink="."><mat-icon class="mr-2">widgets</mat-icon>Widgets</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

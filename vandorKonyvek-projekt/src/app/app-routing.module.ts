@@ -9,6 +9,7 @@ import { BookDetailsComponent } from './components/admin-component/book-list/boo
 import { BookNewComponent } from './components/admin-component/book-list/book-new/book-new.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AuthGuard } from './components/auth/helpers/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -19,12 +20,16 @@ const routes: Routes = [
     { path: 'books/new', component: BookNewComponent},
     { path: 'books/:id', component: BookDetailsComponent}
   ]}, */
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', 
+  component: AdminComponent, 
+  canActivate: [AuthGuard] 
+},
     
 ]; 
  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ AuthGuard ]
 })
 export class AppRoutingModule { }

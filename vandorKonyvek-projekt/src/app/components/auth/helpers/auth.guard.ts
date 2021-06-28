@@ -14,14 +14,13 @@ import {
                 private router: Router) 
                 {}
   
-    canActivate(
-      route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot
-    ): boolean | Observable<boolean> | Promise<boolean> {
-      const isAuth = this.authService.getIsAuthenticated();
-      if (!isAuth) {
-        this.router.navigate(['/login']);
-      }
-      return isAuth;
-    }
+   
+    canActivate(next: ActivatedRouteSnapshot, 
+                state: RouterStateSnapshot): boolean {
+                  const isAuth = this.authService.isAuthenticated();
+                  if (!isAuth) {
+                    this.router.navigate(['/login']);
+                  }
+                  return isAuth;
+  }
   }

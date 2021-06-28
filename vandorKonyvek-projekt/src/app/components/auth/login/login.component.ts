@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     return;
   } else {
     this.authService.login(this.loginForm.value);
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin']);
     }
   } 
   

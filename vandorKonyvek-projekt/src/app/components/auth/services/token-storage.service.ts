@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
@@ -7,25 +8,26 @@ const USER_KEY = 'auth-user';
   providedIn: 'root'
 })
 export class TokenStorageService {
-  constructor() { }
+  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) { }
 
   signOut(): any {
-    window.sessionStorage.clear();
-    console.log('signout windowsessionstorage: ');
-    console.log(window.sessionStorage);
+    this.storage.clear();
+    console.log('signout localstorage: ');
+    console.log(this.storage);
   }
 
   public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
-    console.log('savetoken windowsessionstorage: ');
-    console.log(window.sessionStorage);
+    this.storage.clear();
+    this.storage.set(TOKEN_KEY, token);
+    console.log('savetoken localstorage: ');
+    console.log(this.storage);
   }
 
   public getToken(): string | null {
-    const token = window.sessionStorage.getItem(TOKEN_KEY);
-    console.log(token);
-    return token;
+    return this.storage.get(TOKEN_KEY);
+    //const token = window.sessionStorage.getItem(TOKEN_KEY);
+   // console.log(token);
+   // return token;
   }
 /*
   public saveUser(user: any): void {
