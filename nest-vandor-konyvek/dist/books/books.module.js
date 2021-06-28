@@ -13,8 +13,6 @@ const auth_module_1 = require("../auth/auth.module");
 const books_controller_1 = require("./books.controller");
 const books_service_1 = require("./books.service");
 const books_repository_1 = require("./books.repository");
-const jwt_admin_guard_1 = require("../auth/guards/jwt-admin.guard");
-const jwt_common_guard_1 = require("../auth/guards/jwt-common.guard");
 let BooksModule = class BooksModule {
 };
 BooksModule = __decorate([
@@ -22,8 +20,6 @@ BooksModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forFeature([books_repository_1.BookRepository]),
             auth_module_1.AuthModule,
-            jwt_admin_guard_1.JwtAdminAuthGuard,
-            jwt_common_guard_1.JwtCommonAuthGuard
         ],
         controllers: [books_controller_1.BooksController],
         providers: [books_service_1.BooksService],

@@ -19,7 +19,6 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
     async getBooks(filterDto, user) {
         const { book_available, search } = filterDto;
         const query = this.createQueryBuilder('book');
-        query.where('book.bookUserId = :bookUserId', { bookUserId: user.user_id });
         if (book_available) {
             query.andWhere('book.book_available = :book_available', { book_available });
         }

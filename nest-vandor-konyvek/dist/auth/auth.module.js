@@ -18,8 +18,6 @@ const jwt_strategy_1 = require("./jwt.strategy");
 const config = require("config");
 const user_module_1 = require("../user/user.module");
 const auth_credentials_dto_1 = require("./dto/auth-credentials.dto");
-const jwt_admin_guard_1 = require("./guards/jwt-admin.guard");
-const jwt_common_guard_1 = require("./guards/jwt-common.guard");
 const jwtConfig = config.get('jwt');
 let AuthModule = class AuthModule {
 };
@@ -43,15 +41,11 @@ AuthModule = __decorate([
         providers: [
             auth_service_1.AuthService,
             jwt_strategy_1.JwtStrategy,
-            jwt_admin_guard_1.JwtAdminAuthGuard,
-            jwt_common_guard_1.JwtCommonAuthGuard
         ],
         exports: [
             jwt_strategy_1.JwtStrategy,
             passport_1.PassportModule,
             auth_credentials_dto_1.AuthCredentialsDto,
-            jwt_admin_guard_1.JwtAdminAuthGuard,
-            jwt_common_guard_1.JwtCommonAuthGuard
         ],
     })
 ], AuthModule);

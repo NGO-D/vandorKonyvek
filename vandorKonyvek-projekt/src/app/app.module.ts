@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from './components/auth/auth module';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthModule } from './components/auth/auth module';
     BookNewComponent,
     DeleteModalComponent,
     AffirmModalComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

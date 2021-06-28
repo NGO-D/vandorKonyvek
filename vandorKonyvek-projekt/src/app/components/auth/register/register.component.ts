@@ -38,12 +38,11 @@ export class RegisterComponent implements OnInit {
       console.log('kakuk');
       return;
     } else {
-      console.log(this.registerForm.value);
       this.authService.register(this.registerForm.value);
-      this._snackBar.open('Sikeres regisztráció!', ' ', {
+      this._snackBar.open('Sikeres ', 'regisztráció!', {
         duration: 2000,
       });
       this.router.navigate(['/login']);
+      }
     }
   }
-}

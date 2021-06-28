@@ -46,12 +46,10 @@ export class AuthService {
         console.log(typeof response);
         this.tokenStorageService.saveToken(token.toString());
         console.log(token.toString());
-        
-
       },
       (error) => {
         console.error(error);
-      }
+      } 
     );
     return;
   }

@@ -4,15 +4,15 @@ import { AuthModule } from 'src/auth/auth.module';
 import { BooksController } from './books.controller';
 import { BooksService } from './books.service';
 import { BookRepository } from './books.repository';
-import { JwtAdminAuthGuard } from 'src/auth/guards/jwt-admin.guard';
-import { JwtCommonAuthGuard } from 'src/auth/guards/jwt-common.guard';
+//import { JwtAdminAuthGuard } from 'src/auth/guards/jwt-admin.guard';
+//import { JwtCommonAuthGuard } from 'src/auth/guards/jwt-common.guard';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([BookRepository]), 
         AuthModule,
-        JwtAdminAuthGuard,
-        JwtCommonAuthGuard
+       // JwtAdminAuthGuard,
+        // JwtCommonAuthGuard
     ],
     controllers: [BooksController],
     providers: [BooksService],

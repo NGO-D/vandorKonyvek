@@ -3891,18 +3891,8 @@
         "signature": "9e36626cb39f17790cf2403e2e54d8a74542da63e2a49aba7061133a1af26dcd",
         "affectsGlobalScope": false
       },
-      "../src/auth/guards/jwt-admin.guard.ts": {
-        "version": "fd4dc5c41e6de52d0ab4e6d0cb3421ee54e6b4ec7d6c5fd62b374e6fb814f1ad",
-        "signature": "8123f38d09f343255eb7be8210a4df6bf480e86305ab2ed03324cc47ba4f29ef",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/guards/jwt-common.guard.ts": {
-        "version": "f0427f1f9fadc169e24c764882697853e1589a80ee075efbbb30775774cc1c28",
-        "signature": "944d48cdb32bfe16a29931525cb71573bbfbff894d8eb19bbb152676b854692e",
-        "affectsGlobalScope": false
-      },
       "../src/auth/auth.module.ts": {
-        "version": "a3933286f272dcbf3f1312b6d8f805f5e372cd99b7279627e5049197f413931a",
+        "version": "624af9897c00a1afd664deed971534a1af39b3f4257fd50f123a38c35dfc6976",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
         "affectsGlobalScope": false
       },
@@ -3917,7 +3907,7 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.repository.ts": {
-        "version": "e219e72ce31b2756e2a849f05df8b57a4e5c9f100e67be67faf213208084d4fb",
+        "version": "1490386429e63114d0b0df428f8fa893d9d7ea0fb7c35f6be661ee93dc3fc4e5",
         "signature": "12d9eafc73495782e29edc89f166c42a42299db036488fd60d785b131006b6fe",
         "affectsGlobalScope": false
       },
@@ -3937,7 +3927,7 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.module.ts": {
-        "version": "7a618a46646426e2c1b9a576f14daf52dcd276abfcb3973a157616f627d816c0",
+        "version": "bbe59d8284badeb1c2fc8ed2985096d07c74b69bc2fc5c71f696ede644f87f4a",
         "signature": "827e8ecdc7854dc685d7ea2b7672a57d60e3b43f8437d9cab902a2c5a11b457c",
         "affectsGlobalScope": false
       },
@@ -8202,8 +8192,6 @@
         "../src/auth/auth.controller.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
-        "../src/auth/guards/jwt-admin.guard.ts",
-        "../src/auth/guards/jwt-common.guard.ts",
         "../src/auth/jwt.strategy.ts",
         "../src/user/user.module.ts",
         "../src/user/user.repository.ts"
@@ -8224,14 +8212,6 @@
       "../src/auth/get-user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/user/user.entity.ts"
-      ],
-      "../src/auth/guards/jwt-admin.guard.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts"
-      ],
-      "../src/auth/guards/jwt-common.guard.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts"
       ],
       "../src/auth/jwt-payload.interface.ts": [
         "../src/user/user-role.enum.ts"
@@ -8265,8 +8245,6 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/auth.module.ts",
-        "../src/auth/guards/jwt-admin.guard.ts",
-        "../src/auth/guards/jwt-common.guard.ts",
         "../src/books/books.controller.ts",
         "../src/books/books.repository.ts",
         "../src/books/books.service.ts"
@@ -11706,12 +11684,6 @@
         "../src/user/user-region.enum.ts",
         "../src/user/user-role.enum.ts"
       ],
-      "../src/auth/guards/jwt-admin.guard.ts": [
-        "../node_modules/@nestjs/passport/index.d.ts"
-      ],
-      "../src/auth/guards/jwt-common.guard.ts": [
-        "../node_modules/@nestjs/passport/index.d.ts"
-      ],
       "../src/auth/jwt-payload.interface.ts": [
         "../src/user/user-role.enum.ts"
       ],
@@ -12727,8 +12699,6 @@
       "../src/auth/auth.service.ts",
       "../src/auth/dto/auth-credentials.dto.ts",
       "../src/auth/get-user.decorator.ts",
-      "../src/auth/guards/jwt-admin.guard.ts",
-      "../src/auth/guards/jwt-common.guard.ts",
       "../src/auth/jwt-payload.interface.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/books/book-available.enum.ts",

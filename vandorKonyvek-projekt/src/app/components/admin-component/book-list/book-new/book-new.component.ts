@@ -29,16 +29,18 @@ export class BookNewComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookNewSignupForm = this.formBuilder.group( {
+      'book_id': [null],
       'book_description': [null],
       'book_title': [null],
       'book_image': [null],
     } )
-  
+  /*
     this.newID = this.booksService.getMaxID().subscribe(
       id => {
         this.bookNewSignupForm.patchValue({id: id});
       }
     )
+    */
   }
 
   openAffirmModal(name: string) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, 
               private router: Router,
-              private authService: AuthService)
+              private authService: AuthService,
+              private _snackBar: MatSnackBar,)
                { }
 
   ngOnInit() {
@@ -31,11 +33,10 @@ export class LoginComponent implements OnInit {
      console.log('kakuk');
     return;
   } else {
-    console.log('comp');
     this.authService.login(this.loginForm.value);
+    this.router.navigate(['/']);
+    }
   } 
-  // ez itt nem jó, akkor is átnavigál, amikor nem sikerül a bejelentkezés
-  this.router.navigate(['/']);
+  
   }
-}
 

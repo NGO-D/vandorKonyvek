@@ -18,7 +18,7 @@ export class BookRepository extends Repository<Book> {
         const { book_available, search } = filterDto;
         const query = this.createQueryBuilder('book');
 
-        query.where('book.bookUserId = :bookUserId', { bookUserId: user.user_id });
+        //query.where('book.bookUserId = :bookUserId', { bookUserId: user.user_id });
 
         if (book_available) {
 

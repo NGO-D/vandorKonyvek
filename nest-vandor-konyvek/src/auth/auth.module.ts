@@ -9,8 +9,8 @@ import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config';
 import { UserModule } from 'src/user/user.module';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
-import { JwtAdminAuthGuard } from './guards/jwt-admin.guard';
-import { JwtCommonAuthGuard } from './guards/jwt-common.guard';
+//import { JwtAdminAuthGuard } from './guards/jwt-admin.guard';
+//import { JwtCommonAuthGuard } from './guards/jwt-common.guard';
 
 
 const jwtConfig = config.get('jwt'); 
@@ -36,16 +36,16 @@ const jwtConfig = config.get('jwt');
   providers: [
     AuthService,
     JwtStrategy,
-    JwtAdminAuthGuard,
-    JwtCommonAuthGuard
+    //JwtAdminAuthGuard,
+    //JwtCommonAuthGuard
   ],
 
   exports: [
     JwtStrategy,
     PassportModule,
     AuthCredentialsDto,
-    JwtAdminAuthGuard,
-    JwtCommonAuthGuard
+    //JwtAdminAuthGuard,
+    //JwtCommonAuthGuard
   ],
 
 })
