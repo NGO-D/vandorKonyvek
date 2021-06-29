@@ -5,7 +5,7 @@ import {
     Router,
   } from '@angular/router';
   import { Injectable } from '@angular/core';
-  import { Observable } from 'rxjs';
+  import { Observable, of, pipe } from 'rxjs';
   import { AuthService } from '../services/auth.service';
   
   @Injectable()
@@ -14,15 +14,18 @@ import {
                 private router: Router) 
                 {}
   
-   
-    canActivate(
-      // ezeket ki kéne törölni, de nem tudom, mit csinálnak. lehet, kellenek még később
-      next: ActivatedRouteSnapshot, 
-                state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-                  const isAuth = this.authService.isAuthenticated();
-                  if (!isAuth) {
-                    this.router.navigate(['/login']);
-                  }
-                  return isAuth;
+canActivate(next: ActivatedRouteSnapshot, 
+            state: RouterStateSnapshot
+            ): Observable<boolean> | Promise<boolean> | boolean {
+            if (!this.authService.isAuthenticated()) {
+              console.log('it is not authenticalted');
+              this.router.navigate(['/login']);
+              return false;
+            } 
+            console.log('it is authenticated');
+            return true;
+                        
+    }
   }
-  }
+
+ 

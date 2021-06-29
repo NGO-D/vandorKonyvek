@@ -28,6 +28,7 @@
     "angular-confirm-modal": "^0.1.0",
     "angular2-jwt": "^0.2.3",
     "bootstrap": "^4.5.0",
+    "jwt-decode": "^3.1.2",
     "ng-confirmation-modal": "^3.0.0",
     "ngx-webstorage-service": "^4.1.0",
     "rxjs": "^6.6.3",

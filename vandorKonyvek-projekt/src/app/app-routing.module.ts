@@ -6,26 +6,29 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthGuard } from './components/auth/helpers/auth.guard';
+import { RoleGuard } from './components/auth/helpers/role.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent}, 
- // { path: 'admin/books', component: BookListComponent},
- /* { path: 'admin', component: AdminLandingComponent, children: [
-    { path: 'books/new', component: BookNewComponent},
-    { path: 'books/:id', component: BookDetailsComponent}
-  ]}, */
   { path: 'admin', 
-  component: AdminComponent, 
-  canActivate: [AuthGuard] 
-},
-    
+    component: AdminComponent, 
+    canActivate: [ AuthGuard,
+                   RoleGuard
+                  ], 
+    data: { 
+      expectedRole: 'admin'
+    } 
+  },
+  { path: '**', redirectTo: '' },  
 ]; 
  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [ AuthGuard ]
+  providers: [ AuthGuard,
+               RoleGuard,
+               ],
 })
 export class AppRoutingModule { }
