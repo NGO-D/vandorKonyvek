@@ -15,8 +15,10 @@ import {
                 {}
   
    
-    canActivate(next: ActivatedRouteSnapshot, 
-                state: RouterStateSnapshot): boolean {
+    canActivate(
+      // ezeket ki kéne törölni, de nem tudom, mit csinálnak. lehet, kellenek még később
+      next: ActivatedRouteSnapshot, 
+                state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
                   const isAuth = this.authService.isAuthenticated();
                   if (!isAuth) {
                     this.router.navigate(['/login']);

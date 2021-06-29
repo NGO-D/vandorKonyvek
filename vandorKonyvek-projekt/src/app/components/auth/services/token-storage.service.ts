@@ -25,10 +25,9 @@ export class TokenStorageService {
 
   public getToken(): string | null {
     return this.storage.get(TOKEN_KEY);
-    //const token = window.sessionStorage.getItem(TOKEN_KEY);
-   // console.log(token);
-   // return token;
   }
+
+//itt még nem tartok, nem is értem, hogy miért kell ez  
 /*
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);

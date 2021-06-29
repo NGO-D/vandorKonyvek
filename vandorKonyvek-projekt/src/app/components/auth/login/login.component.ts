@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, 
               private router: Router,
               private authService: AuthService,
-              private _snackBar: MatSnackBar,)
+              private _snackBar: MatSnackBar,) 
                { }
 
   ngOnInit() {
@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
 
   get data() { return this.loginForm.controls; }
 
+  // 1 kellene kiírni valamit, ha rosszul adja meg a felhasználó az adatokat
+  // 2 egyelőre nem navigál megfelelően
   onSubmit() {    
    if (this.loginForm.invalid) {
      console.log('kakuk');

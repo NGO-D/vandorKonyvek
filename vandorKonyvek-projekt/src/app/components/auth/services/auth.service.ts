@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AuthDto } from '../dto/auth.dto';
-import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-
-
-//nem korrekt ez alábbi elérési útvonal, át is írtam
-//const AUTH_API = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,28 +22,14 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
-              //public jwtHelper: JwtHelperService
               ) { }
-/*
-  getAccessToken(): string {
-    return this.accessToken;
-  }
-*/
 
-public isAuthenticated(): boolean {
-  const token = localStorage.getItem('auth-token');
-  console.log('isauthaticated: ');
-  console.log(token);
-  // Check whether the token is expired and return
-  // true or false
-  return !this.jwtHelper.isTokenExpired(token);
-}
-
-/*
-  getIsAuthenticated(): boolean {
-    return this.isAuthenticated;
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem('auth-token');
+    console.log('isauthaticated: ');
+    console.log(token);
+    return !this.jwtHelper.isTokenExpired(token);
   }
-*/
 
   login(authDto: AuthDto): Observable<any> {
     console.log('szervíz');

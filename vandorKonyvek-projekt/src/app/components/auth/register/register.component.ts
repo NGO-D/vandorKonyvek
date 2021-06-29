@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
 
   get data() { return this.registerForm.controls; }
 
+  // nem navigál megfelelően
   onSubmit() {    
     if (this.registerForm.invalid) {
       console.log('kakuk');
