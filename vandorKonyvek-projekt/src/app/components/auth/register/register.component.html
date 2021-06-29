@@ -35,6 +35,10 @@
             </mat-form-field>
             <mat-form-field class="w-100">
               <input type="password" matInput placeholder="Jelszó" formControlName="user_password">
+              <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
               <mat-error *ngIf="data.user_password.errors?.required">Jelszó megadása kötelező</mat-error>
             </mat-form-field>
             <div class="mt-4">

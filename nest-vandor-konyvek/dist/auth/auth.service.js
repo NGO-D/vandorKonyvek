@@ -32,7 +32,7 @@ let AuthService = class AuthService {
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        const payload = { user_email: user.user_email,
+        const payload = { user_id: user.user_id,
             user_role: user.user_role,
             user_userName: user.user_userName
         };

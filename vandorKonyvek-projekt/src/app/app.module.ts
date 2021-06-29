@@ -16,12 +16,14 @@ import { AuthGuard } from './components/auth/helpers/auth.guard';
 import { AuthService } from './components/auth/services/auth.service';
 import { TokenStorageService } from './components/auth/services/token-storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

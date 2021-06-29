@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  hide = true;
   
   constructor(private formBuilder: FormBuilder, 
               private router: Router, 
@@ -43,7 +44,6 @@ export class RegisterComponent implements OnInit {
       this._snackBar.open('Sikeres ', 'regisztráció!', {
         duration: 2000,
       });
-      this.router.navigate(['/login']);
       }
     }
   }

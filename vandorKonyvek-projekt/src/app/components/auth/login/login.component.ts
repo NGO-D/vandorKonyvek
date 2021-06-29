@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  hide = true;
 
   constructor(private formBuilder: FormBuilder, 
               private router: Router,
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   // 1 kellene kiírni valamit, ha rosszul adja meg a felhasználó az adatokat
   // 2 egyelőre nem navigál megfelelően
-  onSubmit() {    
+  onSubmit() {   
    if (this.loginForm.invalid) {
      console.log('kakuk');
     return;

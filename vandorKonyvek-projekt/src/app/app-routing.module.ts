@@ -7,11 +7,22 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthGuard } from './components/auth/helpers/auth.guard';
 import { RoleGuard } from './components/auth/helpers/role.guard';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent}, 
+  { path: 'user', 
+    component: UserComponent,
+    canActivate: [ AuthGuard,
+                   RoleGuard,
+                  ], 
+    data: { 
+       expectedRole: ['common',
+                      'admin' ]
+          } 
+  },
   { path: 'admin', 
     component: AdminComponent, 
     canActivate: [ AuthGuard,

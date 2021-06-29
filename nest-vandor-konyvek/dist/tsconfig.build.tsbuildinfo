@@ -3862,12 +3862,12 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt-payload.interface.ts": {
-        "version": "328d979244a3c8143cf70c796eff5ed93850354284350653f9fed373d2dedfc6",
-        "signature": "d9caa7fe1551a42da34a1b96ede71aed640a5f83b3124b93ce2d92412a3e2da9",
+        "version": "2bf8442680333d5464158575026bb79e35fc2eb04393db0cc7c5147c089885d2",
+        "signature": "ce21ad5a6a26b9a2841b0103dd8336825d19aa128e2b9dc27dd345f0a8f6a466",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "47193c2fc655e8f57a4a5564584242f4f311b7e2f288c08456ee5a3cc5a09623",
+        "version": "7c92fb620cbdcf2e3fa5785193e253669934d89622c0c2fc6297f08d7057a8d4",
         "signature": "3773b1d306f86010d83f0646b935c917894ebc7587068db39c8beaf45578e99d",
         "affectsGlobalScope": false
       },
@@ -3882,7 +3882,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
-        "version": "df81939d31441ccab72273cd7c2b06ede637413014b2b84e7d22e8dfb88e7c98",
+        "version": "488716bfa70744e5a95c4eda50abb45e985e647205a97d17fffa18f4cf226cbd",
         "signature": "65466ae825365f75106b7701b9901f091e0dcf2ffa447f499e79436538c4c751",
         "affectsGlobalScope": false
       },

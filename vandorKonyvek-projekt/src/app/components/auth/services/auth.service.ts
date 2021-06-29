@@ -7,7 +7,8 @@ import { User } from '../models/user.model';
 import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
-
+import { Router } from '@angular/router';
+import { TokenPayload } from '../models/token-payload.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,6 +23,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
+              private router: Router,
               ) { }
 
   public isAuthenticated(): boolean {
@@ -41,6 +43,7 @@ export class AuthService {
         console.log(typeof response);
         this.tokenStorageService.saveToken(token.toString());
         console.log(token.toString());
+
       },
       (error) => {
         console.error(error);
@@ -67,6 +70,7 @@ export class AuthService {
           this.httpClient.post(endpoint, httpParams).subscribe(
             (response) => {
               console.log('siker');
+              this.router.navigate(['/login']);
             },
             (error) => {
               console.error(error);
@@ -75,4 +79,9 @@ export class AuthService {
           );
           return;
     }
+
+    
   }
+
+
+ 
