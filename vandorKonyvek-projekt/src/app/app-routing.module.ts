@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AuthGuard } from './components/auth/helpers/auth.guard';
@@ -11,7 +11,7 @@ import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'register', component: RegisterComponent},
+  { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent}, 
   { path: 'user', 
     component: UserComponent,

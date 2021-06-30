@@ -13,6 +13,7 @@
               <input type="text" matInput placeholder="Keresztnév" formControlName="user_firstName">
               <mat-error *ngIf="data.user_firstName.errors?.required">Keresztnév megadása kötelező.</mat-error>
             </mat-form-field>
+           
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Megye" formControlName="user_region">
               <mat-error *ngIf="data.user_region.errors?.required">Megye megadása kötelező.</mat-error>

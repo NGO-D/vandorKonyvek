@@ -2877,8 +2877,8 @@
         "affectsGlobalScope": false
       },
       "../src/user/user-region.enum.ts": {
-        "version": "c97f34c784feeabb752a9768eacfa90bc82f6d7e2840ee7edc7d60addeacaed1",
-        "signature": "ee9952ed4f8becdbcfdbbb98599caa51797dbbaf08091d79e30a4229c785aaec",
+        "version": "3a693e341e00e0f0d2f6137562826d2216759195bc5f4838f8dae3539951e261",
+        "signature": "52e47b2842ebcfa59a5a384c456d653fa9d43bcffdc40520939bfadab6ec58c6",
         "affectsGlobalScope": false
       },
       "../src/user/user-role.enum.ts": {
@@ -3877,7 +3877,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "5dceb97914828e427fe2c22f97f34007cf2e5615310f642698a9d213afd6f927",
+        "version": "ea0f5ff4af6500d90d186fc5c06836d3969124297d2444d47dcbefe176cd3a88",
         "signature": "a6331581391e48405dbb016f4b572899d72c733f3305856bf478d6ba9307f0d2",
         "affectsGlobalScope": false
       },

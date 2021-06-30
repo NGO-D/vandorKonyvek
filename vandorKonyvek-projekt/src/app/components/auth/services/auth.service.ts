@@ -10,6 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { TokenPayload } from '../dto/token-payload.dto';
 import { textChangeRangeIsUnchanged } from 'typescript';
+import { UserRegion } from '../models/user-region.enum';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -38,7 +39,7 @@ export class AuthService {
       (response) => {
         const token = response[Object.keys(response)[0]];
         this.tokenStorageService.saveToken(token);
-        this.loginEndpointDecider(token);
+        this.loginEndpointSwitch(token);
       },
       (error) => {
         console.error(error);
@@ -47,7 +48,7 @@ export class AuthService {
     return;
   }
 
-  loginEndpointDecider(token): void {
+  loginEndpointSwitch(token): void {
     if (this.tokenStorageService.decodeToken(token).user_role === UserRole.common) {
       this.router.navigate(['/user']);
     } else {
@@ -79,7 +80,6 @@ export class AuthService {
           return;
     }
 
-    
   }
 
 

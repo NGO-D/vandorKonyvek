@@ -1,4 +1,21 @@
 export enum UserRegion {
+    Bacs = 'Bács-Kiskun megye', 
+    Baranya = 'Baranya megye', 
+    Bekes = 'Békés megye',
+    Borsod = 'Borsod-Abaúj-Zemplén megye', 
     Budapest = 'Budapest',
-    Pest = 'Pest'
+    Csongrad = 'Csongrád-Csanád megye', 
+    Fejer = 'Fejér megye', 
+    Gyor = 'Győr-Moson-Sopron megye', 
+    Hajdu = 'Hajdú-Bihar megye', 
+    Heves = 'Heves megye', 
+    Jasz = 'Jász-Nagykun-Szolnok megye', 
+    Komarom = 'Komárom-Esztergom megye', 
+    Nograd = 'Nógrád megye',
+    Somogy = 'Somogy megye', 
+    Szabolcs = 'Szabolcs-Szatmár-Bereg megye', 
+    Tolna = 'Tolna megye', 
+    Vas = 'Vas megye', 
+    Veszprem = 'Veszprém megye', 
+    Zala = 'Zala',
 }

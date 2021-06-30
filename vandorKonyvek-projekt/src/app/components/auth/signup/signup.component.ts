@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
 
+
+
+
+
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
 
-export class RegisterComponent implements OnInit {
+export class SignupComponent implements OnInit {
   registerForm: FormGroup;
   hide = true;
   
+
   constructor(private formBuilder: FormBuilder, 
-              private router: Router, 
               private _snackBar: MatSnackBar,
               private authService: AuthService) { }
 
@@ -31,6 +34,9 @@ export class RegisterComponent implements OnInit {
       user_password: ['', Validators.required],
     });
   }
+
+
+  
 
   get data() { return this.registerForm.controls; }
 

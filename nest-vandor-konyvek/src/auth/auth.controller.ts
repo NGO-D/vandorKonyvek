@@ -19,7 +19,7 @@ export class AuthController {
     } 
  */   
     
-    @Post('/register')
+    @Post('/signup')
     signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto ): Promise<any> {
         console.log('baaaack');
         console.log(authCredentialsDto);

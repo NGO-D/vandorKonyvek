@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RegisterComponent } from './register/register.component';
+import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { TokenStorageService } from './services/token-storage.service';
@@ -28,7 +28,7 @@ import { RoleGuard } from './helpers/role.guard';
                   AuthGuard,
                   RoleGuard,
                   ],
-  declarations: [ RegisterComponent,
+  declarations: [ SignupComponent,
                   LoginComponent, ],
   exports:      [ ],
   bootstrap:    [  ]
