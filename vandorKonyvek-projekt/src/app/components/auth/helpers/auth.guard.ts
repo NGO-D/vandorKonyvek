@@ -18,11 +18,9 @@ canActivate(next: ActivatedRouteSnapshot,
             state: RouterStateSnapshot
             ): Observable<boolean> | Promise<boolean> | boolean {
             if (!this.authService.isAuthenticated()) {
-              console.log('it is not authenticalted');
               this.router.navigate(['/login']);
               return false;
             } 
-            console.log('it is authenticated');
             return true;
                         
     }

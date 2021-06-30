@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { TokenPayload } from '../dto/token-payload.dto';
+import decode from 'jwt-decode';
 
 const TOKEN_KEY = 'auth-token';
-const USER_KEY = 'auth-user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ const USER_KEY = 'auth-user';
 export class TokenStorageService {
   constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) { }
 
-  signOut(): any {
+  public signOut(): void {
     this.storage.clear();
     console.log('signout localstorage: ');
     console.log(this.storage);
@@ -27,21 +28,8 @@ export class TokenStorageService {
     return this.storage.get(TOKEN_KEY);
   }
 
-//itt még nem tartok, nem is értem, hogy miért kell ez  
-/*
-  public saveUser(user: any): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  public decodeToken(token): TokenPayload {
+    const tokenPayload: TokenPayload = decode(token);
+    return tokenPayload;
   }
-*/
-/*
-  public getUser(): any {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-      return JSON.parse(user);
-    }
-
-    return {};
-  }
-*/
 }

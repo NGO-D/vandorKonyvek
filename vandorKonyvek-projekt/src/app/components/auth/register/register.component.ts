@@ -34,16 +34,27 @@ export class RegisterComponent implements OnInit {
 
   get data() { return this.registerForm.controls; }
 
-  // nem navigál megfelelően
   onSubmit() {    
     if (this.registerForm.invalid) {
-      console.log('kakuk');
+      this._snackBar.open('Sikertelen ', 'regisztráció!', {
+        duration: 3000,
+      });
       return;
     } else {
-      this.authService.register(this.registerForm.value);
-      this._snackBar.open('Sikeres ', 'regisztráció!', {
-        duration: 2000,
-      });
+      this.authService.register(this.registerForm.value).subscribe(
+        (response) => {
+          this._snackBar.open('Sikeres ', 'regisztráció!', {
+            duration: 2000,
+          })
+        },
+        (error) => {
+          console.error(error);
+          this._snackBar.open('Sikertelen ', 'regisztráció!', {
+            duration: 3000,
+          });
+        }
+      )
+      
       }
     }
   }

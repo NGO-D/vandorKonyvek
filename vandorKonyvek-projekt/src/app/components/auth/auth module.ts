@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from 'src/app/material.module';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthGuard } from './helpers/auth.guard';
+import { RoleGuard } from './helpers/role.guard';
 
 @NgModule({
   imports:      [ BrowserModule,
@@ -25,6 +26,7 @@ import { AuthGuard } from './helpers/auth.guard';
                   TokenStorageService,
                   JwtHelperService,
                   AuthGuard,
+                  RoleGuard,
                   ],
   declarations: [ RegisterComponent,
                   LoginComponent, ],

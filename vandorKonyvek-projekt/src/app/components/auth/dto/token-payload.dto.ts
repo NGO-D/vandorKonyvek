@@ -1,4 +1,4 @@
-import { UserRole } from "./user-role.enum";
+import { UserRole } from "../models/user-role.enum";
 
 export class TokenPayload {
     user_id: number;

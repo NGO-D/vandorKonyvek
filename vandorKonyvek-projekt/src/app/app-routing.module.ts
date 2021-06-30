@@ -15,13 +15,15 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent}, 
   { path: 'user', 
     component: UserComponent,
+  },
+  { path: 'user', 
+    component: UserComponent, 
     canActivate: [ AuthGuard,
-                   RoleGuard,
+                   RoleGuard
                   ], 
     data: { 
-       expectedRole: ['common',
-                      'admin' ]
-          } 
+      expectedRole: [ 'common' || 'admin']
+    } 
   },
   { path: 'admin', 
     component: AdminComponent, 

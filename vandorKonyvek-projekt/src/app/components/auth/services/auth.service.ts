@@ -8,7 +8,8 @@ import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-import { TokenPayload } from '../models/token-payload.model';
+import { TokenPayload } from '../dto/token-payload.dto';
+import { textChangeRangeIsUnchanged } from 'typescript';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -28,22 +29,16 @@ export class AuthService {
 
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('auth-token');
-    console.log('isauthaticated: ');
-    console.log(token);
     return !this.jwtHelper.isTokenExpired(token);
   }
 
   login(authDto: AuthDto): Observable<any> {
-    console.log('szervíz');
-    console.log(authDto);
     const endpoint: string = this.apiUrl + "/auth/signin";
     this.httpClient.post(endpoint, authDto).subscribe(
       (response) => {
-        const token = Object.values(response);
-        console.log(typeof response);
-        this.tokenStorageService.saveToken(token.toString());
-        console.log(token.toString());
-
+        const token = response[Object.keys(response)[0]];
+        this.tokenStorageService.saveToken(token);
+        this.loginEndpointDecider(token);
       },
       (error) => {
         console.error(error);
@@ -52,9 +47,16 @@ export class AuthService {
     return;
   }
 
+  loginEndpointDecider(token): void {
+    if (this.tokenStorageService.decodeToken(token).user_role === UserRole.common) {
+      this.router.navigate(['/user']);
+    } else {
+      this.router.navigate(['/admin']);
+    }
+  }
+
   register(user: User): Observable<User> {
           const endpoint: string = this.apiUrl + "/auth/register";
-          console.log('serviceben vagyok');
           const httpParams = { 
             user_lastName: user.user_lastName,
             user_firstName: user.user_firstName,
@@ -66,16 +68,13 @@ export class AuthService {
             user_email: user.user_email,
             user_password: user.user_password
           };
-          console.log(httpParams);
           this.httpClient.post(endpoint, httpParams).subscribe(
             (response) => {
-              console.log('siker');
               this.router.navigate(['/login']);
             },
             (error) => {
               console.error(error);
             }
-
           );
           return;
     }
