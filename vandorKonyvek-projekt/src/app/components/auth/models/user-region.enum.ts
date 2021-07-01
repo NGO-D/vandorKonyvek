@@ -1,21 +1,31 @@
 export enum UserRegion {
-    Bacs = 'Bács-Kiskun megye', 
-    Baranya = 'Baranya megye', 
-    Bekes = 'Békés megye',
-    Borsod = 'Borsod-Abaúj-Zemplén megye', 
+    Bacs = 'Bács-Kiskun',
+    Baranya = 'Baranya',
+    Bekes = 'Békés',
+    Borsod = 'Borsod-Abaúj-Zemplén',
     Budapest = 'Budapest',
-    Csongrad = 'Csongrád-Csanád megye', 
-    Fejer = 'Fejér megye', 
-    Gyor = 'Győr-Moson-Sopron megye', 
-    Hajdu = 'Hajdú-Bihar megye', 
-    Heves = 'Heves megye', 
-    Jasz = 'Jász-Nagykun-Szolnok megye', 
-    Komarom = 'Komárom-Esztergom megye', 
-    Nograd = 'Nógrád megye',
-    Somogy = 'Somogy megye', 
-    Szabolcs = 'Szabolcs-Szatmár-Bereg megye', 
-    Tolna = 'Tolna megye', 
-    Vas = 'Vas megye', 
-    Veszprem = 'Veszprém megye', 
+    Csongrad = 'Csongrád-Csanád',
+    Fejer = 'Fejér',
+    Gyor = 'Győr-Moson-Sopron',
+    Hajdu = 'Hajdú-Bihar',
+    Heves = 'Heves',
+    Jasz = 'Jász-Nagykun-Szolnok',
+    Komarom = 'Komárom-Esztergom', 
+    Nograd = 'Nógrád',
+    Somogy = 'Somogy', 
+    Szabolcs = 'Szabolcs-Szatmár-Bereg',
+    Tolna = 'Tolna',
+    Vas = 'Vas',
+    Veszprem = 'Veszprém',
     Zala = 'Zala',
+}
+
+    const valuesArray = Object.values(UserRegion);
+
+    
+export class Regions {
+    public regions = valuesArray;
+    regionsToArray(): String[] {
+        return this.regions;
+    } 
 }

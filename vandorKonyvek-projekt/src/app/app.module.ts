@@ -36,13 +36,13 @@ import { UserComponent } from './components/user/user.component';
     MyMaterialModule,
     AuthModule,
     StorageServiceModule,
-    
-    ],
+  ],
   providers: [ AuthGuard,
               AuthService,
               TokenStorageService,
               JwtHelperService,
-            ],
+              
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

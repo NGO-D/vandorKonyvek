@@ -8,9 +8,8 @@ import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-import { TokenPayload } from '../dto/token-payload.dto';
-import { textChangeRangeIsUnchanged } from 'typescript';
-import { UserRegion } from '../models/user-region.enum';
+import { Regions, UserRegion } from '../models/user-region.enum';
+import { of } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,6 +21,7 @@ const httpOptions = {
 export class AuthService {
   private apiUrl: string = environment.apiUrl;
   private jwtHelper = new JwtHelperService();
+  private regions = new Regions();
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
@@ -48,6 +48,12 @@ export class AuthService {
     return;
   }
 
+  userRegionSelecter(): Observable<String[]> {
+    console.log('auth service:');
+    console.log(this.regions.regionsToArray());
+    return of(this.regions.regionsToArray());
+  }
+
   loginEndpointSwitch(token): void {
     if (this.tokenStorageService.decodeToken(token).user_role === UserRole.common) {
       this.router.navigate(['/user']);
@@ -57,7 +63,7 @@ export class AuthService {
   }
 
   register(user: User): Observable<User> {
-          const endpoint: string = this.apiUrl + "/auth/register";
+          const endpoint: string = this.apiUrl + "/auth/signup";
           const httpParams = { 
             user_lastName: user.user_lastName,
             user_firstName: user.user_firstName,

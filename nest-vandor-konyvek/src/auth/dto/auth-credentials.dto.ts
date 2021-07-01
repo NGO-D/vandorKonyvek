@@ -1,4 +1,4 @@
-import { IsEmail, IsString, Matches, MaxLength, MinLength } from "class-validator";
+import { IsEmail, IsNumber, IsString, Matches, MaxLength, MinLength } from "class-validator";
 import { UserRegion } from "src/user/user-region.enum";
 import { UserRole } from "src/user/user-role.enum";
 
@@ -20,7 +20,7 @@ export class AuthCredentialsDto {
     @MaxLength(20)
     user_city: string
 
-    @IsString()
+    @IsNumber()
     @MinLength(4)
     @MaxLength(4)
     user_postcode: number;
@@ -34,7 +34,7 @@ export class AuthCredentialsDto {
 
     @IsString()
     @IsEmail()
-    @MinLength(6)
+    @MinLength(4)
     @MaxLength(20)
     user_email: string;
 

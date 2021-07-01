@@ -3852,7 +3852,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "12d2599414ad4b0bcb9d3ae2b43628fcb88fb78ee54be9fbd99cacb2da1c2e8a",
+        "version": "507a81d738607d8ef9ce60e1ae8ddbe5567eaa5aef629243b7f188d5e45e9d49",
         "signature": "194d65165d8379af24e86adbdd01d9ef28c01f7269b851e63b8606b3acc7c995",
         "affectsGlobalScope": false
       },

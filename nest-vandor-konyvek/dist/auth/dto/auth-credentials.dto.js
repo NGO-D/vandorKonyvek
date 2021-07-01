@@ -34,7 +34,7 @@ __decorate([
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_city", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    class_validator_1.IsNumber(),
     class_validator_1.MinLength(4),
     class_validator_1.MaxLength(4),
     __metadata("design:type", Number)
@@ -48,7 +48,7 @@ __decorate([
 __decorate([
     class_validator_1.IsString(),
     class_validator_1.IsEmail(),
-    class_validator_1.MinLength(6),
+    class_validator_1.MinLength(4),
     class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_email", void 0);
