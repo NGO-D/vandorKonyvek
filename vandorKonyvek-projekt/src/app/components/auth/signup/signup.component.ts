@@ -9,6 +9,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MustMatch } from '../helpers/password-match.validator';
 
 @Component({
   selector: 'app-signup',
@@ -21,68 +24,35 @@ export class SignupComponent implements OnInit {
   userRegions: String[];
   selectedRegion: String;
   hide = true;
+  hideConfirm = true;
   
   constructor(private formBuilder: FormBuilder, 
               private authService: AuthService,
               private router: Router,
               private _matSelectModule: MatSelectModule,
               private _snackBar: MatSnackBar,
+              private _matCheckBoxModule: MatCheckboxModule,
+              private _matFormFieldModule: MatFormFieldModule,
               ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      user_lastName: ['', 
-                          [
-                          Validators.required,
-                          Validators.minLength(2),
-                          Validators.maxLength(20),
-                          ]
-                      ],
-      user_firstName: ['', 
-                          [
-                          Validators.required,
-                          Validators.minLength(2),
-                          Validators.maxLength(20),
-                        ]
-                      ],
+      user_lastName: ['',  Validators.required],
+      user_firstName: ['', Validators.required],                  
       user_region: [ '', Validators.required],
-      user_city: ['', 
-                      [ 
-                        Validators.required,
-                        Validators.minLength(2),
-                        Validators.maxLength(20),
-                      ]
-                  ],
-      user_postcode: ['', 
-                          [
-                            Validators.required,
-                            Validators.minLength(4),
-                            Validators.maxLength(4),
-                          ]
-                      ],
-      user_userName: ['', 
-                          [
-                            Validators.required,
-                            Validators.minLength(2),
-                            Validators.maxLength(20),
-                          ]
-                      ],
-      user_email: ['', 
-                        [
-                          Validators.required,
-                          Validators.minLength(4),
-                          Validators.maxLength(20),
-                        ]
-                  ],
-      user_password: ['', 
-                          [
-                            Validators.required,
-                            Validators.minLength(6),
-                            Validators.maxLength(20),
-                            Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/),
-                          ]
-                      ],
-    });
+      user_city: ['', Validators.required],
+      user_postcode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      user_userName: ['', Validators.required],
+      user_email: ['', [Validators.required, Validators.email]],
+      user_password: ['', [Validators.required, Validators.minLength(6),
+                           Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6),
+                             Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
+      acceptTerms: [false, Validators.requiredTrue],
+    },
+    {
+     validator: MustMatch('user_password', 'confirmPassword')
+  });
 
     this.authService.userRegionSelecter().subscribe(
       (regions) => {

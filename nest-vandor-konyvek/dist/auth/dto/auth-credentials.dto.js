@@ -17,20 +17,14 @@ class AuthCredentialsDto {
 }
 __decorate([
     class_validator_1.IsString(),
-    class_validator_1.MinLength(2),
-    class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_firstName", void 0);
 __decorate([
     class_validator_1.IsString(),
-    class_validator_1.MinLength(2),
-    class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_lastName", void 0);
 __decorate([
     class_validator_1.IsString(),
-    class_validator_1.MinLength(2),
-    class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_city", void 0);
 __decorate([
@@ -41,21 +35,16 @@ __decorate([
 ], AuthCredentialsDto.prototype, "user_postcode", void 0);
 __decorate([
     class_validator_1.IsString(),
-    class_validator_1.MinLength(6),
-    class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_userName", void 0);
 __decorate([
     class_validator_1.IsString(),
     class_validator_1.IsEmail(),
-    class_validator_1.MinLength(4),
-    class_validator_1.MaxLength(20),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_email", void 0);
 __decorate([
     class_validator_1.IsString(),
     class_validator_1.MinLength(6),
-    class_validator_1.MaxLength(20),
     class_validator_1.Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'weak password' }),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "user_password", void 0);

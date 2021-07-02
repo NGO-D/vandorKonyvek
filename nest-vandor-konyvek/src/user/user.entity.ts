@@ -49,13 +49,6 @@ export class User extends BaseEntity {
         const hash = await bcrypt.hash(password, this.user_salt);
         return hash === this.user_password;
     }
-
-    // These are columnes, I used earlyer and now despite of the fact, 
-    // that they were deleted from the database and the User entity Typeorem somehow still remembers it
-    // and creates user table with these columns. Tryed to clear cache, did not work...
-    // So I creted here these columns with no value and synchronised database as well.
-    // To be fixed later...
-
    
 }
 

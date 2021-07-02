@@ -3512,7 +3512,7 @@
         "affectsGlobalScope": false
       },
       "../src/user/user.entity.ts": {
-        "version": "2f2aa4f2ec4c11bfdca74bc63483f5a54960dba930bdec8f5be9b40f5ed3639b",
+        "version": "f84e8ceb1a7d1f576249a7ebfaec36703572c5ce2734074edce113a557387d7d",
         "signature": "f3f2d93374b57ba3c74d4b8dbe698f219b425fc2117e6086ab294db1035d6120",
         "affectsGlobalScope": false
       },
@@ -3852,7 +3852,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "507a81d738607d8ef9ce60e1ae8ddbe5567eaa5aef629243b7f188d5e45e9d49",
+        "version": "229b08e4a07849772bd444c8add39fd15764b1640c877b68557804e412beb324",
         "signature": "194d65165d8379af24e86adbdd01d9ef28c01f7269b851e63b8606b3acc7c995",
         "affectsGlobalScope": false
       },

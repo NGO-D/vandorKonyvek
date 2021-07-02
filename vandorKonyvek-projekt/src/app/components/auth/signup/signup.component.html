@@ -8,15 +8,11 @@
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Vezetéknév" formControlName="user_lastName">
               <mat-error *ngIf="data.user_lastName.errors?.required">Vezetéknév megadása kötelező.</mat-error>
-              <mat-error *ngIf="data.user_lastName.errors?.minlength">Legalább kettő karakter hosszú legyen a vezetéknév.</mat-error>
-              <mat-error *ngIf="data.user_lastName.errors?.maxlength">Maximum húsz karakter hosszú lehet a vezetéknév.</mat-error>
-           
             </mat-form-field>
+
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Keresztnév" formControlName="user_firstName">
               <mat-error *ngIf="data.user_firstName.errors?.required">Keresztnév megadása kötelező.</mat-error>
-              <mat-error *ngIf="data.user_firstName.errors?.minlength">Legalább kettő karakter hosszú legyen a keresztnév.</mat-error>
-              <mat-error *ngIf="data.user_firstName.errors?.maxlength">Maximum húsz karakter hosszú lehet a keresznév.</mat-error>     
             </mat-form-field>
 
             <mat-form-field class="w-100" appearance="fill">
@@ -29,42 +25,59 @@
 
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Város" formControlName="user_city">
-              <mat-error *ngIf="data.user_city.errors?.required">Város megadása kötelező.</mat-error>
-              <mat-error *ngIf="data.user_city.errors?.minlength">Legalább kettő karakter hosszú legyen a város neve.</mat-error>
-              <mat-error *ngIf="data.user_city.errors?.maxlength">Maximum húsz karakter hosszú lehet a város neve.</mat-error>
-                               
+              <mat-error *ngIf="data.user_city.errors?.required">Város megadása kötelező.</mat-error>    
             </mat-form-field>
+
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Irányítószám" formControlName="user_postcode">
               <mat-error *ngIf="data.user_postcode.errors?.required">Irányítószám megadása kötelező.</mat-error>
               <mat-error *ngIf="data.user_postcode.errors?.minlength">Legalább négy karakter hosszú legyen az irányítószám.</mat-error>
-              <mat-error *ngIf="data.user_postcode.errors?.maxlength">Maximum négy karakter hosszú lehet az irányítószám.</mat-error>
-                               
+              <mat-error *ngIf="data.user_postcode.errors?.maxlength">Maximum négy karakter hosszú lehet az irányítószám.</mat-error>       
             </mat-form-field>
+
             <mat-form-field class="w-100">
               <input type="text" matInput placeholder="Felhasználónév" formControlName="user_userName">
-              <mat-error *ngIf="data.user_userName.errors?.required">Felhasználónév megadása kötelező.</mat-error>
-              <mat-error *ngIf="data.user_userName.errors?.minlength">Legalább kettő karakter hosszú legyen a felhasználónév.</mat-error>
-              <mat-error *ngIf="data.user_userName.errors?.maxlength">Maximum húsz karakter hosszú lehet a felhasználónév.</mat-error>
-                              
+              <mat-error *ngIf="data.user_userName.errors?.required">Felhasználónév megadása kötelező.</mat-error>     
             </mat-form-field>
+
             <mat-form-field class="w-100">
               <input type="email" matInput placeholder="E-mail cím" formControlName="user_email">
               <mat-error *ngIf="data.user_email.errors?.required">E-mail cím megadása kötelező.</mat-error>
-                            
+              <mat-error *ngIf="data.user_email.errors?.email">Nem megfelelő az e-mail formátuma.</mat-error>         
             </mat-form-field>
+
             <mat-form-field class="w-100">
-              <input type="password" matInput placeholder="Jelszó" formControlName="user_password">
-              <input matInput [type]="hide ? 'password' : 'text'">
+              <input matInput [type]="hide ? 'password' : 'text'" matInput placeholder="Jelszó" formControlName="user_password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button> 
               <mat-error *ngIf="data.user_password.errors?.required">Jelszó megadása kötelező</mat-error>
-              <mat-error *ngIf="data.user_password.errors?.minlength">Legalább kettő karakter hosszú legyena a jelszó.</mat-error>
-              <mat-error *ngIf="data.user_password.errors?.maxlength">Maximum húsz karakter hosszú lehet a jelszó.</mat-error>
-              <mat-error *ngIf="data.user_password.errors?.pattern">A jelszónak számot, kis- és nagybetűt kell tartalmaznia.</mat-error>
-                               
+              <mat-error *ngIf="data.user_password.errors?.minlength">Legalább hat karakter hosszú legyena a jelszó.</mat-error>
+              <mat-error *ngIf="data.user_password.errors?.pattern">A jelszónak számot, kis- és nagybetűt kell tartalmaznia.</mat-error>                 
             </mat-form-field>
+
+            <mat-form-field class="w-100">
+              <input matInput [type]="hideConfirm ? 'password' : 'text'" matInput placeholder="Jelszó megismétlése" formControlName="confirmPassword">
+                <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+                  <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button> 
+              <mat-error *ngIf="data.confirmPassword.errors?.required">Jelszó megadása kötelező</mat-error>
+              <mat-error *ngIf="data.confirmPassword.errors?.minlength">Legalább hat karakter hosszú legyena a jelszó.</mat-error>
+              <mat-error *ngIf="data.confirmPassword.errors?.pattern">A jelszónak számot, kis- és nagybetűt kell tartalmaznia.</mat-error>              
+              <mat-error *ngIf="data.confirmPassword.errors?.mustMatch">A két jelszónak egyezni kell.</mat-error> 
+            </mat-form-field>
+<!--
+            <mat-form-field class="w-100">
+              <section>
+                <p><mat-checkbox 
+          
+           formControlName="acceptTerms">Elfogadom az adatkezelési tájékoztatót.</mat-checkbox></p>
+                <mat-error *ngIf="data.acceptTerms.errors?.requiredTrue">A regisztrációhoz szükséges az adatkezelési tájékoztatnó elfogadása.</mat-error>  
+              </section>       
+            </mat-form-field>
+-->
+
+
             <div class="mt-4">
               <button mat-raised-button color="primary">Regisztrálok</button>
               <a [routerLink]="['/']" class="ml-2" mat-button color="primary">Mégse</a>
