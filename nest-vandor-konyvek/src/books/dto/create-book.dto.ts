@@ -2,11 +2,11 @@ import { IsNotEmpty } from 'class-validator';
 
 export class CreateBookDto {
     @IsNotEmpty()
-    book_title: string;
+    bookTitle: string;
 
     @IsNotEmpty()
-    book_description: string;
+    bookDescription: string;
 
     @IsNotEmpty()
-    book_image: string;
+    bookImage: string;
 }

@@ -16,14 +16,14 @@ class CreateBookDto {
 __decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateBookDto.prototype, "book_title", void 0);
+], CreateBookDto.prototype, "bookTitle", void 0);
 __decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateBookDto.prototype, "book_description", void 0);
+], CreateBookDto.prototype, "bookDescription", void 0);
 __decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], CreateBookDto.prototype, "book_image", void 0);
+], CreateBookDto.prototype, "bookImage", void 0);
 exports.CreateBookDto = CreateBookDto;
 //# sourceMappingURL=create-book.dto.js.map

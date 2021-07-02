@@ -17,23 +17,23 @@ let Book = class Book extends typeorm_1.BaseEntity {
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], Book.prototype, "book_id", void 0);
+], Book.prototype, "bookId", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Book.prototype, "book_title", void 0);
+], Book.prototype, "bookTitle", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Book.prototype, "book_description", void 0);
+], Book.prototype, "bookDescription", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Book.prototype, "book_image", void 0);
+], Book.prototype, "bookImage", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Book.prototype, "book_available", void 0);
+], Book.prototype, "bookAvailable", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)

@@ -1,5 +1,5 @@
 export declare class CreateBookDto {
-    book_title: string;
-    book_description: string;
-    book_image: string;
+    bookTitle: string;
+    bookDescription: string;
+    bookImage: string;
 }

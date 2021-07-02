@@ -23,25 +23,25 @@ let BooksService = class BooksService {
     async getBooks(filterDto, user) {
         return await this.bookRepository.getBooks(filterDto, user);
     }
-    async getBookById(book_id, user) {
-        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.user_id } });
+    async getBookById(bookId, user) {
+        const found = await this.bookRepository.findOne({ where: { bookId, bookUserId: user.userId } });
         if (!found) {
-            throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
+            throw new common_1.NotFoundException(`Task with ID '${bookId}' not found.`);
         }
         return found;
     }
     async createBook(createBookDto, user) {
         return await this.bookRepository.createBook(createBookDto, user);
     }
-    async updateBookStatus(book_id, book_available, user) {
-        const book = this.getBookById(book_id, user);
-        (await book).book_available = book_available;
+    async updateBookStatus(bookId, bookAvailable, user) {
+        const book = this.getBookById(bookId, user);
+        (await book).bookAvailable = bookAvailable;
         return book;
     }
-    async deleteBook(book_id, user) {
-        const result = await this.bookRepository.delete({ book_id, bookUserId: user.user_id });
+    async deleteBook(bookId, user) {
+        const result = await this.bookRepository.delete({ bookId, bookUserId: user.userId });
         if (result.affected === 0) {
-            throw new common_1.NotFoundException(`Task with ID '${book_id}' not found.`);
+            throw new common_1.NotFoundException(`Task with ID '${bookId}' not found.`);
         }
     }
 };

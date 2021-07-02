@@ -19,7 +19,7 @@ __decorate([
     class_validator_1.IsNotEmpty(),
     class_validator_1.IsNumber(),
     __metadata("design:type", String)
-], Message.prototype, "message_id", void 0);
+], Message.prototype, "messageId", void 0);
 Message = __decorate([
     typeorm_1.Entity()
 ], Message);

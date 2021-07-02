@@ -18,35 +18,33 @@ class AuthCredentialsDto {
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_firstName", void 0);
+], AuthCredentialsDto.prototype, "userFirstName", void 0);
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_lastName", void 0);
+], AuthCredentialsDto.prototype, "userLastName", void 0);
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_city", void 0);
+], AuthCredentialsDto.prototype, "userCity", void 0);
 __decorate([
     class_validator_1.IsNumber(),
-    class_validator_1.MinLength(4),
-    class_validator_1.MaxLength(4),
     __metadata("design:type", Number)
-], AuthCredentialsDto.prototype, "user_postcode", void 0);
+], AuthCredentialsDto.prototype, "userPostcode", void 0);
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_userName", void 0);
+], AuthCredentialsDto.prototype, "userName", void 0);
 __decorate([
     class_validator_1.IsString(),
     class_validator_1.IsEmail(),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_email", void 0);
+], AuthCredentialsDto.prototype, "userEmail", void 0);
 __decorate([
     class_validator_1.IsString(),
     class_validator_1.MinLength(6),
     class_validator_1.Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'weak password' }),
     __metadata("design:type", String)
-], AuthCredentialsDto.prototype, "user_password", void 0);
+], AuthCredentialsDto.prototype, "userPassword", void 0);
 exports.AuthCredentialsDto = AuthCredentialsDto;
 //# sourceMappingURL=auth-credentials.dto.js.map

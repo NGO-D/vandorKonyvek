@@ -16,57 +16,57 @@ const user_region_enum_1 = require("./user-region.enum");
 const user_role_enum_1 = require("./user-role.enum");
 let User = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
-        const hash = await bcrypt.hash(password, this.user_salt);
-        return hash === this.user_password;
+        const hash = await bcrypt.hash(password, this.userSalt);
+        return hash === this.userPassword;
     }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
+    typeorm_1.PrimaryGeneratedColumn({ type: 'int' }),
     __metadata("design:type", Number)
-], User.prototype, "user_id", void 0);
+], User.prototype, "userId", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_firstName", void 0);
+], User.prototype, "userFirstName", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_lastName", void 0);
+], User.prototype, "userLastName", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_region", void 0);
+], User.prototype, "userRegion", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_city", void 0);
+], User.prototype, "userCity", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'int', nullable: false }),
     __metadata("design:type", Number)
-], User.prototype, "user_postcode", void 0);
+], User.prototype, "userPostcode", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_userName", void 0);
+], User.prototype, "userName", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_role", void 0);
+], User.prototype, "userRole", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_email", void 0);
+], User.prototype, "userEmail", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_password", void 0);
+], User.prototype, "userPassword", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'text', nullable: false }),
+    typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
-], User.prototype, "user_salt", void 0);
+], User.prototype, "userSalt", void 0);
 User = __decorate([
     typeorm_1.Entity(),
-    typeorm_1.Unique(['user_email'])
+    typeorm_1.Unique(['userEmail'])
 ], User);
 exports.User = User;
 //# sourceMappingURL=user.entity.js.map

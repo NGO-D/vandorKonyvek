@@ -25,9 +25,8 @@ let AuthController = class AuthController {
         console.log(authCredentialsDto);
         return this.authService.signUp(authCredentialsDto);
     }
-    signIn(body) {
-        console.log('backendben vagyok');
-        return this.authService.signIn(body);
+    signIn(authCredentialsDto) {
+        return this.authService.signIn(authCredentialsDto);
     }
 };
 __decorate([
@@ -39,9 +38,9 @@ __decorate([
 ], AuthController.prototype, "signUp", null);
 __decorate([
     common_1.Post('/signin'),
-    __param(0, common_1.Body()),
+    __param(0, common_1.Body(common_1.ValidationPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [auth_credentials_dto_1.AuthCredentialsDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signIn", null);
 AuthController = __decorate([

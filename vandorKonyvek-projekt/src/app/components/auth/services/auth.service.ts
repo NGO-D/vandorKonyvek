@@ -8,7 +8,7 @@ import { TokenStorageService } from './token-storage.service';
 import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-import { Regions, UserRegion } from '../models/user-region.enum';
+import { Regions } from '../models/user-region.enum';
 import { of } from 'rxjs';
 
 const httpOptions = {
@@ -49,13 +49,11 @@ export class AuthService {
   }
 
   userRegionSelecter(): Observable<String[]> {
-    console.log('auth service:');
-    console.log(this.regions.regionsToArray());
     return of(this.regions.regionsToArray());
   }
 
   loginEndpointSwitch(token): void {
-    if (this.tokenStorageService.decodeToken(token).user_role === UserRole.common) {
+    if (this.tokenStorageService.decodeToken(token).userRole === UserRole.common) {
       this.router.navigate(['/user']);
     } else {
       this.router.navigate(['/admin']);
@@ -65,16 +63,17 @@ export class AuthService {
   register(user: User): Observable<User> {
           const endpoint: string = this.apiUrl + "/auth/signup";
           const httpParams = { 
-            user_lastName: user.user_lastName,
-            user_firstName: user.user_firstName,
-            user_region: user.user_region,
-            user_city: user.user_city,
-            user_postcode: user.user_postcode,
-            user_userName: user.user_userName,
-            user_role: UserRole.common,
-            user_email: user.user_email,
-            user_password: user.user_password
+            userLastName: user.userLastName,
+            userFirstName: user.userFirstName,
+            userRegion: user.userRegion,
+            userCity: user.userCity,
+            userPostcode: parseInt(user.userPostcode),
+            userName: user.userName,
+            userRole: UserRole.common,
+            userEmail: user.userEmail,
+            userPassword: user.userPassword
           };
+         
           this.httpClient.post(endpoint, httpParams).subscribe(
             (response) => {
               this.router.navigate(['/login']);

@@ -13,15 +13,11 @@ export class TokenStorageService {
 
   public signOut(): void {
     this.storage.clear();
-    console.log('signout localstorage: ');
-    console.log(this.storage);
   }
 
   public saveToken(token: string): void {
     this.storage.clear();
     this.storage.set(TOKEN_KEY, token);
-    console.log('savetoken localstorage: ');
-    console.log(this.storage);
   }
 
   public getToken(): string | null {

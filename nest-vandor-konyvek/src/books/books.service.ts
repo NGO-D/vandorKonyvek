@@ -20,14 +20,14 @@ export class BooksService {
     }
 
     async getBookById(
-        book_id: number,
+        bookId: number,
         user: User
         ): Promise<Book>{
        
-        const found = await this.bookRepository.findOne({ where: { book_id, bookUserId: user.user_id }});
+        const found = await this.bookRepository.findOne({ where: { bookId, bookUserId: user.userId }});
         
             if (!found) {
-                throw new NotFoundException(`Task with ID '${book_id}' not found.`);
+                throw new NotFoundException(`Task with ID '${bookId}' not found.`);
             }
         
         return found;
@@ -41,25 +41,25 @@ export class BooksService {
     }
 
     async updateBookStatus
-        (book_id: number, 
-        book_available: BookAvailable,
+        (bookId: number, 
+        bookAvailable: BookAvailable,
         user: User
         ) {
-        const book = this.getBookById(book_id, user);
-        (await book).book_available = book_available;
+        const book = this.getBookById(bookId, user);
+        (await book).bookAvailable = bookAvailable;
        
         return book;
     }
 
     async deleteBook(
-        book_id: number,
+        bookId: number,
         user: User
         ): Promise<void> {
-        const result = await this.bookRepository.delete({book_id, bookUserId: user.user_id});
+        const result = await this.bookRepository.delete({bookId, bookUserId: user.userId});
 
          //ez ugyanaz mint az if (!result) {}
          if (result.affected === 0) {
-            throw new NotFoundException(`Task with ID '${book_id}' not found.`);
+            throw new NotFoundException(`Task with ID '${bookId}' not found.`);
         }
 
     }

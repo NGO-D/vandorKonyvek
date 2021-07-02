@@ -1,32 +1,30 @@
-import { IsEmail, IsNumber, IsString, Matches, MaxLength, MinLength } from "class-validator";
+import { IsEmail, IsNumber, IsString, Matches, MinLength } from "class-validator";
 import { UserRegion } from "src/user/user-region.enum";
 import { UserRole } from "src/user/user-role.enum";
 
 export class AuthCredentialsDto {
     @IsString()
-    user_firstName: string;
+    userFirstName: string;
 
     @IsString()
-    user_lastName: string;
+    userLastName: string;
 
-    user_region: UserRegion;
+    userRegion: UserRegion;
 
     @IsString()
-    user_city: string
+    userCity: string
 
     @IsNumber()
-    @MinLength(4)
-    @MaxLength(4)
-    user_postcode: number;
+    userPostcode: number;
 
     @IsString()
-    user_userName: string;
+    userName: string;
 
-    user_role: UserRole.common;
+    userRole: UserRole.common;
 
     @IsString()
     @IsEmail()
-    user_email: string;
+    userEmail: string;
 
     @IsString()
     @MinLength(6)
@@ -34,5 +32,5 @@ export class AuthCredentialsDto {
         /((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, 
         {message: 'weak password'},
         )
-    user_password: string;
+    userPassword: string;
 }

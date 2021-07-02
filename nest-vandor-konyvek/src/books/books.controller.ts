@@ -27,10 +27,10 @@ export class BooksController {
 
     @Get('/:id')
     getBookById(
-        @Param('id', ParseIntPipe) book_id: number,
+        @Param('bookId', ParseIntPipe) bookId: number,
         @GetUser() user: User
         ): Promise<Book>{
-        return this.booksService.getBookById(book_id, user);
+        return this.booksService.getBookById(bookId, user);
     }
 
     @Post('/new')
@@ -43,19 +43,19 @@ export class BooksController {
 
     @Patch('/:id/update')
     updateBookStatus(
-        @Param('id', ParseIntPipe) book_id: number,
-        @Body('book_available', BookAvailableValidationPipe) book_available: BookAvailable,
+        @Param('bookId', ParseIntPipe) bookId: number,
+        @Body('bookAvailable', BookAvailableValidationPipe) bookAvailable: BookAvailable,
         @GetUser() user: User
         ) {
-        return this.booksService.updateBookStatus(book_id, book_available, user);
+        return this.booksService.updateBookStatus(bookId, bookAvailable, user);
     }
 
     @Delete('/:id')
     deleteBook(
-        @Param('id', ParseIntPipe) book_id: number,
+        @Param('bookId', ParseIntPipe) bookId: number,
         @GetUser() user: User
         ): Promise<void> {
-        return this.booksService.deleteBook(book_id, user);
+        return this.booksService.deleteBook(bookId, user);
     }
 
 }

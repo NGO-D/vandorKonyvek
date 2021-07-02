@@ -9,17 +9,18 @@
             <h3 class="text-center">Bejelentkezés</h3>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <mat-form-field class="w-100">
-                <input type="email" matInput placeholder="E-mail cím" formControlName="user_email">
-                <mat-error *ngIf="data.user_email.errors?.required">E-mail cím megadásak kötelező.</mat-error>
+                <input type="email" matInput placeholder="E-mail cím" formControlName="userEmail">
+                <mat-error *ngIf="data.userEmail.errors?.required">E-mail cím megadásak kötelező.</mat-error>
               </mat-form-field>
+
               <mat-form-field class="w-100">
-                <input type="password" matInput placeholder="Jelszó" formControlName="user_password">
-                <input matInput [type]="hide ? 'password' : 'text'">
+                <input matInput [type]="hide ? 'password' : 'text'" type="password" matInput placeholder="Jelszó" formControlName="userPassword">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <mat-error *ngIf="data.user_password.errors?.required">Password is required</mat-error>
+                <mat-error *ngIf="data.userPassword.errors?.required">Password is required</mat-error>
               </mat-form-field>
+
               <div class="form-group mt-4">
                 <button mat-raised-button color="primary">Bejelentkezés</button>
                 <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Regisztráció</a>

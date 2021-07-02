@@ -29,8 +29,8 @@ let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport
     }
     async validate(payload) {
         console.log('jwtstrategy vagyok');
-        const { user_id } = payload;
-        const user = await this.userRepository.findOne({ user_id });
+        const { userId } = payload;
+        const user = await this.userRepository.findOne({ userId });
         if (!user) {
             throw new common_1.UnauthorizedException();
         }

@@ -32,9 +32,9 @@ let AuthService = class AuthService {
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        const payload = { user_id: user.user_id,
-            user_role: user.user_role,
-            user_userName: user.user_userName
+        const payload = { userId: user.userId,
+            userRole: user.userRole,
+            userName: user.userName
         };
         const accessToken = await this.jwtService.sign(payload);
         console.log(typeof accessToken);

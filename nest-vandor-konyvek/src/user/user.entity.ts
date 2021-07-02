@@ -3,51 +3,50 @@ import * as bcrypt from 'bcrypt';
 import { Book } from './../books/books.entity';
 import { UserRegion } from "./user-region.enum";
 import { UserRole } from "./user-role.enum";
-import { IsEmail, Matches, MaxLength, MinLength } from "class-validator";
 
 @Entity()
-@Unique(['user_email'])
+@Unique(['userEmail'])
 export class User extends BaseEntity {
    
-    @PrimaryGeneratedColumn()
-    user_id: number;
+    @PrimaryGeneratedColumn({type: 'int'})
+    userId: number;
 
-    @Column({type: 'text', nullable: false})
-    user_firstName: string;
+    @Column({type: 'varchar', nullable: false})
+    userFirstName: string;
 
-    @Column({type: 'text', nullable: false})
-    user_lastName: string;
+    @Column({type: 'varchar', nullable: false})
+    userLastName: string;
     
-    @Column({nullable: false})
-    user_region: UserRegion;
+    @Column({type: 'varchar', nullable: false})
+    userRegion: UserRegion;
 
-    @Column({type: 'text', nullable: false})
-    user_city: string 
+    @Column({type: 'varchar', nullable: false})
+    userCity: string 
 
-    @Column({type: 'text', nullable: false})
-    user_postcode: number;
+    @Column({type: 'int', nullable: false})
+    userPostcode: number;
 
-    @Column({type: 'text', nullable: false})
-    user_userName: string;
+    @Column({type: 'varchar', nullable: false})
+    userName: string;
 
-    @Column({nullable: false})
-    user_role: UserRole.common;
+    @Column({type: 'varchar', nullable: false})
+    userRole: UserRole.common;
 
-    @Column({type: 'text', nullable: false})
-    user_email: string;
+    @Column({type: 'varchar', nullable: false})
+    userEmail: string;
 
-    @Column({type: 'text', nullable: false})
-    user_password: string;
+    @Column({type: 'varchar', nullable: false})
+    userPassword: string;
 
-    @Column({type: 'text', nullable: false})
-    user_salt: string;
+    @Column({type: 'varchar', nullable: false})
+    userSalt: string;
 
     //@OneToMany(type => Book, book => book.book_user, { eager: true })
     //user_books: Book[];
 
     async validatePassword(password: string): Promise<boolean> {
-        const hash = await bcrypt.hash(password, this.user_salt);
-        return hash === this.user_password;
+        const hash = await bcrypt.hash(password, this.userSalt);
+        return hash === this.userPassword;
     }
    
 }

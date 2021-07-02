@@ -4,9 +4,9 @@ import { IsNotEmpty, IsOptional, IsIn } from 'class-validator';
 export class GetBooksFilterDto {
    @IsOptional()
    @IsIn([BookAvailable.YES, BookAvailable.NO])
-   book_available: BookAvailable;
+   bookAvailable: BookAvailable;
 
    @IsOptional()
    @IsNotEmpty()
-   search: string;
+   bookSearch: string;
 }

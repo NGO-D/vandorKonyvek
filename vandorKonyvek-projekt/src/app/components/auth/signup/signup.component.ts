@@ -10,8 +10,10 @@ import { AuthService } from '../services/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MustMatch } from '../helpers/password-match.validator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-signup',
@@ -33,32 +35,32 @@ export class SignupComponent implements OnInit {
               private _snackBar: MatSnackBar,
               private _matCheckBoxModule: MatCheckboxModule,
               private _matFormFieldModule: MatFormFieldModule,
+              private _matButtonModule: MatButtonModule,
+              private _matButtonToggleModule: MatButtonToggleModule
               ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      user_lastName: ['',  Validators.required],
-      user_firstName: ['', Validators.required],                  
-      user_region: [ '', Validators.required],
-      user_city: ['', Validators.required],
-      user_postcode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      user_userName: ['', Validators.required],
-      user_email: ['', [Validators.required, Validators.email]],
-      user_password: ['', [Validators.required, Validators.minLength(6),
-                           Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(6),
+      userLastName:    ['', Validators.required],
+      userFirstName:   ['', Validators.required],                  
+      userRegion:      ['', Validators.required],
+      userCity:        ['', Validators.required],
+      userPostcode:    ['', [Validators.required, Validators.maxLength(4)]],
+      userName:        ['', Validators.required],
+      userEmail:       ['', [Validators.required, Validators.email]],
+      userPassword:    ['', [Validators.required, Validators.minLength(6),
                              Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
-      acceptTerms: [false, Validators.requiredTrue],
+      userConfirmPassword:  ['', [Validators.required, Validators.minLength(6),
+                             Validators.pattern(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
+      userAcceptTerms:      [false, Validators.requiredTrue],
     },
     {
-     validator: MustMatch('user_password', 'confirmPassword')
+     validator: MustMatch('userPassword', 'userConfirmPassword')
   });
 
     this.authService.userRegionSelecter().subscribe(
       (regions) => {
         this.userRegions = regions;
-        console.log('userRegions ngonint:');
-        console.log(this.userRegions);
       },
       (error) => {
         console.error(error);

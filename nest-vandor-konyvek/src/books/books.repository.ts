@@ -15,19 +15,19 @@ export class BookRepository extends Repository<Book> {
         user: User
         ): Promise<Book[]>{
         
-        const { book_available, search } = filterDto;
+        const { bookAvailable, bookSearch } = filterDto;
         const query = this.createQueryBuilder('book');
 
-        //query.where('book.bookUserId = :bookUserId', { bookUserId: user.user_id });
+        //query.where('book.bookUserId = :bookUserId', { bookUserId: user.userId });
 
-        if (book_available) {
+        if (bookAvailable) {
 
-            query.andWhere('book.book_available = :book_available', {book_available});
+            query.andWhere('book.bookAvailable = :bookAvailable', {bookAvailable});
         }
 
-        if (search) {
+        if (bookSearch) {
             
-            query.andWhere('book.book_id = :search OR book.book_title LIKE :search OR book.book_description LIKE :search OR book.book_image = :search', {search: `%${search}%`} );
+            query.andWhere('book.bookId = :bookSearch OR book.bookTitle LIKE :search OR book.bookDescription LIKE :search OR book.bookImage = :bookSearch', {bookSearch: `%${bookSearch}%`} );
             
         }
 
@@ -45,13 +45,13 @@ export class BookRepository extends Repository<Book> {
         createBookDto: CreateBookDto,
         user: User
         ): Promise<Book> {
-        const { book_title, book_description, book_image } = createBookDto;
+        const { bookTitle, bookDescription, bookImage } = createBookDto;
 
         const book = new Book();
-        book.book_title = book_title;
-        book.book_description = book_description;
-        book.book_image = book_image;
-        book.book_available = BookAvailable.YES;
+        book.bookTitle = bookTitle;
+        book.bookDescription = bookDescription;
+        book.bookImage = bookImage;
+        book.bookAvailable = BookAvailable.YES;
        // book.book_user = user;
 
         try {

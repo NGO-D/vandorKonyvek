@@ -27,18 +27,18 @@ export class AuthController {
     }
     
 
-    /*
+    
     @Post('/signin')
     signIn(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto): Promise<{accessToken: string}> {
         return this.authService.signIn(authCredentialsDto);
     }
-    */
-
+    
+/*
     @Post('/signin')
     signIn(@Body() body): Promise<any> {
         console.log('backendben vagyok');
         return this.authService.signIn(body);
     }
-    
+    */
 }
 

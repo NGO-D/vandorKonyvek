@@ -9,8 +9,8 @@ export declare class BooksController {
     private logger;
     constructor(booksService: BooksService);
     getBooks(filterDto: GetBooksFilterDto, user: User): Promise<Book[]>;
-    getBookById(book_id: number, user: User): Promise<Book>;
+    getBookById(bookId: number, user: User): Promise<Book>;
     createBook(createBookDto: CreateBookDto, user: User): Promise<Book>;
-    updateBookStatus(book_id: number, book_available: BookAvailable, user: User): Promise<Book>;
-    deleteBook(book_id: number, user: User): Promise<void>;
+    updateBookStatus(bookId: number, bookAvailable: BookAvailable, user: User): Promise<Book>;
+    deleteBook(bookId: number, user: User): Promise<void>;
 }

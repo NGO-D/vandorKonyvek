@@ -17,13 +17,13 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         this.logger = new common_1.Logger('BookRepository');
     }
     async getBooks(filterDto, user) {
-        const { book_available, search } = filterDto;
+        const { bookAvailable, bookSearch } = filterDto;
         const query = this.createQueryBuilder('book');
-        if (book_available) {
-            query.andWhere('book.book_available = :book_available', { book_available });
+        if (bookAvailable) {
+            query.andWhere('book.bookAvailable = :bookAvailable', { bookAvailable });
         }
-        if (search) {
-            query.andWhere('book.book_id = :search OR book.book_title LIKE :search OR book.book_description LIKE :search OR book.book_image = :search', { search: `%${search}%` });
+        if (bookSearch) {
+            query.andWhere('book.bookId = :bookSearch OR book.bookTitle LIKE :search OR book.bookDescription LIKE :search OR book.bookImage = :bookSearch', { bookSearch: `%${bookSearch}%` });
         }
         try {
             const books = await query.getMany();
@@ -35,12 +35,12 @@ let BookRepository = class BookRepository extends typeorm_1.Repository {
         }
     }
     async createBook(createBookDto, user) {
-        const { book_title, book_description, book_image } = createBookDto;
+        const { bookTitle, bookDescription, bookImage } = createBookDto;
         const book = new books_entity_1.Book();
-        book.book_title = book_title;
-        book.book_description = book_description;
-        book.book_image = book_image;
-        book.book_available = book_available_enum_1.BookAvailable.YES;
+        book.bookTitle = bookTitle;
+        book.bookDescription = bookDescription;
+        book.bookImage = bookImage;
+        book.bookAvailable = book_available_enum_1.BookAvailable.YES;
         try {
             await book.save();
         }

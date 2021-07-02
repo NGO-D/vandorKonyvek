@@ -6,7 +6,7 @@ export class Message extends BaseEntity {
     @PrimaryGeneratedColumn()
     @IsNotEmpty()
     @IsNumber()
-    message_id: string;
+    messageId: string;
 }
 
 

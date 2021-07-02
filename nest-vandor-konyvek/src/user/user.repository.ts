@@ -7,29 +7,29 @@ import * as bcrypt from 'bcrypt';
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
     async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-        const { user_firstName,
-                user_lastName,
-                user_region,
-                user_city,
-                user_postcode,
-                user_userName, 
-                user_role,
-                user_email,
-                user_password } = authCredentialsDto;
+        const { userFirstName,
+                userLastName,
+                userRegion,
+                userCity,
+                userPostcode,
+                userName, 
+                userRole,
+                userEmail,
+                userPassword } = authCredentialsDto;
 console.log('repo');
 console.log(authCredentialsDto);
 
         const user = new User();
-        user.user_firstName = user_firstName;
-        user.user_lastName = user_lastName;
-        user.user_region = user_region;
-        user.user_city = user_city;
-        user.user_postcode = user_postcode;
-        user.user_userName = user_userName;
-        user.user_role = user_role;
-        user.user_email = user_email;
-        user.user_salt = await bcrypt.genSalt();
-        user.user_password = await this.hashPassword(user_password, user.user_salt);
+        user.userFirstName = userFirstName;
+        user.userLastName = userLastName;
+        user.userRegion = userRegion;
+        user.userCity = userCity;
+        user.userPostcode = userPostcode;
+        user.userName = userName;
+        user.userRole = userRole;
+        user.userEmail = userEmail;
+        user.userSalt = await bcrypt.genSalt();
+        user.userPassword = await this.hashPassword(userPassword, user.userSalt);
 console.log(user);
         try { 
             await user.save();
@@ -46,10 +46,10 @@ console.log(user);
     }
 
     async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User> {
-        const { user_email, user_password } = authCredentialsDto;
-        const user = await this.findOne({user_email});
+        const { userEmail, userPassword } = authCredentialsDto;
+        const user = await this.findOne({userEmail});
 
-        if (user && await user.validatePassword(user_password)) {
+        if (user && await user.validatePassword(userPassword)) {
             return user;
         } else {
             return null;
@@ -57,7 +57,7 @@ console.log(user);
     }
 
 
-    private async hashPassword(password: string, salt: string): Promise<string> {
-        return bcrypt.hash(password, salt);
+    private async hashPassword(userPassword: string, userSalt: string): Promise<string> {
+        return bcrypt.hash(userPassword, userSalt);
     }
 }

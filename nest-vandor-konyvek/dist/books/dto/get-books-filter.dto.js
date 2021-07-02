@@ -18,11 +18,11 @@ __decorate([
     class_validator_1.IsOptional(),
     class_validator_1.IsIn([book_available_enum_1.BookAvailable.YES, book_available_enum_1.BookAvailable.NO]),
     __metadata("design:type", String)
-], GetBooksFilterDto.prototype, "book_available", void 0);
+], GetBooksFilterDto.prototype, "bookAvailable", void 0);
 __decorate([
     class_validator_1.IsOptional(),
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], GetBooksFilterDto.prototype, "search", void 0);
+], GetBooksFilterDto.prototype, "bookSearch", void 0);
 exports.GetBooksFilterDto = GetBooksFilterDto;
 //# sourceMappingURL=get-books-filter.dto.js.map

@@ -31,17 +31,17 @@ let BooksController = class BooksController {
         this.logger.verbose(`FilterDto is: ${JSON.stringify(filterDto)}`);
         return this.booksService.getBooks(filterDto, user);
     }
-    getBookById(book_id, user) {
-        return this.booksService.getBookById(book_id, user);
+    getBookById(bookId, user) {
+        return this.booksService.getBookById(bookId, user);
     }
     createBook(createBookDto, user) {
         return this.booksService.createBook(createBookDto, user);
     }
-    updateBookStatus(book_id, book_available, user) {
-        return this.booksService.updateBookStatus(book_id, book_available, user);
+    updateBookStatus(bookId, bookAvailable, user) {
+        return this.booksService.updateBookStatus(bookId, bookAvailable, user);
     }
-    deleteBook(book_id, user) {
-        return this.booksService.deleteBook(book_id, user);
+    deleteBook(bookId, user) {
+        return this.booksService.deleteBook(bookId, user);
     }
 };
 __decorate([
@@ -55,7 +55,7 @@ __decorate([
 ], BooksController.prototype, "getBooks", null);
 __decorate([
     common_1.Get('/:id'),
-    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __param(0, common_1.Param('bookId', common_1.ParseIntPipe)),
     __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, user_entity_1.User]),
@@ -72,8 +72,8 @@ __decorate([
 ], BooksController.prototype, "createBook", null);
 __decorate([
     common_1.Patch('/:id/update'),
-    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
-    __param(1, common_1.Body('book_available', book_available_validation_pipe_1.BookAvailableValidationPipe)),
+    __param(0, common_1.Param('bookId', common_1.ParseIntPipe)),
+    __param(1, common_1.Body('bookAvailable', book_available_validation_pipe_1.BookAvailableValidationPipe)),
     __param(2, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, String, user_entity_1.User]),
@@ -81,7 +81,7 @@ __decorate([
 ], BooksController.prototype, "updateBookStatus", null);
 __decorate([
     common_1.Delete('/:id'),
-    __param(0, common_1.Param('id', common_1.ParseIntPipe)),
+    __param(0, common_1.Param('bookId', common_1.ParseIntPipe)),
     __param(1, get_user_decorator_1.GetUser()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, user_entity_1.User]),

@@ -5,22 +5,22 @@ import { BookAvailable } from "./book-available.enum";
 @Entity()
 export class Book extends BaseEntity {
     @PrimaryGeneratedColumn()
-    book_id: number;
+    bookId: number;
 
     @Column()
-    book_title: string;
+    bookTitle: string;
 
     @Column()
-    book_description: string;
+    bookDescription: string;
 
     @Column()
-    book_image: string;
+    bookImage: string;
 
     @Column()
-    book_available: BookAvailable;
+    bookAvailable: BookAvailable;
 
-    //@ManyToOne(type => User, user => user.user_books, { eager: false })
-    //book_user: User;
+    //@ManyToOne(type => User, user => user.userBooks, { eager: false })
+    //bookUser: User;
 
     @Column()
     bookUserId: number;

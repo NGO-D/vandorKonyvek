@@ -13,20 +13,20 @@ const common_1 = require("@nestjs/common");
 const bcrypt = require("bcrypt");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async signUp(authCredentialsDto) {
-        const { user_firstName, user_lastName, user_region, user_city, user_postcode, user_userName, user_role, user_email, user_password } = authCredentialsDto;
+        const { userFirstName, userLastName, userRegion, userCity, userPostcode, userName, userRole, userEmail, userPassword } = authCredentialsDto;
         console.log('repo');
         console.log(authCredentialsDto);
         const user = new user_entity_1.User();
-        user.user_firstName = user_firstName;
-        user.user_lastName = user_lastName;
-        user.user_region = user_region;
-        user.user_city = user_city;
-        user.user_postcode = user_postcode;
-        user.user_userName = user_userName;
-        user.user_role = user_role;
-        user.user_email = user_email;
-        user.user_salt = await bcrypt.genSalt();
-        user.user_password = await this.hashPassword(user_password, user.user_salt);
+        user.userFirstName = userFirstName;
+        user.userLastName = userLastName;
+        user.userRegion = userRegion;
+        user.userCity = userCity;
+        user.userPostcode = userPostcode;
+        user.userName = userName;
+        user.userRole = userRole;
+        user.userEmail = userEmail;
+        user.userSalt = await bcrypt.genSalt();
+        user.userPassword = await this.hashPassword(userPassword, user.userSalt);
         console.log(user);
         try {
             await user.save();
@@ -43,17 +43,17 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         await user.save();
     }
     async validateUserPassword(authCredentialsDto) {
-        const { user_email, user_password } = authCredentialsDto;
-        const user = await this.findOne({ user_email });
-        if (user && await user.validatePassword(user_password)) {
+        const { userEmail, userPassword } = authCredentialsDto;
+        const user = await this.findOne({ userEmail });
+        if (user && await user.validatePassword(userPassword)) {
             return user;
         }
         else {
             return null;
         }
     }
-    async hashPassword(password, salt) {
-        return bcrypt.hash(password, salt);
+    async hashPassword(userPassword, userSalt) {
+        return bcrypt.hash(userPassword, userSalt);
     }
 };
 UserRepository = __decorate([

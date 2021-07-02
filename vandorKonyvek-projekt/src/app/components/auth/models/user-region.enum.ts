@@ -20,7 +20,8 @@ export enum UserRegion {
     Zala = 'Zala',
 }
 
-    const valuesArray = Object.values(UserRegion);
+
+const valuesArray = Object.values(UserRegion);
 
     
 export class Regions {
