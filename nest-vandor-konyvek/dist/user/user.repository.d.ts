@@ -5,4 +5,5 @@ export declare class UserRepository extends Repository<User> {
     signUp(authCredentialsDto: AuthCredentialsDto): Promise<void>;
     validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User>;
     private hashPassword;
+    firstLetterCapitalizer(userCity: string): Promise<string>;
 }

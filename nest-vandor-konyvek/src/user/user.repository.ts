@@ -16,8 +16,11 @@ export class UserRepository extends Repository<User> {
                 userRole,
                 userEmail,
                 userPassword } = authCredentialsDto;
+        
+        this.firstLetterCapitalizer(userCity);
+
 console.log('repo');
-console.log(authCredentialsDto);
+console.log(userCity);
 
         const user = new User();
         user.userFirstName = userFirstName;
@@ -34,9 +37,10 @@ console.log(user);
         try { 
             await user.save();
         } catch (error) {
-            if (error.code === '23505') { // duplicate username. 
-                // error.code needs to be a string
-                throw new ConflictException('Duplicate username');
+            if (error.code === '23505') { // unique violation. (error.code needs to be a string)
+                console.log(error);
+                console.log(error.code);
+                throw new ConflictException('Duplicate email address.');
             } else {
                 console.log(error.code);
                 throw new InternalServerErrorException();
@@ -44,6 +48,7 @@ console.log(user);
         }
         await user.save();
     }
+
 
     async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User> {
         const { userEmail, userPassword } = authCredentialsDto;
@@ -60,4 +65,11 @@ console.log(user);
     private async hashPassword(userPassword: string, userSalt: string): Promise<string> {
         return bcrypt.hash(userPassword, userSalt);
     }
+
+
+    async firstLetterCapitalizer(userCity: string): Promise<string> {
+        userCity = userCity.charAt(0).toUpperCase() + userCity.slice(1).toLowerCase();
+        return userCity;
+    }
+
 }

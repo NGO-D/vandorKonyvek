@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AuthDto } from '../dto/auth.dto';
 import { User } from '../models/user.model';
@@ -9,7 +9,7 @@ import { UserRole } from '../models/user-role.enum';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Regions } from '../models/user-region.enum';
-import { of } from 'rxjs';
+import { ErrorInterceptor } from '../helpers/http-error.interceptor';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,16 +22,19 @@ export class AuthService {
   private apiUrl: string = environment.apiUrl;
   private jwtHelper = new JwtHelperService();
   private regions = new Regions();
+  
 
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
               private router: Router,
+              //private errorInterceptor: ErrorInterceptor,
               ) { }
 
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('auth-token');
     return !this.jwtHelper.isTokenExpired(token);
   }
+
 
   login(authDto: AuthDto): Observable<any> {
     const endpoint: string = this.apiUrl + "/auth/signin";
@@ -48,9 +51,11 @@ export class AuthService {
     return;
   }
 
+
   userRegionSelecter(): Observable<String[]> {
     return of(this.regions.regionsToArray());
   }
+
 
   loginEndpointSwitch(token): void {
     if (this.tokenStorageService.decodeToken(token).userRole === UserRole.common) {
@@ -59,6 +64,7 @@ export class AuthService {
       this.router.navigate(['/admin']);
     }
   }
+
 
   register(user: User): Observable<User> {
           const endpoint: string = this.apiUrl + "/auth/signup";
@@ -79,11 +85,14 @@ export class AuthService {
               this.router.navigate(['/login']);
             },
             (error) => {
-              console.error(error);
+              console.log(error);
             }
           );
+          console.log('jár itt?');
           return;
     }
+
+
 
   }
 

@@ -1,6 +1,6 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -17,6 +17,7 @@ import { AuthService } from './components/auth/services/auth.service';
 import { TokenStorageService } from './components/auth/services/token-storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserComponent } from './components/user/user.component';
+import { ErrorInterceptor } from './components/auth/helpers/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,11 @@ import { UserComponent } from './components/user/user.component';
               AuthService,
               TokenStorageService,
               JwtHelperService,
-              
+              {
+                provide: HTTP_INTERCEPTORS,           
+                useClass: ErrorInterceptor,          
+                multi: true          
+              },       
               ],
   bootstrap: [AppComponent]
 })

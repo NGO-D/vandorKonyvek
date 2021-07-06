@@ -14,8 +14,9 @@ const bcrypt = require("bcrypt");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async signUp(authCredentialsDto) {
         const { userFirstName, userLastName, userRegion, userCity, userPostcode, userName, userRole, userEmail, userPassword } = authCredentialsDto;
+        this.firstLetterCapitalizer(userCity);
         console.log('repo');
-        console.log(authCredentialsDto);
+        console.log(userCity);
         const user = new user_entity_1.User();
         user.userFirstName = userFirstName;
         user.userLastName = userLastName;
@@ -33,7 +34,9 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         }
         catch (error) {
             if (error.code === '23505') {
-                throw new common_1.ConflictException('Duplicate username');
+                console.log(error);
+                console.log(error.code);
+                throw new common_1.ConflictException('Duplicate email address.');
             }
             else {
                 console.log(error.code);
@@ -54,6 +57,10 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
     }
     async hashPassword(userPassword, userSalt) {
         return bcrypt.hash(userPassword, userSalt);
+    }
+    async firstLetterCapitalizer(userCity) {
+        userCity = userCity.charAt(0).toUpperCase() + userCity.slice(1).toLowerCase();
+        return userCity;
     }
 };
 UserRepository = __decorate([

@@ -42,7 +42,8 @@
             <mat-form-field class="w-100">
               <input type="email" matInput placeholder="E-mail cím" formControlName="userEmail">
               <mat-error *ngIf="data.userEmail.errors?.required">E-mail cím megadása kötelező.</mat-error>
-              <mat-error *ngIf="data.userEmail.errors?.email">Nem megfelelő az e-mail formátuma.</mat-error>         
+              <mat-error *ngIf="data.userEmail.errors?.email">Nem megfelelő az e-mail formátuma.</mat-error>  
+              <mat-error *ngIf="data.userEmail.errors?.emailAlreadyInUse">Már regisztrált ezzel az e-mail címmel egy felhasználó hozzánk.</mat-error>      
             </mat-form-field>
 
             <mat-form-field class="w-100">
