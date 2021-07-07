@@ -22,26 +22,34 @@ export class ErrorInterceptor implements HttpInterceptor {
       return next.handle(request)
         .pipe( 
           catchError((error: HttpErrorResponse) => {  
+            this.errorNotificationService.retryFailedRequests();
             let errorMessage = ''; 
-            this.httpError = error;
-            if (error.error instanceof ErrorEvent) {
+            if (error.error instanceof ErrorEvent) {     
               // client-side error 
+              this.unauthorised();
               errorMessage = `Error: ${error.error.message}`;
-            } else {  
+            } else {    
               // server-side error 
-             this.emailAlreadyInUse();
+             this.conflict();
               errorMessage = `Error Code: ${error.status} Message: ${error.message}`; 
-            }  
-            //window.alert(errorMessage);  
-            
+            }              
             return throwError(errorMessage);  
           })  
         ) 
     }   
 
-    emailAlreadyInUse() {
+    // while registry entered email address is already in the database
+    conflict() {
       if (this.httpError.status === 409) {
-        this.errorNotificationService.emailAlreadyInUse();
+        this.errorNotificationService.conflict();
+        };
+      return;
+    }
+
+    // eg: token is epired, user is not signed in
+    unauthorised() {
+      if (this.httpError.status === 401) {
+        this.errorNotificationService.unauthorised();
         };
       return;
     }

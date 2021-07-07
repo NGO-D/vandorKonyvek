@@ -14,7 +14,7 @@ import {
                 private router: Router) 
                 {}
   
-canActivate(next: ActivatedRouteSnapshot, 
+  public canActivate(next: ActivatedRouteSnapshot, 
             state: RouterStateSnapshot
             ): Observable<boolean> | Promise<boolean> | boolean {
             if (!this.authService.isAuthenticated()) {

@@ -47,7 +47,7 @@
 
             <mat-form-field class="w-100">
               <input matInput [type]="hide ? 'password' : 'text'" matInput placeholder="Jelszó" formControlName="userPassword">
-                <button type="button" matSuffix (click)="hide ? hide : !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button> 
               <mat-error *ngIf="data.userPassword.errors?.required">Jelszó megadása kötelező</mat-error>
@@ -57,7 +57,7 @@
 
             <mat-form-field class="w-100"> 
               <input matInput [type]="hideConfirm ? 'password' : 'text'" matInput placeholder="Jelszó megismétlése" formControlName="userConfirmPassword">
-                <button type="button" mat-icon-button matSuffix (click)="hideConfirm ? hideConfirm : !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+                <button type="button" mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
                   <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button> 
               <mat-error *ngIf="data.userConfirmPassword.errors?.required">Jelszó megadása kötelező</mat-error>

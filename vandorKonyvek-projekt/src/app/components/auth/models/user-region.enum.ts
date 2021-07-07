@@ -26,7 +26,7 @@ const valuesArray = Object.values(UserRegion);
     
 export class Regions {
     public regions = valuesArray;
-    regionsToArray(): String[] {
+    public regionsToArray(): String[] {
         return this.regions;
     } 
 }

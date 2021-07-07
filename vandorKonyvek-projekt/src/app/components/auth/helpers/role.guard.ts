@@ -16,7 +16,7 @@ export class RoleGuard implements CanActivate {
               public router: Router) 
               {}
 
-  canActivate(route: ActivatedRouteSnapshot,
+  public canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot
               ): boolean {
     const expectedRole = route.data.expectedRole;
