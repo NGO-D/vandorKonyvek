@@ -15,14 +15,14 @@
 
               <mat-form-field class="w-100">
                 <input matInput [type]="hide ? 'password' : 'text'" type="password" matInput placeholder="Jelszó" formControlName="userPassword">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <button type="button" mat-icon-button matSuffix (click)="hide ? hide : !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="data.userPassword.errors?.required">Password is required</mat-error>
               </mat-form-field>
 
               <div class="form-group mt-4">
-                <button mat-raised-button color="primary">Bejelentkezés</button>
+                <button type="submit" [autofocus] mat-raised-button color="primary">Bejelentkezés</button>
                 <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Regisztráció</a>
               </div>
             </form>

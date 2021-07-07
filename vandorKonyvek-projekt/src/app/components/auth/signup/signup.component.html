@@ -43,12 +43,11 @@
               <input type="email" matInput placeholder="E-mail cím" formControlName="userEmail">
               <mat-error *ngIf="data.userEmail.errors?.required">E-mail cím megadása kötelező.</mat-error>
               <mat-error *ngIf="data.userEmail.errors?.email">Nem megfelelő az e-mail formátuma.</mat-error>  
-              <mat-error *ngIf="data.userEmail.errors?.emailAlreadyInUse">Már regisztrált ezzel az e-mail címmel egy felhasználó hozzánk.</mat-error>      
             </mat-form-field>
 
             <mat-form-field class="w-100">
               <input matInput [type]="hide ? 'password' : 'text'" matInput placeholder="Jelszó" formControlName="userPassword">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <button type="button" matSuffix (click)="hide ? hide : !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button> 
               <mat-error *ngIf="data.userPassword.errors?.required">Jelszó megadása kötelező</mat-error>
@@ -56,9 +55,9 @@
               <mat-error *ngIf="data.userPassword.errors?.pattern">A jelszónak számot, kis- és nagybetűt kell tartalmaznia.</mat-error>                 
             </mat-form-field>
 
-            <mat-form-field class="w-100">
+            <mat-form-field class="w-100"> 
               <input matInput [type]="hideConfirm ? 'password' : 'text'" matInput placeholder="Jelszó megismétlése" formControlName="userConfirmPassword">
-                <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+                <button type="button" mat-icon-button matSuffix (click)="hideConfirm ? hideConfirm : !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
                   <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button> 
               <mat-error *ngIf="data.userConfirmPassword.errors?.required">Jelszó megadása kötelező</mat-error>
@@ -66,12 +65,11 @@
               <mat-error *ngIf="data.userConfirmPassword.errors?.pattern">A jelszónak számot, kis- és nagybetűt kell tartalmaznia.</mat-error>              
               <mat-error *ngIf="data.userConfirmPassword.errors?.mustMatch">A két jelszónak egyezni kell.</mat-error> 
             </mat-form-field>
-           
             <p><mat-checkbox formControlName="userAcceptTerms">Elfogadom az adatkezelési tájékoztatót.</mat-checkbox></p>
             <mat-error *ngIf="data.userAcceptTerms.errors?.requiredTrue">A regisztrációhoz szükséges az adatkezelési tájékoztatnó elfogadása.</mat-error>     
             
             <div class="mt-4">
-              <button mat-raised-button color="primary">Regisztrálok</button>
+              <button type="submit" [autofocus] mat-raised-button color="primary">Regisztrálok</button>
               <a [routerLink]="['/']" class="ml-2" mat-button color="primary">Mégse</a>
             </div>
           </form>

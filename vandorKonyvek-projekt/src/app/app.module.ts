@@ -18,6 +18,7 @@ import { TokenStorageService } from './components/auth/services/token-storage.se
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserComponent } from './components/user/user.component';
 import { ErrorInterceptor } from './components/auth/helpers/http-error.interceptor';
+import { AuthInterceptor } from './components/auth/helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,12 @@ import { ErrorInterceptor } from './components/auth/helpers/http-error.intercept
               JwtHelperService,
               {
                 provide: HTTP_INTERCEPTORS,           
-                useClass: ErrorInterceptor,          
+                useClass: ErrorInterceptor,       
+                multi: true          
+              },  
+              {
+                provide: HTTP_INTERCEPTORS,           
+                useClass: AuthInterceptor,       
                 multi: true          
               },       
               ],

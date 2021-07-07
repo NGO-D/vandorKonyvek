@@ -1,4 +1,5 @@
 import { Component, 
+         OnDestroy, 
          OnInit,
          } from '@angular/core';
 import { FormBuilder, 
@@ -8,6 +9,8 @@ import { FormBuilder,
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
 import { MustMatch } from '../helpers/password-match.validator';
+import { Subject, Subscription } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-signup',
@@ -15,16 +18,17 @@ import { MustMatch } from '../helpers/password-match.validator';
   styleUrls: ['./signup.component.scss']
 })
 
-export class SignupComponent implements OnInit {
-  registerForm: FormGroup;
-  userRegions: String[];
-  selectedRegion: String;
-  hide = true;
-  hideConfirm = true;
+export class SignupComponent implements OnInit, OnDestroy {
+  public registerForm: FormGroup;
+  public userRegions: String[];
+  public selectedRegion: String;
+  public hide = true;
+  public hideConfirm = true;
+  private ngUnsubscribe = new Subject();
   
   constructor(private formBuilder: FormBuilder, 
               private authService: AuthService,
-              private matSnackBar: MatSnackBar,
+              private _snackBar: MatSnackBar,
               ) { }
 
   ngOnInit(): void {
@@ -45,17 +49,15 @@ export class SignupComponent implements OnInit {
     {
      validator: MustMatch('userPassword', 'userConfirmPassword')
     },
-    
-  );
+    );
 
-    this.authService.userRegionSelecter().subscribe(
-      (regions) => {
-        this.userRegions = regions;
-      },
-      (error) => {
-        console.error(error);
-      } 
-    ); 
+    this.authService.userRegionSelecter()
+    .pipe(takeUntil(this.ngUnsubscribe))
+    .subscribe(
+        regions => this.userRegions = regions,
+        err => console.log(err)
+        ); 
+  
   }
 
   get data() { return this.registerForm.controls; }
@@ -64,28 +66,17 @@ export class SignupComponent implements OnInit {
     console.log('onsubmit:');
     console.log(this.registerForm.value);
     if (this.registerForm.invalid) {
-      this.matSnackBar.open('Sikertelen ', 'regisztráció!', {
+      this._snackBar.open('Sikertelen regisztráció.', '', {
         duration: 3000,
       });
       return;
     } else {
-      this.authService.register(this.registerForm.value).subscribe(
-        (response) => {
-          this.matSnackBar.open('Sikeres ', 'regisztráció!', {
-            duration: 2000,
-          })
-        },
-        (error) => {
-          this.matSnackBar.open('Sikertelen ', 'regisztráció!', {
-            duration: 3000,
-          });
-        }
-      )
-      
-      }
-    }
-
-    ngOnDestroy() {
-
-    }
+      this.authService.register(this.registerForm.value);
+    };
   }
+
+  ngOnDestroy() {
+      this.ngUnsubscribe.next();
+      this.ngUnsubscribe.complete();
+  }
+}

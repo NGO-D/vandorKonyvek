@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,12 +9,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  submitted = false;
-  hide = true;
+  public loginForm: FormGroup;
+  public submitted = false;
+  public hide = true;
 
   constructor(private formBuilder: FormBuilder, 
               private authService: AuthService,
+              private _snackBar: MatSnackBar,
               ) { }
 
   ngOnInit() {
@@ -27,11 +29,14 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {   
    if (this.loginForm.invalid) {
+    this._snackBar.open('Sikertelen bejelentkezés.', '', {
+      duration: 3000,
+    });
     return;
   } else {
     this.authService.login(this.loginForm.value);
     }
   } 
   
-  }
+}
 

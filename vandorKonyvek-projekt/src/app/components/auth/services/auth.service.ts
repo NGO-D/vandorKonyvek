@@ -79,7 +79,6 @@ export class AuthService {
             userEmail: user.userEmail,
             userPassword: user.userPassword
           };
-         
           this.httpClient.post(endpoint, httpParams).subscribe(
             (response) => {
               this.router.navigate(['/login']);
@@ -88,13 +87,9 @@ export class AuthService {
               console.log(error);
             }
           );
-          console.log('jár itt?');
           return;
     }
-
-
-
-  }
+}
 
 
  

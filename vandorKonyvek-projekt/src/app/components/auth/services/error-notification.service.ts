@@ -7,10 +7,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ErrorNotificationService {
   constructor(private _snackBar: MatSnackBar) {}
 
-  emailAlreadyInUse()  {
-
+  emailAlreadyInUse(): void  {
     this._snackBar.open('Ezzel az e-mail címmel már regisztrált nálunk felhasználó.', '', {
       duration: 3000,
     });
   }
+  
+
 }
