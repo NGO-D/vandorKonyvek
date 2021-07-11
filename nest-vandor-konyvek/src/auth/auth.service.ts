@@ -11,7 +11,7 @@ export class AuthService {
     constructor(
         @InjectRepository(UserRepository)
         private userRepository: UserRepository,
-        private jwtService: JwtService,
+        private readonly jwtService: JwtService,
         ) {}
 
     async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
@@ -25,14 +25,14 @@ export class AuthService {
         if (!user) {
             throw new UnauthorizedException('Invalid credentials');
         }
-
+        // ezt ki kellene szervezni egy másik funkcióba
         const payload: JwtPayload = { userId: user.userId, 
                                       userRole: user.userRole, 
                                       userName: user.userName 
                                     };
         const accessToken = await this.jwtService.sign(payload);
         console.log(typeof accessToken);
-
+        // egy másik tutorial 
         return { accessToken };
     } 
 }
