@@ -1,6 +1,5 @@
-import { IsEmail, IsNumber, IsString, Matches, MinLength } from "class-validator";
+import { IsBoolean, IsEmail, IsNumber, IsString, Matches, MinLength } from "class-validator";
 import { UserRegion } from "src/user/user-region.enum";
-import { UserRole } from "src/user/user-role.enum";
 
 export class AuthCredentialsDto {
     @IsString()
@@ -20,7 +19,8 @@ export class AuthCredentialsDto {
     @IsString()
     userName: string;
 
-    userRole: UserRole.user;
+    @IsBoolean()
+    userIsAdmin: boolean;
 
     @IsString()
     @IsEmail()

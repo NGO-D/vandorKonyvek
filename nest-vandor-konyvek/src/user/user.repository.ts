@@ -3,6 +3,7 @@ import { AuthCredentialsDto } from '../auth/dto/auth-credentials.dto';
 import { User } from "./user.entity";
 import { ConflictException, InternalServerErrorException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
+import { SignInCredentialsDto } from "src/auth/dto/signin-credentials.dto";
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
@@ -13,7 +14,7 @@ export class UserRepository extends Repository<User> {
                 userCity,
                 userPostcode,
                 userName, 
-                userRole,
+                userIsAdmin,
                 userEmail,
                 userPassword } = authCredentialsDto;
         
@@ -29,7 +30,7 @@ console.log(userCity);
         user.userCity = userCity;
         user.userPostcode = userPostcode;
         user.userName = userName;
-        user.userRole = userRole;
+        user.userIsAdmin = userIsAdmin;
         user.userEmail = userEmail;
         user.userSalt = await bcrypt.genSalt();
         user.userPassword = await this.hashPassword(userPassword, user.userSalt);
@@ -50,8 +51,8 @@ console.log(user);
     }
 
 
-    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User> {
-        const { userEmail, userPassword } = authCredentialsDto;
+    async validateUserPassword(signInCredentialsDto: SignInCredentialsDto): Promise<User> {
+        const { userEmail, userPassword } = signInCredentialsDto;
         const user = await this.findOne({userEmail});
 
         if (user && await user.validatePassword(userPassword)) {

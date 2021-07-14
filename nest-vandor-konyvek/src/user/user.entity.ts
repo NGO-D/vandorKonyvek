@@ -2,7 +2,6 @@ import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique }
 import * as bcrypt from 'bcrypt';
 import { Book } from './../books/books.entity';
 import { UserRegion } from "./user-region.enum";
-import { UserRole } from "./user-role.enum";
 
 @Entity()
 @Unique(['userEmail'])
@@ -29,8 +28,8 @@ export class User extends BaseEntity {
     @Column({type: 'varchar', nullable: false})
     userName: string;
 
-    @Column({type: 'varchar', nullable: false})
-    userRole: UserRole.user;
+    @Column({type: 'boolean', nullable: false})
+    userIsAdmin: boolean;
 
     @Column({type: 'varchar', nullable: false})
     userEmail: string;
@@ -41,8 +40,8 @@ export class User extends BaseEntity {
     @Column({type: 'varchar', nullable: false})
     userSalt: string;
 
-    //@OneToMany(type => Book, book => book.book_user, { eager: true })
-    //user_books: Book[];
+    @OneToMany(type => Book, book => book.bookUser, { eager: true })
+    userBooks: Book[];
 
     async validatePassword(password: string): Promise<boolean> {
         const hash = await bcrypt.hash(password, this.userSalt);

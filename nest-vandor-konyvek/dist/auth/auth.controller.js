@@ -16,17 +16,18 @@ exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const auth_credentials_dto_1 = require("./dto/auth-credentials.dto");
+const signin_credentials_dto_1 = require("./dto/signin-credentials.dto");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
     signUp(authCredentialsDto) {
-        console.log('baaaack');
-        console.log(authCredentialsDto);
+        console.log('serverside');
         return this.authService.signUp(authCredentialsDto);
     }
-    signIn(authCredentialsDto) {
-        return this.authService.signIn(authCredentialsDto);
+    signIn(signInCredentialsDto) {
+        console.log('serverside');
+        return this.authService.signIn(signInCredentialsDto);
     }
 };
 __decorate([
@@ -40,7 +41,7 @@ __decorate([
     common_1.Post('/signin'),
     __param(0, common_1.Body(common_1.ValidationPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [auth_credentials_dto_1.AuthCredentialsDto]),
+    __metadata("design:paramtypes", [signin_credentials_dto_1.SignInCredentialsDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "signIn", null);
 AuthController = __decorate([

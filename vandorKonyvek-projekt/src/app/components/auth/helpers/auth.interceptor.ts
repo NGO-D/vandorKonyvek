@@ -18,7 +18,7 @@ import { TokenStorageService } from '../services/token-storage.service';
       const authRequest = req.clone({
         headers: req.headers.set('Authorization',  'Bearer ' + authToken),
       });
-      console.log(`Inceptor: ${authRequest}`);
+      console.log(authRequest);
       return next.handle(authRequest);
     }
   }

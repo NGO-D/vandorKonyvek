@@ -21,14 +21,13 @@ export class RoleGuard implements CanActivate {
               ): boolean {
     const expectedRole = route.data.expectedRole;
     const token = this.tokenStorageService.getToken();
-    
     if (
       !this.authService.isAuthenticated() || 
-      this.tokenStorageService.decodeToken(token).userRole !== expectedRole
+      this.tokenStorageService.decodeToken(token).userIsAdmin !== expectedRole
     ) {
       this.router.navigate(['login']);
       return false;
-    } 
+    }  
     return true;
   } 
 

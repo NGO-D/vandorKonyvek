@@ -11,9 +11,10 @@ const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
 const common_1 = require("@nestjs/common");
 const bcrypt = require("bcrypt");
+const signin_credentials_dto_1 = require("../auth/dto/signin-credentials.dto");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async signUp(authCredentialsDto) {
-        const { userFirstName, userLastName, userRegion, userCity, userPostcode, userName, userRole, userEmail, userPassword } = authCredentialsDto;
+        const { userFirstName, userLastName, userRegion, userCity, userPostcode, userName, userIsAdmin, userEmail, userPassword } = authCredentialsDto;
         this.firstLetterCapitalizer(userCity);
         console.log('repo');
         console.log(userCity);
@@ -24,7 +25,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         user.userCity = userCity;
         user.userPostcode = userPostcode;
         user.userName = userName;
-        user.userRole = userRole;
+        user.userIsAdmin = userIsAdmin;
         user.userEmail = userEmail;
         user.userSalt = await bcrypt.genSalt();
         user.userPassword = await this.hashPassword(userPassword, user.userSalt);
@@ -45,8 +46,8 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         }
         await user.save();
     }
-    async validateUserPassword(authCredentialsDto) {
-        const { userEmail, userPassword } = authCredentialsDto;
+    async validateUserPassword(signInCredentialsDto) {
+        const { userEmail, userPassword } = signInCredentialsDto;
         const user = await this.findOne({ userEmail });
         if (user && await user.validatePassword(userPassword)) {
             return user;

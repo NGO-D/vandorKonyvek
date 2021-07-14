@@ -27,16 +27,17 @@ let AuthService = class AuthService {
         console.log(authCredentialsDto);
         return this.userRepository.signUp(authCredentialsDto);
     }
-    async signIn(authCredentialsDto) {
-        const user = await this.userRepository.validateUserPassword(authCredentialsDto);
+    async signIn(signInCredentialsDto) {
+        const user = await this.userRepository.validateUserPassword(signInCredentialsDto);
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
         const payload = { userId: user.userId,
-            userRole: user.userRole,
+            userIsAdmin: user.userIsAdmin,
             userName: user.userName
         };
         const accessToken = await this.jwtService.sign(payload);
+        console.log('typeof accessToken');
         console.log(typeof accessToken);
         return { accessToken };
     }

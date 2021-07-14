@@ -2881,14 +2881,9 @@
         "signature": "52e47b2842ebcfa59a5a384c456d653fa9d43bcffdc40520939bfadab6ec58c6",
         "affectsGlobalScope": false
       },
-      "../src/user/user-role.enum.ts": {
-        "version": "f594c6a0977f2f44f58bc95c7f7b7e0f3a40ef40830e62a6f09e7809d4fcdec4",
-        "signature": "3b540d3cbf49ca730ecd54191b41bf2f314b92cb797c5768f491b957d2e9825b",
-        "affectsGlobalScope": false
-      },
       "../src/user/user.entity.ts": {
-        "version": "0c8ac9a59cfc929d59cf69237a25414e995f6a0b985020d2b2fd7a3c64e41213",
-        "signature": "b9adf356b42205993d82ab3fec7cd2a1748ee5a647b94b7e43375a7a41711af2",
+        "version": "1633ea26de6c0aa6a1467f4430b29c10696191e73039f5251ebee396cd116c31",
+        "signature": "ad678e7632d534e5c23b7a76014de6c2457d12ef981d150dd78b47fcb9e97bbb",
         "affectsGlobalScope": false
       },
       "../src/books/book-available.enum.ts": {
@@ -2897,8 +2892,8 @@
         "affectsGlobalScope": false
       },
       "../src/books/books.entity.ts": {
-        "version": "9bdf274ef4cd73d92daba4c5d63811f48243b5934799788e4d2d308859ded1e2",
-        "signature": "95c7c155b57048507c7bb1425b0c242c3a339f2685f7e083c6772c534c957adc",
+        "version": "d349c8052d6995f72e29b104be80845af01e1a6109be6256b89e423dc51a5dfb",
+        "signature": "b00e02522c17901bec418815d01ccaa7998395e58b3527157a88ce448f13a343",
         "affectsGlobalScope": false
       },
       "../src/config/typeorm.config.ts": {
@@ -3852,33 +3847,33 @@
         "affectsGlobalScope": false
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "4f7691242e349d4e850419d984b3a5346270bab0b82495528bdeaeec597b38c0",
-        "signature": "83fe5bde3abb0ff5b5a1c1082bc9214ce2512591affe8ebef98cf24b4103fe87",
+        "version": "e4741f27d6bfb7f0077ecbc14004034dfd5026f2dce0ab8899f2da47833f878f",
+        "signature": "7f913d7c650cf521f93f79247f86bc1004459206a92c038dcdafedcbdbacc10d",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/dto/signin-credentials.dto.ts": {
+        "version": "9ddf4a7a7900ebad1c871d9aa5ed5d3beedb221c7096dfe85f8af3bc2c4cbc91",
+        "signature": "6770d53d446281f38c7c1992ef683390dd1b4a63ecfc853ac0101eef44bf3a83",
         "affectsGlobalScope": false
       },
       "../src/user/user.repository.ts": {
-        "version": "84952ae791c1ec302eeba0ea5f8b4d2abbcf48c26865c50cc67c8ca6d99c375d",
-        "signature": "a2e2b4cb4cebc16a92fcaa6e72a92f97d08a2b8c852283ac5de2cdab50713084",
+        "version": "7f53e904afe0a73ce7f7880888bf9711016a387464e2a33302491aeff4fbff40",
+        "signature": "30b88789f49504703858aeb28c5535ad0ebae321db01d54bd379881ec3846826",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt-payload.interface.ts": {
-        "version": "0e83aefab8c5889135d545c21c4a565041bdde4f510105cc9b6989ee61104508",
-        "signature": "7ecb82e40b925b1b6eeddda25ac0c845cf4106a512bbbfbccc9bd7880dee49bc",
+        "version": "58ac8da6dd06456f82e11c6fb94a95f020b1d5be4e728dde8466a8e243c2330f",
+        "signature": "b8ede2cd21ce5f926185184c86b0cbe0d62f22a54175e2fbf3c6b37cd72dc6c6",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.service.ts": {
-        "version": "21234eeb3cf38b46953da3d063f9d2ad191311b1ee79dabc247ab377402b68fa",
-        "signature": "3ee6c05ab9df05b60212b0554c6d432d5b9978c499d4215dbb8d7aad23bf9725",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/get-user.decorator.ts": {
-        "version": "02546cde340cba73a6eabb160ee8ed844a4e5baef73e454d1294887a3d682a1a",
-        "signature": "9c0e831c191af5cb4a765fa287f20b4abef8bdabb757c5e5fface4e843a857f9",
+        "version": "c1304ff42cd39ad89f4eb277c509890060982d15775fa9517057c3cca13927f0",
+        "signature": "f0f877d707c33c7735a7e96c0b58cc0e39917bd3023bfad6e8c721455d3bf3e8",
         "affectsGlobalScope": false
       },
       "../src/auth/auth.controller.ts": {
-        "version": "44ba3c9e782324b6c507344426627e21c3d670237e421eba59aed603f1d46df8",
-        "signature": "612c3b0151fe02bb99ef76f14f1e98a6fbbd27a3038bd7f1a41ec07784be453a",
+        "version": "64f248ad9d38266f79a16e9e64596491fb401791369ff08c2ff9080a6ce355c5",
+        "signature": "1dd29c4f9fc2c8dba4e53d0b2829d6ab38942efdca1591c0c7007393a701aa39",
         "affectsGlobalScope": false
       },
       "../src/auth/jwt.strategy.ts": {
@@ -3894,6 +3889,11 @@
       "../src/auth/auth.module.ts": {
         "version": "003078d57c97f09bc5d78d6500306768d3b7737986e14abe945ba460dfd02fc1",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/get-user.decorator.ts": {
+        "version": "98e68ca984f828d421149c488c5db512923ee5b732dea1c8ec72ce7d1c7f28ae",
+        "signature": "9c0e831c191af5cb4a765fa287f20b4abef8bdabb757c5e5fface4e843a857f9",
         "affectsGlobalScope": false
       },
       "../src/books/dto/get-books-filter.dto.ts": {
@@ -4304,6 +4304,201 @@
       "../src/main.ts": {
         "version": "0809ce35c6f66a31f45402cc902883cfe85773818ceb5a4aa55e1ee16684a6d3",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/action.enum.ts": {
+        "version": "ade8e421ae568a289c7b263707ea0454682c0a92042f1b97308fe3d57cb9c9d6",
+        "signature": "396c92fbc8a6a78c9971186158e2fa4da695ffa462b31cf5842418a26a87893f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/condition.d.ts": {
+        "version": "7d630f207a66aaa4ad2e3e5e6dac1dc40585ca012ea60cb8ccb292e425882899",
+        "signature": "7d630f207a66aaa4ad2e3e5e6dac1dc40585ca012ea60cb8ccb292e425882899",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/types.d.ts": {
+        "version": "cc42f8b3aeaf33e44edcc6ac736d81a1cfb10611832d25701ab96f389db4adf5",
+        "signature": "cc42f8b3aeaf33e44edcc6ac736d81a1cfb10611832d25701ab96f389db4adf5",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/interpreter.d.ts": {
+        "version": "51858552745d17efa808ac92b37b0ad7a151e0a4dd2898987e0ddaac43ed875e",
+        "signature": "51858552745d17efa808ac92b37b0ad7a151e0a4dd2898987e0ddaac43ed875e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/translator.d.ts": {
+        "version": "3991442ac433a969fb5a453979cf62917d3997bedbc508525ae8e439523ef76b",
+        "signature": "3991442ac433a969fb5a453979cf62917d3997bedbc508525ae8e439523ef76b",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/builder.d.ts": {
+        "version": "e5d0c5dcdff8b4b7dbcc1b1d6d06fa2f0905a33869b8cd0b8d3dbd085d7b56d5",
+        "signature": "e5d0c5dcdff8b4b7dbcc1b1d6d06fa2f0905a33869b8cd0b8d3dbd085d7b56d5",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/utils.d.ts": {
+        "version": "a85b6368a73819f345b8e75cf73c5dce69d41fd5984afbbbb70de5085fcb27c0",
+        "signature": "a85b6368a73819f345b8e75cf73c5dce69d41fd5984afbbbb70de5085fcb27c0",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts": {
+        "version": "46ba72d2350cc0bd82f6a2a80cf0a95665ec42f2e1303fb0a104b0622df2a320",
+        "signature": "46ba72d2350cc0bd82f6a2a80cf0a95665ec42f2e1303fb0a104b0622df2a320",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts": {
+        "version": "3814a023edef4bd7ce0b5ff309ba955bd045779fccf87834acf72fa3394afcaa",
+        "signature": "3814a023edef4bd7ce0b5ff309ba955bd045779fccf87834acf72fa3394afcaa",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/core/dist/types/index.d.ts": {
+        "version": "9778da922b0fea985c1c57eed0294d3ee3cad4af31f7a1af88eb19e90495e976",
+        "signature": "9778da922b0fea985c1c57eed0294d3ee3cad4af31f7a1af88eb19e90495e976",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo/dist/types/types.d.ts": {
+        "version": "e7d2e8448600b8605597199b1d83c93db15d80367a03e0b58ac08ef76cf9d237",
+        "signature": "e7d2e8448600b8605597199b1d83c93db15d80367a03e0b58ac08ef76cf9d237",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo/dist/types/instructions.d.ts": {
+        "version": "85ea7c3e9f3b7d93d11e8082e2aac95a0c56c28cad863108d94ac7660027e23c",
+        "signature": "85ea7c3e9f3b7d93d11e8082e2aac95a0c56c28cad863108d94ac7660027e23c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts": {
+        "version": "6dd643f03f95644c51ade4d1569d4b6af7d701d7cc2b456b23c0ac27fae63aed",
+        "signature": "6dd643f03f95644c51ade4d1569d4b6af7d701d7cc2b456b23c0ac27fae63aed",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo/dist/types/index.d.ts": {
+        "version": "87d444caec5135116657d8cfd09fc3a9a4a8bd1e375cc80325459de4a598f22e",
+        "signature": "87d444caec5135116657d8cfd09fc3a9a4a8bd1e375cc80325459de4a598f22e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/types.d.ts": {
+        "version": "1ecd2a7fd8ba4a1d18c4933a2216b4ffc1fcbc5f97ce6cbc55f5588b092dcf50",
+        "signature": "1ecd2a7fd8ba4a1d18c4933a2216b4ffc1fcbc5f97ce6cbc55f5588b092dcf50",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/utils.d.ts": {
+        "version": "272aa6064ef79f6d561e1111cc0269f0daffafef6550c59d42f4b235d362de71",
+        "signature": "272aa6064ef79f6d561e1111cc0269f0daffafef6550c59d42f4b235d362de71",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/interpreters.d.ts": {
+        "version": "d3faf237654bb007931951f8a783b8c1982a3a62659ce6833d23eefd1bf2a7ec",
+        "signature": "d3faf237654bb007931951f8a783b8c1982a3a62659ce6833d23eefd1bf2a7ec",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/interpreter.d.ts": {
+        "version": "9cb4625b02253cf3c0818f59c70d19c542175ceba18ec1e18318de0bc0932727",
+        "signature": "9cb4625b02253cf3c0818f59c70d19c542175ceba18ec1e18318de0bc0932727",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/defaults.d.ts": {
+        "version": "45c48571bfd80f129ef9e5f143c7dc8f228b381d87af7cb9a796f4865b30bc33",
+        "signature": "45c48571bfd80f129ef9e5f143c7dc8f228b381d87af7cb9a796f4865b30bc33",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/js/dist/types/index.d.ts": {
+        "version": "e9da0698eb51c586e4f210be87cd7ce957d403517dba89b3697fec2f539413a4",
+        "signature": "e9da0698eb51c586e4f210be87cd7ce957d403517dba89b3697fec2f539413a4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts": {
+        "version": "5a85c6c8966322f562748f32a0e30ed212fa08661d4d8759ee56e660fd04be9c",
+        "signature": "5a85c6c8966322f562748f32a0e30ed212fa08661d4d8759ee56e660fd04be9c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@ucast/mongo2js/dist/types/index.d.ts": {
+        "version": "966f01c60963e2c2e1a455d187feff969fd13768dda55542d77bb57e266910b2",
+        "signature": "966f01c60963e2c2e1a455d187feff969fd13768dda55542d77bb57e266910b2",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/hkt.d.ts": {
+        "version": "627fd523a87c691c02329f1ad7985582b354400cebe9a7a83092a200bf782ad2",
+        "signature": "627fd523a87c691c02329f1ad7985582b354400cebe9a7a83092a200bf782ad2",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/types.d.ts": {
+        "version": "9c7d644eca08297ab9c839abf0338460e8f4ab918ec46b3caf05205a9a1b2502",
+        "signature": "9c7d644eca08297ab9c839abf0338460e8f4ab918ec46b3caf05205a9a1b2502",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/rawrule.d.ts": {
+        "version": "6929240c1a63a9b345c994ae24ffb36a22ec635289edbd022cdc56cc0d594f36",
+        "signature": "6929240c1a63a9b345c994ae24ffb36a22ec635289edbd022cdc56cc0d594f36",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/rule.d.ts": {
+        "version": "97ddce16eafb5f794b5d9ddb5e861303f661a25f25e47e970f228b470c4b7515",
+        "signature": "97ddce16eafb5f794b5d9ddb5e861303f661a25f25e47e970f228b470c4b7515",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/structures/linkeditem.d.ts": {
+        "version": "3b3218143ce54069b0086f62c7e8113b66eaa44c5da6e18108be06cbc5634cf3",
+        "signature": "3b3218143ce54069b0086f62c7e8113b66eaa44c5da6e18108be06cbc5634cf3",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/ruleindex.d.ts": {
+        "version": "62463c50c0420bd8075d7ccfaa2af09678daf9bcf0656e330cd70a1fd93ecde7",
+        "signature": "62463c50c0420bd8075d7ccfaa2af09678daf9bcf0656e330cd70a1fd93ecde7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/pureability.d.ts": {
+        "version": "428a327108f2773c5b2ae9a90ba0ea982445cc5e2d26f2f5667be302349cfe47",
+        "signature": "428a327108f2773c5b2ae9a90ba0ea982445cc5e2d26f2f5667be302349cfe47",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts": {
+        "version": "0c16a563469daf74268c80401a3f29978a19a4db692b15beee5217bf46352644",
+        "signature": "0c16a563469daf74268c80401a3f29978a19a4db692b15beee5217bf46352644",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/ability.d.ts": {
+        "version": "60b9256ce72e1710a29684890f590cbf3290eb3c57509321d2d893ab535e69a7",
+        "signature": "60b9256ce72e1710a29684890f590cbf3290eb3c57509321d2d893ab535e69a7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts": {
+        "version": "8ebbdd9af0c2a56fbdddcc578bb4f1018cb98b8091160272eabe317ffa69ff2a",
+        "signature": "8ebbdd9af0c2a56fbdddcc578bb4f1018cb98b8091160272eabe317ffa69ff2a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts": {
+        "version": "738c8ddacd9e82574a8d80c87b9232acd477d3d7464b15cb53bedb2288b348e6",
+        "signature": "738c8ddacd9e82574a8d80c87b9232acd477d3d7464b15cb53bedb2288b348e6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/matchers/field.d.ts": {
+        "version": "bed94765baccbd1c3a797d09836ae7ecd5a3408cb7bcf8d39262f970bedc3a77",
+        "signature": "bed94765baccbd1c3a797d09836ae7ecd5a3408cb7bcf8d39262f970bedc3a77",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/utils.d.ts": {
+        "version": "b2f8fe82bf239e76dbc6409267421d9d9a9df6d308b465679726927085cc1b0a",
+        "signature": "b2f8fe82bf239e76dbc6409267421d9d9a9df6d308b465679726927085cc1b0a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/dist/types/index.d.ts": {
+        "version": "651049fa0972283d78f0c77d0538c404c0da5beed42c6d75674b77ab72d00b5a",
+        "signature": "651049fa0972283d78f0c77d0538c404c0da5beed42c6d75674b77ab72d00b5a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@casl/ability/index.d.ts": {
+        "version": "33ca55bdff472d604b62d87cf15440de57d634b27da84b457ae13ab106414a77",
+        "signature": "33ca55bdff472d604b62d87cf15440de57d634b27da84b457ae13ab106414a77",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/casl/casl-ability.factory.ts": {
+        "version": "0b5f81b8a5769574384920044f6e24776a1bb09afcbe1b45b297976b8c7ab7a2",
+        "signature": "8f390ef1558ceb9da6e099555c7c83f356b6ff6209efcffc78b802e75b3c0ccf",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/casl/casl.module.ts": {
+        "version": "a180f09cb5c387dd6e7c06eb7531c21a37eb3e429fb6fafb9df2d067e221d7f3",
+        "signature": "c37ae6eb5dbd23f5dfe41605cfbaaf6e61e5cc5ef9da152b292a1ca56f4e90be",
         "affectsGlobalScope": false
       },
       "../src/chat/chat.controller.ts": {
@@ -4844,6 +5039,75 @@
     "referencedMap": {
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "../node_modules/@babel/types/lib/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/ability.d.ts": [
+        "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts": [
+        "../node_modules/@casl/ability/dist/types/ability.d.ts",
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts": [
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/index.d.ts": [
+        "../node_modules/@casl/ability/dist/types/ability.d.ts",
+        "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts",
+        "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts",
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts",
+        "../node_modules/@casl/ability/dist/types/matchers/field.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@casl/ability/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts": [
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/matchers/field.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/pureability.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/rawrule.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/rule.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/ruleindex.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/rule.d.ts",
+        "../node_modules/@casl/ability/dist/types/structures/linkeditem.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/types.d.ts": [
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/utils.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/index.d.ts": [
+        "../node_modules/@casl/ability/dist/types/index.d.ts"
       ],
       "../node_modules/@nestjs/common/cache/cache.module.d.ts": [
         "../node_modules/@nestjs/common/cache/interfaces/cache-module.interface.d.ts",
@@ -6060,6 +6324,95 @@
       ],
       "../node_modules/@types/yargs/index.d.ts": [
         "../node_modules/@types/yargs-parser/index.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/builder.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/builder.d.ts",
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts",
+        "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts",
+        "../node_modules/@ucast/core/dist/types/translator.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts",
+        "../node_modules/@ucast/core/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/interpreter.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts": [
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/translator.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/utils.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/defaults.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/index.d.ts": [
+        "../node_modules/@ucast/js/dist/types/defaults.d.ts",
+        "../node_modules/@ucast/js/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/js/dist/types/interpreters.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/interpreter.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts",
+        "../node_modules/@ucast/js/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/interpreters.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts",
+        "../node_modules/@ucast/js/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/utils.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/instructions.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/instructions.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/mongo2js/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts"
       ],
       "../node_modules/class-validator/types/decorator/array/arraycontains.d.ts": [
         "../node_modules/class-validator/types/decorator/validationoptions.d.ts"
@@ -8178,11 +8531,9 @@
       ],
       "../src/auth/auth.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts",
         "../src/auth/auth.service.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
-        "../src/auth/get-user.decorator.ts",
-        "../src/user/user.entity.ts"
+        "../src/auth/dto/signin-credentials.dto.ts"
       ],
       "../src/auth/auth.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8201,20 +8552,31 @@
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/dto/signin-credentials.dto.ts",
         "../src/auth/jwt-payload.interface.ts",
         "../src/user/user.repository.ts"
       ],
+      "../src/auth/casl/casl-ability.factory.ts": [
+        "../node_modules/@casl/ability/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/action.enum.ts",
+        "../src/books/books.entity.ts",
+        "../src/user/user.entity.ts"
+      ],
+      "../src/auth/casl/casl.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/casl/casl-ability.factory.ts"
+      ],
       "../src/auth/dto/auth-credentials.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts",
-        "../src/user/user-region.enum.ts",
-        "../src/user/user-role.enum.ts"
+        "../src/user/user-region.enum.ts"
+      ],
+      "../src/auth/dto/signin-credentials.dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/auth/get-user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/user/user.entity.ts"
-      ],
-      "../src/auth/jwt-payload.interface.ts": [
-        "../src/user/user-role.enum.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8326,8 +8688,7 @@
       "../src/user/user.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/books/books.entity.ts",
-        "../src/user/user-region.enum.ts",
-        "../src/user/user-role.enum.ts"
+        "../src/user/user-region.enum.ts"
       ],
       "../src/user/user.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8340,12 +8701,82 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/dto/signin-credentials.dto.ts",
         "../src/user/user.entity.ts"
       ]
     },
     "exportedModulesMap": {
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "../node_modules/@babel/types/lib/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/ability.d.ts": [
+        "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts": [
+        "../node_modules/@casl/ability/dist/types/ability.d.ts",
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts": [
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/index.d.ts": [
+        "../node_modules/@casl/ability/dist/types/ability.d.ts",
+        "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts",
+        "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts",
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts",
+        "../node_modules/@casl/ability/dist/types/matchers/field.d.ts",
+        "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@casl/ability/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts": [
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/matchers/field.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/pureability.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rule.d.ts",
+        "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/rawrule.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/rule.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/ruleindex.d.ts": [
+        "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+        "../node_modules/@casl/ability/dist/types/rule.d.ts",
+        "../node_modules/@casl/ability/dist/types/structures/linkeditem.d.ts",
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/types.d.ts": [
+        "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/index.d.ts"
+      ],
+      "../node_modules/@casl/ability/dist/types/utils.d.ts": [
+        "../node_modules/@casl/ability/dist/types/types.d.ts"
+      ],
+      "../node_modules/@casl/ability/index.d.ts": [
+        "../node_modules/@casl/ability/dist/types/index.d.ts"
       ],
       "../node_modules/@nestjs/common/cache/cache.module.d.ts": [
         "../node_modules/@nestjs/common/cache/interfaces/cache-module.interface.d.ts",
@@ -9562,6 +9993,95 @@
       ],
       "../node_modules/@types/yargs/index.d.ts": [
         "../node_modules/@types/yargs-parser/index.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/builder.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/builder.d.ts",
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts",
+        "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts",
+        "../node_modules/@ucast/core/dist/types/translator.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts",
+        "../node_modules/@ucast/core/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/interpreter.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts": [
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/translator.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts",
+        "../node_modules/@ucast/core/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/core/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/core/dist/types/utils.d.ts": [
+        "../node_modules/@ucast/core/dist/types/condition.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/defaults.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/index.d.ts": [
+        "../node_modules/@ucast/js/dist/types/defaults.d.ts",
+        "../node_modules/@ucast/js/dist/types/interpreter.d.ts",
+        "../node_modules/@ucast/js/dist/types/interpreters.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/interpreter.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts",
+        "../node_modules/@ucast/js/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/interpreters.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts",
+        "../node_modules/@ucast/js/dist/types/utils.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/js/dist/types/utils.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/instructions.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/instructions.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/types.d.ts"
+      ],
+      "../node_modules/@ucast/mongo/dist/types/types.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/index.d.ts"
+      ],
+      "../node_modules/@ucast/mongo2js/dist/types/index.d.ts": [
+        "../node_modules/@ucast/core/dist/types/index.d.ts",
+        "../node_modules/@ucast/js/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo/dist/types/index.d.ts",
+        "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts"
       ],
       "../node_modules/class-validator/types/decorator/array/arraycontains.d.ts": [
         "../node_modules/class-validator/types/decorator/validationoptions.d.ts"
@@ -11672,19 +12192,23 @@
       ],
       "../src/auth/auth.controller.ts": [
         "../src/auth/auth.service.ts",
-        "../src/auth/dto/auth-credentials.dto.ts"
+        "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/dto/signin-credentials.dto.ts"
       ],
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/dto/signin-credentials.dto.ts",
         "../src/user/user.repository.ts"
       ],
-      "../src/auth/dto/auth-credentials.dto.ts": [
-        "../src/user/user-region.enum.ts",
-        "../src/user/user-role.enum.ts"
+      "../src/auth/casl/casl-ability.factory.ts": [
+        "../node_modules/@casl/ability/index.d.ts",
+        "../src/auth/action.enum.ts",
+        "../src/books/books.entity.ts",
+        "../src/user/user.entity.ts"
       ],
-      "../src/auth/jwt-payload.interface.ts": [
-        "../src/user/user-role.enum.ts"
+      "../src/auth/dto/auth-credentials.dto.ts": [
+        "../src/user/user-region.enum.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../src/auth/jwt-payload.interface.ts",
@@ -11701,7 +12225,8 @@
       ],
       "../src/books/books.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/books/book-available.enum.ts"
+        "../src/books/book-available.enum.ts",
+        "../src/user/user.entity.ts"
       ],
       "../src/books/books.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
@@ -11747,18 +12272,34 @@
       ],
       "../src/user/user.entity.ts": [
         "../node_modules/typeorm/index.d.ts",
-        "../src/user/user-region.enum.ts",
-        "../src/user/user-role.enum.ts"
+        "../src/books/books.entity.ts",
+        "../src/user/user-region.enum.ts"
       ],
       "../src/user/user.repository.ts": [
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/dto/auth-credentials.dto.ts",
+        "../src/auth/dto/signin-credentials.dto.ts",
         "../src/user/user.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
+      "../node_modules/@casl/ability/dist/types/ability.d.ts",
+      "../node_modules/@casl/ability/dist/types/abilitybuilder.d.ts",
+      "../node_modules/@casl/ability/dist/types/forbiddenerror.d.ts",
+      "../node_modules/@casl/ability/dist/types/hkt.d.ts",
+      "../node_modules/@casl/ability/dist/types/index.d.ts",
+      "../node_modules/@casl/ability/dist/types/matchers/conditions.d.ts",
+      "../node_modules/@casl/ability/dist/types/matchers/field.d.ts",
+      "../node_modules/@casl/ability/dist/types/pureability.d.ts",
+      "../node_modules/@casl/ability/dist/types/rawrule.d.ts",
+      "../node_modules/@casl/ability/dist/types/rule.d.ts",
+      "../node_modules/@casl/ability/dist/types/ruleindex.d.ts",
+      "../node_modules/@casl/ability/dist/types/structures/linkeditem.d.ts",
+      "../node_modules/@casl/ability/dist/types/types.d.ts",
+      "../node_modules/@casl/ability/dist/types/utils.d.ts",
+      "../node_modules/@casl/ability/index.d.ts",
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts",
       "../node_modules/@nestjs/common/cache/cache.module.d.ts",
       "../node_modules/@nestjs/common/cache/decorators/cache-key.decorator.d.ts",
@@ -12122,6 +12663,27 @@
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
       "../node_modules/@types/zen-observable/index.d.ts",
+      "../node_modules/@ucast/core/dist/types/builder.d.ts",
+      "../node_modules/@ucast/core/dist/types/condition.d.ts",
+      "../node_modules/@ucast/core/dist/types/index.d.ts",
+      "../node_modules/@ucast/core/dist/types/interpreter.d.ts",
+      "../node_modules/@ucast/core/dist/types/parsers/defaultinstructionparsers.d.ts",
+      "../node_modules/@ucast/core/dist/types/parsers/objectqueryparser.d.ts",
+      "../node_modules/@ucast/core/dist/types/translator.d.ts",
+      "../node_modules/@ucast/core/dist/types/types.d.ts",
+      "../node_modules/@ucast/core/dist/types/utils.d.ts",
+      "../node_modules/@ucast/js/dist/types/defaults.d.ts",
+      "../node_modules/@ucast/js/dist/types/index.d.ts",
+      "../node_modules/@ucast/js/dist/types/interpreter.d.ts",
+      "../node_modules/@ucast/js/dist/types/interpreters.d.ts",
+      "../node_modules/@ucast/js/dist/types/types.d.ts",
+      "../node_modules/@ucast/js/dist/types/utils.d.ts",
+      "../node_modules/@ucast/mongo/dist/types/index.d.ts",
+      "../node_modules/@ucast/mongo/dist/types/instructions.d.ts",
+      "../node_modules/@ucast/mongo/dist/types/mongoqueryparser.d.ts",
+      "../node_modules/@ucast/mongo/dist/types/types.d.ts",
+      "../node_modules/@ucast/mongo2js/dist/types/factory.d.ts",
+      "../node_modules/@ucast/mongo2js/dist/types/index.d.ts",
       "../node_modules/anymatch/index.d.ts",
       "../node_modules/axios/index.d.ts",
       "../node_modules/class-validator/types/container.d.ts",
@@ -12693,10 +13255,14 @@
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
       "../src/app.module.ts",
+      "../src/auth/action.enum.ts",
       "../src/auth/auth.controller.ts",
       "../src/auth/auth.module.ts",
       "../src/auth/auth.service.ts",
+      "../src/auth/casl/casl-ability.factory.ts",
+      "../src/auth/casl/casl.module.ts",
       "../src/auth/dto/auth-credentials.dto.ts",
+      "../src/auth/dto/signin-credentials.dto.ts",
       "../src/auth/get-user.decorator.ts",
       "../src/auth/jwt-payload.interface.ts",
       "../src/auth/jwt.strategy.ts",
@@ -12718,7 +13284,6 @@
       "../src/config/typeorm.config.ts",
       "../src/main.ts",
       "../src/user/user-region.enum.ts",
-      "../src/user/user-role.enum.ts",
       "../src/user/user.entity.ts",
       "../src/user/user.module.ts",
       "../src/user/user.repository.ts"

@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const books_entity_1 = require("./../books/books.entity");
 const user_region_enum_1 = require("./user-region.enum");
-const user_role_enum_1 = require("./user-role.enum");
 let User = class User extends typeorm_1.BaseEntity {
     async validatePassword(password) {
         const hash = await bcrypt.hash(password, this.userSalt);
@@ -49,9 +49,9 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "userName", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'varchar', nullable: false }),
-    __metadata("design:type", String)
-], User.prototype, "userRole", void 0);
+    typeorm_1.Column({ type: 'boolean', nullable: false }),
+    __metadata("design:type", Boolean)
+], User.prototype, "userIsAdmin", void 0);
 __decorate([
     typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
@@ -64,6 +64,10 @@ __decorate([
     typeorm_1.Column({ type: 'varchar', nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "userSalt", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => books_entity_1.Book, book => book.bookUser, { eager: true }),
+    __metadata("design:type", Array)
+], User.prototype, "userBooks", void 0);
 User = __decorate([
     typeorm_1.Entity(),
     typeorm_1.Unique(['userEmail'])

@@ -1,5 +1,4 @@
 import { UserRegion } from "./user-region.enum";
-import { UserRole } from "./user-role.enum";
 
 export class User {
     userLastName: string;
@@ -8,7 +7,7 @@ export class User {
     userCity: string;
     userPostcode: string;
     userName: string;
-    userRole: UserRole.user;
+    userIsAdmin: boolean;
     userEmail: string;
     userPassword: string;
     userConfirmPassword: string;

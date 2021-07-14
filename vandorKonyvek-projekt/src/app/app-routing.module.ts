@@ -22,7 +22,7 @@ const routes: Routes = [
                    RoleGuard
                   ], 
     data: { 
-      expectedRole: [ 'user' || 'admin']
+      expectedRole: [ false || true ]
     } 
   },
   { path: 'admin', 
@@ -31,7 +31,7 @@ const routes: Routes = [
                    RoleGuard
                   ], 
     data: { 
-      expectedRole: 'admin'
+      expectedRole: true
     } 
   },
   { path: '**', redirectTo: '' },  
