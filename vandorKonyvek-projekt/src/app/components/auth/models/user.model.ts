@@ -8,7 +8,7 @@ export class User {
     userCity: string;
     userPostcode: string;
     userName: string;
-    userRole: UserRole.common;
+    userRole: UserRole.user;
     userEmail: string;
     userPassword: string;
     userConfirmPassword: string;

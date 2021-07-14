@@ -30,7 +30,7 @@ export class User extends BaseEntity {
     userName: string;
 
     @Column({type: 'varchar', nullable: false})
-    userRole: UserRole.common;
+    userRole: UserRole.user;
 
     @Column({type: 'varchar', nullable: false})
     userEmail: string;

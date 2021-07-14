@@ -22,7 +22,7 @@ const routes: Routes = [
                    RoleGuard
                   ], 
     data: { 
-      expectedRole: [ 'common' || 'admin']
+      expectedRole: [ 'user' || 'admin']
     } 
   },
   { path: 'admin', 

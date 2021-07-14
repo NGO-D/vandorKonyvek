@@ -32,7 +32,6 @@ export class AuthService {
                                     };
         const accessToken = await this.jwtService.sign(payload);
         console.log(typeof accessToken);
-        // egy másik tutorial 
         return { accessToken };
     } 
 }

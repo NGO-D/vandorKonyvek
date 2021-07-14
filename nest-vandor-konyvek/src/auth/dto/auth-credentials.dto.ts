@@ -20,7 +20,7 @@ export class AuthCredentialsDto {
     @IsString()
     userName: string;
 
-    userRole: UserRole.common;
+    userRole: UserRole.user;
 
     @IsString()
     @IsEmail()

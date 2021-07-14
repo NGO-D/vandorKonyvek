@@ -7,7 +7,7 @@ export declare class AuthCredentialsDto {
     userCity: string;
     userPostcode: number;
     userName: string;
-    userRole: UserRole.common;
+    userRole: UserRole.user;
     userEmail: string;
     userPassword: string;
 }

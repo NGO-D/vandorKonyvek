@@ -9,7 +9,7 @@ export declare class User extends BaseEntity {
     userCity: string;
     userPostcode: number;
     userName: string;
-    userRole: UserRole.common;
+    userRole: UserRole.user;
     userEmail: string;
     userPassword: string;
     userSalt: string;

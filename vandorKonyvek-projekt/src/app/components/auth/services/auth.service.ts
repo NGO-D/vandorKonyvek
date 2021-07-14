@@ -26,7 +26,6 @@ export class AuthService {
   constructor(private httpClient: HttpClient,
               private tokenStorageService: TokenStorageService,
               private router: Router,
-              //private errorInterceptor: ErrorInterceptor,
               ) { }
 
 
@@ -57,7 +56,7 @@ export class AuthService {
 
 
   public loginEndpointSwitch(token): void {
-    if (this.tokenStorageService.decodeToken(token).userRole === UserRole.common) {
+    if (this.tokenStorageService.decodeToken(token).userRole === UserRole.user) {
       this.router.navigate(['/user']);
     } else {
       this.router.navigate(['/admin']);
@@ -74,7 +73,7 @@ export class AuthService {
             userCity: user.userCity,
             userPostcode: parseInt(user.userPostcode),
             userName: user.userName,
-            userRole: UserRole.common,
+            userRole: UserRole.user,
             userEmail: user.userEmail,
             userPassword: user.userPassword
           };

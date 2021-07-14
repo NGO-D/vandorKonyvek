@@ -8,16 +8,8 @@ async function bootstrap() {
   const serverConfig = config.get('server');
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
-  const options = {
-    origin: ['http://localhost:4200', 'http://localhost', '*'],
-    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-    credentials: true,
-    allowedHeaders: ['Accept', 'Content-Type', 'Authorization'],
-  };
   
-  app.enableCors(options);
+  app.enableCors();
   const port = process.env.PORT || serverConfig.port;
   
   const swaggerConfig = new DocumentBuilder()

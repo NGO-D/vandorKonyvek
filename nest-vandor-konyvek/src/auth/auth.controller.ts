@@ -10,14 +10,6 @@ export class AuthController {
     constructor(
         private authService: AuthService
     ) {}
-/*
-    @Post('/register')
-    signUp(@Body() body): Promise<void> {
-        console.log('baaaack');
-        console.log(body);
-        return this.authService.signUp(body);
-    } 
- */   
     
     @Post('/signup')
     signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto ): Promise<any> {
@@ -32,13 +24,6 @@ export class AuthController {
     signIn(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto): Promise<{accessToken: string}> {
         return this.authService.signIn(authCredentialsDto);
     }
-    
-/*
-    @Post('/signin')
-    signIn(@Body() body): Promise<any> {
-        console.log('backendben vagyok');
-        return this.authService.signIn(body);
-    }
-    */
+
 }
 
