@@ -17,22 +17,24 @@ const routes: Routes = [
     component: UserComponent,
   },
   { path: 'user', 
-    component: UserComponent, 
+    component: UserComponent,
+    /* server oldal teszelése  
     canActivate: [ AuthGuard,
                    RoleGuard
                   ], 
     data: { 
       expectedRole: [ false || true ]
-    } 
+    } */
   },
   { path: 'admin', 
     component: AdminComponent, 
+    /* szerver oldal tesztelése
     canActivate: [ AuthGuard,
                    RoleGuard
                   ], 
     data: { 
       expectedRole: true
-    } 
+    } */
   },
   { path: '**', redirectTo: '' },  
 ]; 

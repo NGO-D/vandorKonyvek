@@ -1,0 +1,1 @@
+{"version":3,"file":"policy-handler.interface.js","sourceRoot":"","sources":["../../src/auth/policy-handler.interface.ts"],"names":[],"mappings":";;;AAAA,wDAA8C;AAC9C,+CAAuC;AAYvC,MAAa,wBAAwB;IACnC,MAAM,CAAC,OAAmB;QACxB,OAAO,OAAO,CAAC,GAAG,CAAC,oBAAM,CAAC,IAAI,EAAE,mBAAI,CAAC,CAAC;IACxC,CAAC;CACF;AAJD,4DAIC"}

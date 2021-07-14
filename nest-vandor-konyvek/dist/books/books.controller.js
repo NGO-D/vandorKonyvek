@@ -14,8 +14,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BooksController = void 0;
 const common_1 = require("@nestjs/common");
-const passport_1 = require("@nestjs/passport");
+const check_policies_decorator_1 = require("../auth/check-policies.decorator");
 const get_user_decorator_1 = require("../auth/get-user.decorator");
+const policy_handler_interface_1 = require("../auth/policy-handler.interface");
+const policy_guard_1 = require("../auth/policy.guard");
 const user_entity_1 = require("../user/user.entity");
 const book_available_enum_1 = require("./book-available.enum");
 const books_service_1 = require("./books.service");
@@ -89,7 +91,6 @@ __decorate([
 ], BooksController.prototype, "deleteBook", null);
 BooksController = __decorate([
     common_1.Controller('books'),
-    common_1.UseGuards(passport_1.AuthGuard()),
     __metadata("design:paramtypes", [books_service_1.BooksService])
 ], BooksController);
 exports.BooksController = BooksController;
